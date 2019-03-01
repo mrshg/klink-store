@@ -1,0 +1,139 @@
+#modal-schedule
+  max-width: 400px;
+  .modal__header
+    padding-left: 30px;
+    padding-right: 30px;
+    overflow: hidden;
+  .modal__body
+    padding-bottom: 20px;
+  .modal-time-selection-slider-arrows
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 30px;
+    left: 0;
+    i:first-child, i:last-child
+      width: 40px;
+      height: 40px;
+      color: rgba(gray-10, 0.5);
+      font-size: 26px;
+      position: absolute;
+      top: 50%;
+      transition: color .3s ease;
+      &:hover
+        color: rgba(gray-10, 1);
+    i:first-child
+      left: 30px;
+    i:last-child
+      right: 30px;
+.schedule-title
+  margin-bottom: 20px;
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23px;
+  text-transform: uppercase;
+
+.schedule-label
+  overflow: hidden;
+  clear: both;
+  position: relative;
+  display: block;
+  font-size: 12px;
+  line-height: 18px;
+  height: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #808080;
+  text-align: center;
+  span
+    padding: 0 8px;
+    position: relative;
+    display: inline-block;
+    background-color: #fff;
+    z-index: 100;
+    
+  &:before
+    position: absolute;
+    content: '';
+    display: block;
+    top: 50%;
+    margin-top: -1px;
+    height: 1px;
+    background-color: rgba(0,0,0,0.25);
+    left: 0;
+    right: 0;
+
+.day-selection-list, .time-selection-list
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+.day-selection-list-wrapper
+  text-align: center;
+.day-selection-list
+  display: inline-block;
+  // justify-content: center;
+  overflow: hidden;
+  margin: 14px 0 11px;
+  li
+    display: block;
+    float: left;
+    margin-left: 1px;
+    &:first-child
+      margin-left: 0;
+    
+  a
+    display: block;
+    border-radius: 5px;
+    width: 55px;
+    height: 56px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    &.active, &:hover
+      background-color: #ffa800;
+      color: #fff;
+  .day
+    display: block;
+    font-size: 12px;
+    line-height: 14px;
+    padding-top: 5px;
+    font-weight: 400;
+  .date
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 34px;
+
+.time-selection-list
+  color: #000;
+  font-weight: 400;
+  margin: 23px auto 21px auto;
+  width: 250px;
+  display block;
+  li
+    font-size: 32px;
+    line-height: 40px;
+    text-transform: uppercase;
+
+.form__submit.schedule-submit
+  width: 90%;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 270px;
+  margin: 0 auto;
+  font-size: 12px;
+  font-weight: 400;
+.schedule-note
+  width: 90%;
+  max-width: 270px;
+  margin: 6px auto 0;
+  display: block;
+  color: #807e7e;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 14px;
+  text-align: center;

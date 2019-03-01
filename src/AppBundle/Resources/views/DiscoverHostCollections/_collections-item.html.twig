@@ -1,0 +1,13 @@
+<div class="box__item box__item--host-collections" style="background-color:{{ collection.color }}">
+    <div class="box__item-content">
+    	<div class="box__item-content-inner">
+			{%  if collection.image is defined %}
+    		<div class="bg-image" style="background-image: url('{{ collection.image }}')"></div>
+			{% endif %}
+    		<div class="collection-name" style="background-color:{{ collection.color }}">
+        	<h3>{{ collection.name|length < 30 ? collection.name : collection.name|slice(0, 30) ~ '...' }} </h3>
+    		</div>
+      </div>
+    </div>
+    <a href="{{ path('_discover_single_collection', {'collectionId':collection.id}) }}" title="{{ collection.name }}">View more</a>
+</div>

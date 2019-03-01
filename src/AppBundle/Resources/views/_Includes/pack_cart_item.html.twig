@@ -1,0 +1,19 @@
+{% if item is defined %}
+    <article class="pack-cart-item cart-item" data-id="{{ item.product.variants.0.id }}">
+        {# todo change image to thumbnail_path #}
+        <div class="cart-item-thumb" style="background-image: url('{{ item.product.variants.0.image }}')"></div>
+        <div class="cart-item-info">
+            <h2>{{ item.product.variants.0.presentation }}</h2>
+            {% if app.request.cookies.get('sampleStore') == 'false' %}
+            <p class="pack-item-price--action" data-price="{{ item.product.variants.0.price }}">{{ item.product.variants.0.price|price }}</p>
+            {% endif %}
+        </div>
+        <div class="cart-item-count">
+            <div class="cart-item-count-count">
+                <span class="cart-item-count-increase pack-increase--action" data-price="{{ item.product.variants.0.price }}"></span>
+                <input type="tel" class="cart-item-quantity pack-quantity--action" value="{{ item.quantity }}"/>
+                <span class="cart-item-count-decrease pack-decrease--action" data-price="{{ item.product.variants.0.price }}"></span>
+            </div>
+        </div>
+    </article>
+{% endif %}

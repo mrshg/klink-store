@@ -1,0 +1,222 @@
+input, input[type="text"], input[type="email"]
+  box-sizing: border-box;
+  display: block;
+  border: 1px solid gray-50;
+  border-radius: 4px;
+  background-color: white;
+  padding: 15px 20px 13px 20px;
+  margin-bottom: 15px;
+  text-align: center;
+  width: 100%;
+  color: black;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: fSansBase;
+  height: 50px;
+  line-height: 1.3;
+  transition: all 0.3s ease;
+  &:hover, &:focus
+    outline: none;
+    border: 1px solid gray-30;
+  &::-webkit-input-placeholder { color: placeholderColor; }
+  &:-moz-placeholder { color: placeholderColor; }
+  &::-moz-placeholder { color: placeholderColor; }
+  &:-ms-input-placeholder { color: placeholderColor; }
+textarea
+  box-sizing: border-box;
+  display: block;
+  border: 1px solid gray-50;
+  border-radius: 4px;
+  background-color: white;
+  padding: 15px 20px 13px 20px;
+  margin-bottom: 15px;
+  text-align: left;
+  width: 100%;
+  color: black;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: fSansBase;
+  height: 70px;
+  line-height: 1.3;
+  transition: all 0.3s ease;
+  resize: none;
+  &:hover, &:focus
+   outline: none;
+   border: 1px solid gray-30;
+  &::-webkit-input-placeholder { color: placeholderColor; }
+  &:-moz-placeholder { color: placeholderColor; }
+  &::-moz-placeholder { color: placeholderColor; }
+  &:-ms-input-placeholder { color: placeholderColor; }
+
+input[type="submit"]
+  display: inline-block;
+  width: auto;
+  box-sizing: border-box;
+  border: 0;
+  margin: (baseSpacing / 2) auto;
+  background-color: theme-primary;
+  color: white;
+  border-radius: 4px;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+  height: auto;
+  &:hover
+    background-color: darken(theme-primary, 10%);
+
+select
+    border: 1px solid gray-50;
+    border-radius: 4px;
+    box-shadow: none;
+    background-color: transparent;
+    width: 100%;
+    line-height: 1;
+    text-align: center;
+    color: black;
+    font-weight: 400;
+    padding: 15px 20px;
+    margin-bottom: (baseSpacing / 2);
+    height: 50px;
+    margin-bottom: 10px;
+    position: relative;
+    &:focus
+      outline: none;
+
+.select-custom
+  position: relative;
+  width: 100%;
+  &:after
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 6.5px 0 6.5px;
+    border-color: #808080 transparent transparent transparent;
+    right: 22px;
+    top: 50%;
+    margin-top: -7px;
+    opacity: 0.5;
+  select
+    border: 1px solid gray-50;
+    border-radius: 4px;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    line-height: 1;
+    text-align: center;
+    color: black;
+    font-weight: 400;
+    padding: 15px 20px;
+    margin-bottom: (baseSpacing / 2);
+    height: 50px;
+    margin-bottom: 10px;
+    position: relative;
+    &:focus
+      outline: none;
+
+
+.form
+  &__group
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    +above(bpSmall)
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+    input
+      line-height:1;
+      margin: 0;
+      font-size: 14px;
+      +below(bpSmall)
+        width: 100%
+      +above(bpSmall)
+        order: 1;
+      &:first-child
+        display block;
+        margin:0 0 10px 0;
+        flex: 1;
+        +above(bpSmall)
+          margin:0 8px 15px 0;
+      &:last-child
+        flex: 1;
+        margin:0 0 10px 0;
+        +above(bpSmall)
+          margin:0 0 15px 8px;
+  &__info
+    font-size: 12px;
+    font-weight: 400;
+    a
+      text-decoration: underline;
+  &__link
+    text-decoration: underline;
+    display: block;
+    color: gray-30;
+    font-size: 14px;
+    &:hover
+      text-decoration: none;
+
+  &__field
+    position: relative;
+    .msg
+      display: inline-block;
+    .msg--error
+      position: absolute;
+      right: -20px;
+      top: 49%;
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: theme-danger;
+    .msg--success
+      position: absolute;
+      right: -20px;
+      top: 49%;
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: theme-success;
+    .msg:after
+      opacity: 0;
+      transition: all .3s ease;
+      font-weight: 400;
+      background: #333;
+      background: rgba(0,0,0,.8);
+      border-radius: 5px;
+      bottom: 10px;
+      color: #fff;
+      font-size: 12px;
+      content: attr(data-text);
+      right: -0px;
+      padding: baseSpacing;
+      position: absolute;
+      z-index: 101;
+      width: 150px;
+      pointer-events: none;
+    .msg:hover:after
+      opacity: 1;
+
+
+.field-group
+  position: relative
+
+.hasDatepicker + .ui-datepicker-trigger
+  position: relative;
+  z-index: 3;
+  float: right;
+  width: 22px;
+  margin-top: -52px;
+  margin-right: 10px;
+  opacity: 0.5
+  transition: opacity 0.3s ease;
+  &:hover
+    cursor: pointer;
+    opacity:0.8

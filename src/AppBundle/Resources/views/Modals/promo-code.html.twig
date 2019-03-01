@@ -1,0 +1,14 @@
+<section id="modal-promo-code" class="modal modal--promo-code mfp-with-anim mfp-hide">
+    <div class="content">
+        <div class="modal__header">
+            <h3 class="modal__title">Enter Promo Code</h3>
+            <form class="form form--modal" method="post" name="promo-code" id="promo-code">
+                {% for flashError in app.session.flashbag.get('error') %}
+                    <div class="alert">{{ flashError }}</div>
+                {% endfor %}
+                <input type="text" placeholder="Promo code" name="_promo_code" id="_promo_code" required/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </div>
+    </div>
+</section>

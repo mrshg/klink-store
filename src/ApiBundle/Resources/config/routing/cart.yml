@@ -1,0 +1,39 @@
+_delete_cart:
+    pattern: /delete/
+    defaults: { _controller: ApiBundle:Cart:deleteCart }
+    methods: [POST]
+
+_get_cart:
+    pattern: /
+    defaults: { _controller: ApiBundle:Cart:getCart }
+    methods: [GET]
+
+_post_cart:
+    pattern: /
+    defaults: { _controller: ApiBundle:Cart:postCart }
+    methods: [POST]
+
+_delete_cart_item:
+    pattern: /{itemId}/delete/
+    defaults: { _controller: ApiBundle:Cart:deleteCartItem }
+    methods: [POST]
+
+_patch_cart_item:
+    pattern: /{itemId}/patch/
+    defaults: { _controller: ApiBundle:Cart:patchCartItem }
+    methods: [POST]
+
+_patch_cart_package:
+    pattern: /pack/
+    defaults: { _controller: ApiBundle:Cart:postCartPackage }
+    methods: [POST]
+
+_put_cart_tip:
+    pattern: /tip/
+    defaults: { _controller: ApiBundle:Cart:putCartTip }
+    methods: [POST]
+
+_put_cart_coupon:
+    pattern: /coupon/
+    defaults: { _controller: ApiBundle:Cart:putCartCoupon }
+    methods: [POST]

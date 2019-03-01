@@ -1,0 +1,68 @@
+{% if profile.default_address is defined %}
+    {% set address = profile.default_address %}
+    {% set mapImage %}
+        style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=650x400&maptype=roadmap&key=AIzaSyAKkJMIYxEv8IV9Eoshxc4U8uDYKKPO97A&format=png&visual_refresh=true&markers=icon:http://i.imgur.com/dZttCtd.png|{{ address.address_line1 }}{% if address.address_line2 is defined %}+{{ address.address_line2 }}{% endif %}+{{ address.locality }}+{{ address.administrative_area|slice(-2) }}+{{ address.postal_code }}')"
+    {% endset %}
+    <article class="checkout-address-item">
+        <div class="map-source" {{ mapImage }}></div>
+        <div class="checkout-address-item__data">
+            <div class="map-blur" {{ mapImage }}></div>
+            <div class="center">
+                {#<h2>Home</h2>#}
+                <address>
+                    {{ address.address_line1 }}
+                    {% if address.address_line2 is defined %}
+                        <br>{{ address.address_line2 }}
+                    {% endif %}
+                    <br>
+                    {{ address.locality }}, {{ address.administrative_area|slice(-2) }} {{ address.postal_code }}
+                </address>
+                <hr>
+                <p>
+                    <strong>
+                        Special Instructions:
+                    </strong> <br>
+                    <span class="special-instructions--action">None</span>
+                </p>
+                <hr>
+                <div class="checkout-address-item__actions">
+                    <a href="#modal-edit-address-checkout" class="btn btn--white activate-modal-link"
+                       data-effect="mfp-zoom-in" data-id="{{ address.id }}">Edit</a>
+                </div>
+            </div>
+        </div>
+    </article>
+    <script>
+        $(document).ready(function () {
+            if (address.getAdditionalInfo({{ address.id }})) {
+                $('.special-instructions--action').html(address.getAdditionalInfo({{ address.id }}));
+            }
+            var addressData = {
+                        'address_line1': '{{ address.address_line1 }}',
+                        {% if address.address_line2 is defined %}
+                            'address_line2': '{{ address.address_line2 }}',
+                        {% endif %}
+                        'locality': '{{ address.locality }}',
+                        'administrative_area': '{{ address.administrative_area|slice(-2) }}',
+                        'postal_code': '{{ address.postal_code }}',
+
+                    };
+            var geocodeData = {
+                address: address.__toString(addressData)
+            }
+            apiHandler.getGeocode(geocodeData).then(function(latlong){
+                var long = latlong.longitude + 0.0018;
+                var lat = latlong.latitude;
+                var mapImage = 'https://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=650x400&maptype=roadmap&key=AIzaSyAKkJMIYxEv8IV9Eoshxc4U8uDYKKPO97A&format=png&visual_refresh=true&markers=icon:http://i.imgur.com/dZttCtd.png|{{ address.address_line1 }}{% if address.address_line2 is defined %}+{{ address.address_line2 }}{% endif %}+{{ address.locality }}+{{ address.administrative_area|slice(-2) }}+{{ address.postal_code }}&center=' + lat + ',' + long;
+                $('.map-blur').css('background-image', "url('" + mapImage + "')");
+            });
+        });
+    </script>
+{% else %}
+    <article class="new-item new-item--address">
+        <div class="content">
+            <a href="#modal-update-address" class="activate-modal-link"
+               data-effect="mfp-zoom-in">Add address</a>
+        </div>
+    </article>
+{% endif %}

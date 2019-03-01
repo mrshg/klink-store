@@ -1,0 +1,82 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <div class="page page--checkout">
+
+        <div class="checkout-review">
+            <div class="wrapper">
+                <div class="content">
+                    <div class="checkout-review__info">
+                        <div class="user-info">
+                            <div class="user-info__content">
+                                <div class="center">
+                                    <p>Full name</p>
+
+                                    <p>email@address.com</p>
+
+                                    <p>(123) 123-1234</p>
+                                </div>
+                            </div>
+                            <div class="user-info__actions">
+                                <a href="#" class="btn btn--gray-hasborder">Send as gift</a>
+                                <a href="#" class="btn btn--gray-hasborder">Edit</a>
+                            </div>
+                        </div>
+
+                        <div class="card-info">
+                            <div class="card-info__content">
+                                <div class="center">
+                                    <p>Visa</p>
+
+                                    <p>**** 4646</p>
+                                </div>
+                            </div>
+                            <div class="card-info__actions">
+                                <a href="#" class="btn btn--gray-hasborder">Send as gift</a>
+                                <a href="#" class="btn btn--gray-hasborder">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-review__address">
+                        {% include 'AppBundle:Checkout:_address-item.html.twig' %}
+                    </div>
+
+                    <div class="checkout-review__footer">
+                        <p>Order will arrive:</p>
+
+                        <p>Today as soon as possible</p>
+                        <a href="#" class="btn btn--gray-hasborder">Reschedule</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="page-actions page-actions--checkout">
+            <div class="success-msg">
+                <a href="" class="btn btn--full btn--green">CLICK TO SEND ORDER - <span class="checkout-total"></span>
+                </a>
+                <p class="termsofuse">I am 21 or older and agree to the <a href="/tou" target="_blank">terms of use</a></p>
+            </div>
+            <div class="error-msg">
+                Enter valid payment to complete checkout
+            </div>
+            <div class="info-msg">
+                <i class="icon" data-icon="i"></i>
+                <p>Your order is on the way!</p>
+            </div>
+        </div>
+
+
+    </div>
+    <script>
+        var width = $(window).width();
+        if (width < 720) {
+            $('body').removeClass('cart-active');
+            $('body').removeClass('cart-active-saved');
+        }
+    </script>
+
+
+{% endblock body %}

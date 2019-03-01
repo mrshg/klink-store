@@ -1,0 +1,44 @@
+## To get started with security, check out the documentation:
+## http://symfony.com/doc/current/book/security.html
+security:
+
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+
+    providers:
+        klink_user_provider:
+            id: klink_user_provider
+
+    firewalls:
+        main:
+            pattern: /.*
+            simple_form:
+                provider: klink_user_provider
+                authenticator: klink_authenticator
+                login_path: /login
+                check_path: /login-check
+                failure_path: /login
+                default_target_path: /login-success
+                always_use_default_target_path: true
+                use_forward:  false
+                use_referer: true
+            remember_me:
+                key: 'aksfkasbfasbjkfabjkfar@4'
+                name: KlinkDelivery
+                lifetime: 31536000
+                always_remember_me: true
+            logout: true
+            anonymous: true
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+    access_control:
+        - { path: ^/login.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/account.*, role: ROLE_USER }
+        - { path: ^/cart.*, role: ROLE_USER }
+        - { path: ^/checkout.*, role: ROLE_USER }

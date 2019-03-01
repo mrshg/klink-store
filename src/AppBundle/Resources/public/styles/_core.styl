@@ -1,0 +1,186 @@
+body
+	background-color: page-bg;
+	color: gray-30;
+	font-family: fSansBase;
+	font-weight: 400;
+	font-size: baseline-font-size;
+	line-height: 1.2;
+	overflow-x: hidden;
+
+html
+	box-sizing: border-box;
+
+*, *:before, *:after
+	box-sizing: inherit;
+
+body::before
+	/* never visible - this is used in jQuery to check the current MQ */
+	content: 'mobile';
+	display: none;
+	+above(bpMedium)
+		content: 'desktop';
+
+body
+	margin: 0;
+	padding-top: headerHeight;
+.page-wrap, .page
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 100%;
+.wrapper
+	box-sizing: border-box;
+	margin: 0 auto;
+	min-width: 320px;
+	max-width: bpLarge;
+	width: 100%;
+	clearfix();
+
+.content
+	margin: 0 auto;
+	padding: 0 20px;
+	width: 100%;
+
+
+
+// Push content when store is closed
+body.closed-store
+	padding-top: 88px;
+	.top-header
+		top: 26px;
+	.browse-drinks-filters-and-sorting-wrapper
+		+above(bpMedium)
+			top: 155px;
+	.browse-drinks-filters
+		+above(bpMedium)
+			max-height: calc(100vh - 270px);
+
+
+
+
+h1, h2, h3, h4, h5, h6
+	font-weight: fwSemibold;
+
+h1
+	margin: 0;
+	padding: 0;
+	font-family:fSansBase;
+	font-size: 26px;
+
+h2
+	margin: 0;
+	padding: 0;
+	font-family:fSansBase;
+	font-size: 24px;
+
+h3
+	margin: 0;
+	padding: 0;
+	font-family:fSansBase;
+	font-size: 22px;
+
+h4
+	margin: 0;
+	padding: 0;
+	font-family:fSansBase;
+	font-size: 20px;
+
+img
+	display: block;
+
+a
+	color: inherit;
+	text-decoration: none;
+	font-weight: 400;
+	+above(bpMedium)
+		transition: all .3s ease;
+	&:focus
+		outline: none;
+
+p
+	margin: 0;
+
+ul
+	li
+		list-style: none;
+
+figure
+	margin: 0;
+
+button
+	background-color: transparent;
+	outline: none;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	&:focus
+		outline: none;
+
+input[type="text"],
+input[type="email"],
+textarea
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+
+
+label
+	display: block;
+	position: relative;
+	cursor: pointer;
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+
+
+@-webkit-keyframes rotate {
+  100% {
+     transform: rotate(360deg);
+     -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+     transform: rotate(360deg);
+     -webkit-transform: rotate(360deg);
+  }
+}
+
+.rotate {
+  -webkit-animation-name: rotate;
+  animation-name: rotate;
+}
+
+
+

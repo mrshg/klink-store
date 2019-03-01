@@ -1,0 +1,12 @@
+{% if categories is defined %}
+<ul>
+    {% for category in categories|slice(0, 3) %}
+        <li class="{% if app.request.server.get("REQUEST_URI") == '/browse/'~category.id %}active{% endif %}">
+            <a href="{{ path('_browse_drinks_category', {categoryId: category.id}) }}">{{ category.name }}</a>
+        </li>
+    {% endfor %}
+    <li class="{% if app.request.attributes.get('_route') == '_browse_drinks' %}active{% endif %}">
+        <a href="{{ path('_browse_drinks') }}">More</a>
+    </li>
+</ul>
+{% endif %}

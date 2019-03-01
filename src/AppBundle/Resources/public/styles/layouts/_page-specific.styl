@@ -1,0 +1,855 @@
+.page
+	&--discover
+		padding: 0 0 baseSpacing 0;
+		& .content
+			font-size: 0;
+			line-height: 1;
+			.box__item--host-collections
+					float:none!important;
+					display: inline-block;
+					vertical-align: top;
+
+
+//CENTER PACKS BOXES
+.box__list
+	line-height: 1;
+	font-size: 0;
+	text-align:center;
+	.box__item--pack
+		float:none!important;
+		display: inline-block;
+		vertical-align: top;
+
+.page--single-host-collection
+	.box__list
+		text-align:left;
+
+.billboard-hero
+	text-align: center;
+	img
+		width: 100%;
+		height: auto;
+	.site-head-content
+		display: table-cell;
+		vertical-align: middle;
+	.content
+		display: table;
+		height: 100%;
+	.content__inner
+		position: relative;
+		width: 100%;
+		display: block;
+		margin: 0 auto;
+		+above(bpSmall)
+			width: 450px;
+		+above(bpMedium)
+			width: 450px;
+	&__title
+		position absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: white;
+		text-shadow: 1px 1px 5px rgba(0,0,0, 0.8);
+
+
+
+.box--recent-features
+	margin-top: 20px;
+
+.box-slider
+	padding: 40px 0 20px 0;
+	clearfix();
+	.box__header
+		padding: (baseSpacing / 3) 0;
+		border-bottom: 1px gray-32 solid;
+		margin-bottom: 20px;
+		display: table;
+		width: 100%;
+		> div
+			display: table-cell;
+			vertical-align: middle;
+			width: 50%;
+		.left
+			text-align: left;
+		.right
+			text-align: right;
+			position: relative;
+			>div
+				position: relative;
+				width: 100%;
+				height: 12px;
+				text-align: right;
+				.slick-arrow
+					top: 0;
+					right: 0;
+					&:first-child
+						right: 20px;
+
+
+
+		.icon-arrow
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			background-size: contain;
+			background-position: 0 0;
+			opacity: 0.7;
+			&:hover, &:focus
+				cursor: pointer;
+				opacity: 1;
+		&-title
+			color: white;
+			font-size: 14px;
+			font-weight: normal;
+			text-transform: uppercase;
+			text-shadow: 1px 1px 1px gray-10;
+
+	&:last-child
+		padding-bottom: 0;
+
+
+	.drink-item
+		margin: 5px 0px 20px 0px;
+	.box__footer
+		padding: baseSpacing 0;
+		text-align: center;
+
+	.box
+		&__item
+			float: left;
+			width: 100%;
+			height: 200px;
+			overflow: hidden;
+			figure
+				position: relative;
+				float: left;
+				overflow: hidden;
+				height: 100%;
+				width: 100%;
+				background: theme-primary;
+				text-align: center;
+				cursor: pointer;
+				border-radius: 4px;
+				figcaption
+					text-transform: uppercase;
+					color: white;
+
+				figcaption,
+				figcaption > a
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+
+				p
+					opacity: 0;
+
+				figcaption
+					> a
+						z-index: 1000;
+						text-indent: 200%;
+						white-space: nowrap;
+						font-size: 0;
+						opacity: 0;
+
+				h3
+					display: table;
+					position: relative;
+					top: 50%;
+					width: 100%;
+					margin: 0 auto;
+					transition: transform 0.35s;
+					transform: translate3d(0, -50%, 0);
+
+				img
+					position: relative;
+					display: block;
+					min-height: 100%;
+					max-width: 100%;
+
+.box-slider-host-collections
+	.box__header
+		.right
+			text-align: right;
+			position: relative;
+			>div
+				position: relative;
+				width: 100%;
+				height: 12px;
+				text-align: right;
+				.slick-arrow
+					top: 0;
+					right: 0;
+					&:first-child
+						right: 20px;
+
+	.box__list
+		margin: 0 -20px;
+
+.box
+	padding: 20px 0;
+	clearfix();
+	.box__header
+		padding: (baseSpacing / 3) 0;
+		border-bottom: 1px gray-32 solid;
+		margin-bottom: baseSpacing;
+		display: table;
+		width: 100%;
+		> div
+			//display: block;
+			//width: 100%;
+			//+above(bpSmall)
+			display: table-cell;
+			vertical-align: middle;
+			width: 50%;
+
+		.left
+			text-align: left;
+
+		.right
+			text-align: right;
+			a
+				color: gray-50;
+				font-weight: normal;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				font-size: 14px;
+				&:hover
+					color: white;
+				.icon-arrow
+					display: inline-block;
+					width: 10px;
+					height: 10px;
+					background-size: contain;
+					background-position: 0 0;
+					opacity: 0.7;
+					transform: rotate(90deg);
+
+		&-title
+			color: white;
+			font-size: 14px;
+			font-weight: normal;
+			text-transform: uppercase;
+			text-shadow: 1px 1px 1px gray-10;
+
+		.icon-arrow
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			background-size: contain;
+			background-position: 0 0;
+			&:hover
+				cursor: hand;
+
+			&--previous
+				transform: rotate(-90deg);
+
+			&--next
+				transform: rotate(90deg);
+
+	&:last-child
+		padding-bottom: 0;
+
+	.box__body
+		clearfix();
+	.box__list
+		clearfix();
+		margin: 0 -10px;
+
+	//Single box
+
+	.box
+		&__item
+			float: left;
+			width: 100%;
+			height: 200px;
+			overflow: hidden;
+			padding: 0 (baseSpacing / 2);
+			+above(bpSmall)
+				width: 50%;
+			+above(bpMedium)
+				width: 33.33%;
+			.box__item-inner
+				position: relative;
+				float: left;
+				overflow: hidden;
+				height: 100%;
+				width: 100%;
+				text-align: center;
+				cursor: pointer;
+				border-radius: 4px;
+				background-position: center center;
+				background-color: rgba(#333, 0.5);
+				background-repeat: no-repeat;
+				background-size: cover;
+				.box__item-content
+					text-transform: uppercase;
+					color: white;
+
+				.box__item-content,
+				.box__item-content > a
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+
+				.box__item-content
+					> a
+						z-index: 1000;
+						text-indent: 200%;
+						white-space: nowrap;
+						font-size: 0;
+					p
+						text-transform: none;
+						font-weight: 400;
+						padding-top: 10px;
+					.center
+						position: relative;
+						top: 60%;
+
+			// RECENT FEATURES BOX
+			&--recent-features
+				height: 300px;
+				margin-bottom: (baseSpacing / 2);
+				+above(bpSmall)
+					margin-bottom: 0;
+					width: 33.33%;
+				+above(bpMedium)
+					width: 33.33%;
+
+				.box__item-content
+					text-align: left;
+					padding: 15px 20px;
+					a
+						opacity: 0;
+						transition: all .5s ease;
+						background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+					h3, p
+						text-shadow: 0 0 10px gray-10;
+						transition: all .5s ease;
+					.summary
+						z-index: 1001;
+						position: absolute;
+						bottom: 20px;
+						right: 20%;
+						left: 20px;
+						+above(bpMedium)
+							position: absolute;
+							bottom: 20px;
+							right: 20%;
+							left: 20px;
+				&:hover
+					a
+						opacity: 0.4;
+
+
+
+			// COLLECTIONS BOX
+			&--host-collections
+				height: auto;
+				margin-bottom: baseSpacing;
+				width: calc(50% - 20px);
+				position: relative;
+				padding: 0;
+				margin: 10px;
+				overflow: hidden;
+				border-radius: 4px;
+				+above(bpSmall)
+					margin: 20px;
+					width: calc(33.3% - 40px);
+				+above(bpMedium)
+					width: calc(25% - 40px);
+					height: auto;
+				&:after
+					content: "";
+					display: block;
+					padding-bottom: calc(100% + 46px);
+				.box__item-content
+					// backface-visibility: hidden;
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					&-inner
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						bottom:0;
+				.bg-image
+					width: 100%;
+					position: absolute;
+					z-index: 1;
+					bottom: 55px;
+					top: 0;
+					right: 0;
+					left: 0;
+					background-position: center center;
+					background-repeat: no-repeat;
+					background-size: cover;
+				.collection-name
+					display: table;
+					width: 100%;
+					height: 55px;
+					position: absolute;
+					z-index: 2;
+					top: auto;
+					bottom: 0;
+					left: 0;
+					margin: 0;
+					// background-color: rgba(gray-10, 0.25);
+					text-align: center;
+				h3
+					display: table-cell;
+					hegiht: 100%;
+					vertical-align: middle;
+					font-weight: 400;
+					font-size: 14px;
+					text-transform: uppercase;
+					color: white;
+					font-family: fSansBase;
+				a
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					z-index: 1000;
+					text-indent: 200%;
+					white-space: nowrap;
+					font-size: 0;
+					opacity: 0.2;
+					transition: all .5s ease;
+					background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+				&:hover
+					a
+						opacity: 0;
+
+
+			// PACK BOX
+			&--pack
+				height: auto;
+				margin-bottom: baseSpacing;
+				width: calc(50% - 20px);
+				position: relative;
+				padding: 0;
+				margin: 10px;
+				overflow: hidden;
+				border-radius: 4px;
+				+above(bpSmall)
+					margin: 20px;
+					width: calc(33.3% - 40px);
+				+above(bpMedium)
+					margin: 20px;
+					width: calc(25% - 40px);
+					height: auto;
+				&:after
+					content: "";
+					display: block;
+					padding-bottom: calc(100% + 46px);
+				.box__item-content
+					// backface-visibility: hidden;
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					&-inner
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						bottom:0;
+				.bg-image
+					width: 100%;
+					z-index: 1;
+					position: absolute;
+					bottom: 55px;
+					top: 0;
+					right: 0;
+					left: 0;
+					background-position: center center;
+					background-repeat: no-repeat;
+					background-size: cover;
+				.pack-name
+					display: table;
+					width: 100%;
+					height: 55px;
+					position: absolute;
+					z-index: 2;
+					top: auto;
+					bottom: 0;
+					left: 0;
+					margin: 0;
+					// background-color: rgba(gray-10, 0.25);
+					text-align: center;
+				h3
+					display: table-cell;
+					hegiht: 100%;
+					vertical-align: middle;
+					font-weight: 400;
+					font-size: 14px;
+					text-transform: uppercase;
+					color: white;
+					font-family: fSansBase;
+				a
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					z-index: 1000;
+					text-indent: 200%;
+					white-space: nowrap;
+					font-size: 0;
+					opacity: 0.2;
+					transition: all .5s ease;
+					background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+				&:hover
+					a
+						opacity: 0;
+
+/*
+* Article listing page.
+*/
+
+.page--featured-selection
+	background-color: page-discover-bg;
+	.page__content
+		padding-top: 40px;
+		.wrapper
+			> .content
+				+above(bpMedium)
+					width: 850px;
+
+	.box__item
+		&--recent-features
+			height: 300px;
+			margin-bottom: baseSpacing;
+			+above(bpSmall)
+				width: 50%;
+				height: 350px;
+
+			+above(bpMedium)
+				width: 50%;
+
+	.box__item
+		&--recent-features
+			.box__item-content
+				a
+					opacity: 0.4;
+					transition: all .5s ease;
+					background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+				h3, p
+					transition: all .5s ease;
+				.summary
+					z-index: 1001;
+					position: absolute;
+					bottom: 15px;
+					right: 20%;
+					left: 20px;
+
+/*
+* Collections page.
+*/
+
+
+.collections-hero
+	position:relative;
+	text-align: center;
+	overflow: hidden;
+	background-size: cover;
+	.site-head-content
+		display: table-cell;
+		vertical-align: middle;
+		position: relative;
+	.content
+		display: table;
+		height: 100%;
+		.content__inner
+			width: 250px;
+			display: block;
+			margin: 0 auto;
+
+	&__title, &__subtitle
+		color: white;
+
+	&__title
+		font-weight: 700;
+		font-size: 24px;
+		text-transform: uppercase;
+		margin-bottom: (baseSpacing * 2);
+	&__subtitle
+		font-size: 18px;
+		font-weight: 400;
+		margin-bottom: 0;
+
+/*
+* Packs page.
+*/
+
+.page--pack
+	.page__content
+		> .wrapper
+			padding-top: 40px;
+	.drink-list
+		text-align: center;
+		max-width: 100%;
+
+	.drink-item
+		height: 276px;
+		.drink-data
+			display: table;
+			height: 62px;
+			padding: 0 5px;
+			width: 100%;
+			> div
+				width: 100%;
+				display: table-cell;
+				vertical-align: middle;
+
+
+.pack-hero
+	overflow: hidden;
+	background-size: cover;
+	height: 400px;
+	position: relative;
+	padding: 0;
+	// margin-top: -62px;
+	+below(bpMedium)
+		padding: 0;
+		height: 340px;
+		width: 100%;
+	.wrapper
+		height: 100%;
+		max-width: 760px;
+	.content
+		padding: 90px 40px 40px 40px;
+		height: 100%;
+		text-align: center;
+		width: 100%;
+		display: block;
+		position: absolute;
+		transform: translate(-50%, -50%);
+		top: 50%;
+		left: 50%;
+		+above(bpMedium)
+			width: 650px;
+			// display: table;
+	.site-head-content
+		display: block;
+		/* vertical-align: middle; */
+		width: 100%;
+		height: 100%;
+	.col
+		+above(bpMedium)
+			float: left;
+			display: table;
+			height: 100%;
+		&--one-half
+			width: 100%;
+			+above(bpMedium)
+				width: 50%;
+
+		&__inner
+			+above(bpMedium)
+				display: table-cell;
+				vertical-align: middle;
+			+below(bpMedium)
+				height: 100%;
+
+	&__title, &__subtitle
+		color: white;
+
+	&__title
+		font-weight: 700;
+		font-size: 22px;
+		text-transform: uppercase;
+		margin-bottom: 50px;
+		+above(bpMedium)
+			margin-bottom: baseSpacing;
+	&__subtitle
+		font-size: 14px;
+		font-weight: 400;
+		margin-bottom: baseSpacing;
+	.pack-author
+		display: none;
+		color: white;
+		opacity: 0.5;
+		+above(bpMedium)
+			display: block
+			padding-top: 10px;
+			font-size: 14px;
+			font-weight: 400;
+		a
+			text-decoration: underline;
+	&__image
+		+below(bpMedium)
+			// position: absolute;
+			// width: 100%;
+			// height: 100%;
+			// top: 0;
+			// left: 0;
+			// background-color: #333;
+			display: none;
+		+above(bpMedium)
+			position: relative;
+		.col__inner
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+			position: absolute;
+			width: 100%;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+			img
+				width: 100%;
+				+below(bpMedium)
+					position: absolute;
+					top:50%;
+					left: 50%;
+					// transform: translate(-50%, -50%);
+					transform: translate(-50%, -50%) scale(1);
+			+below(bpMedium)
+				height: 100%;
+				opacity: 0.3;
+			+above(bpMedium)
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 250px;
+				height: 250px;
+				transform: translate(-50%, -50%);
+	&__description
+		+below(bpMedium)
+			position: absolute;
+			z-index: 99;
+			left: 0;
+			bottom: 20px;
+			padding: 20px;
+		.btn
+			font-weight: 700;
+			+below(bpMedium)
+				// position: absolute;
+				// bottom: -100px;
+				// left: 50%;
+				// margin-left: -70px;
+				text-align:center;
+
+
+
+
+/*
+ * Single article.
+ */
+
+.page--single-article
+	background-color: white;
+	.main-overlap
+		top: 600px;
+	.article-content
+		background-color: white;
+		padding: baseSpacing 0;
+
+.article-hero
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	display: table;
+	width: 100%;
+	height: 600px !important;
+	text-align: left;
+	position: relative;
+	margin-top: -(navigationSecondaryHeight);
+	.site-header-content
+		position: relative;
+		z-index: 99;
+	.content
+		display: table-cell;
+		vertical-align: bottom;
+		padding-bottom: (baseSpacing*4);
+	&.parallax-section:first-of-type > div
+		height: 600px!important;
+	&__title, &__subtitle
+		color: white;
+
+	&__title
+		font-weight: 700;
+		font-size: 46px;
+		text-transform: capitalize;
+	&__subtitle
+		font-size: 40px;
+		font-weight: font-weight-light;
+
+.article-content
+	h3, h4, h5, h6
+		color: gray-10;
+		margin-bottom: baseSpacing;
+		margin-top: (baseSpacing / 2);
+	p
+		font-size: 18px;
+		line-height: 1.5;
+		color: gray-10;
+		margin-bottom: baseSpacing;
+	blockquote
+		text-transform: uppercase;
+		color: gray-10;
+		font-weight: font-weight-bold;
+		text-align: center;
+		font-size: 36px;
+		&:before, &:after
+			content: '"'
+			display: inline-block;
+			position: relative;
+		&:before
+			top: -5px;
+		&:after
+			top: -5px;
+
+	.gallery
+		margin: 0 -(baseSpacing / 2);
+		clearfix();
+		img
+			display: block;
+			height: auto;
+			width: 100%;
+			float: left;
+
+		&__image-link
+			display: block;
+			float: left;
+			padding: (baseSpacing / 2);
+			+above(bpSmall)
+				width: 50%;
+			+above(bpMedium)
+				width: 33.33%;
+
+			&:last-child
+				width: 100%;
+
+.article-featured__drinks
+	background-color: white;
+	padding: (baseSpacing * 2);
+	text-align: center;
+	.content
+		padding: (baseSpacing * 3) 0;
+		clearfix();
+		+above(bpMedium)
+			margin: 0 auto;
+			width: 600px;
+	.title--lines-on-side
+		overflow: visible;
+	.article-featured__title
+		color: gray-10;
+		text-transform: uppercase;
+		font-size: 21px;
+		font-weight: font-weight-bold;
+		&:before
+			left: -50%;
+			right: -50%;
+
+
+.article-featured__articles
+	background-color: page-bg;
+	padding: (baseSpacing * 2);
+	margin-bottom: 40px

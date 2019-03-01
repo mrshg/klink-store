@@ -1,0 +1,137 @@
+<section class="cart">
+    <div class="cart-head">
+        <i class="cart-head__cart-icon icon" data-icon="h"></i>
+        <span class="title">CART</span>
+        <button class="cart-close cart-trigger-action">
+            <i class="icon" data-icon="d"></i>
+        </button>
+    </div>
+    <div class="cart__inner">
+
+        <div class="cart-top">
+            <div class="cart-items-count">0 Items</div>
+            <div class="cart-items">
+
+                {#{% for item in cart.items %}#}
+                {#{% include 'AppBundle::_Includes/cart_item.html.twig' %}#}
+                {#{% endfor %}#}
+
+
+                {#--------Dummy packs----------#}
+                {#{% for p in 1..2 %}#}
+                {#<div class="cart-pack-group" id="pack-group-{{ p }}">#}
+                {#<article class="cart-item">#}
+                {#<img class="cart-item-img" src="" alt="" width="40" height="55"/>#}
+
+                {#<div class="cart-item-info">#}
+                {#<h2>Item name</h2>#}
+
+                {#<p>asdad</p>#}
+
+                {#<p>5,00</p>#}
+                {#</div>#}
+                {#<div class="height"></div>#}
+
+                {#<button class="cart-item-more cart-item-more--action">#}
+                {#<span></span>#}
+                {#</button>#}
+
+                {#</article>#}
+
+                {#<div class="cart-pack-group-more">#}
+                {#{% for i in 1..3 %}#}
+                {#<article class="cart-item" id="cart-item-{{ i }}">#}
+                {#<img class="cart-item-img" src="" alt="" width="40" height="55"/>#}
+
+                {#<div class="cart-item-info">#}
+                {#<h2>Item name</h2>#}
+
+                {#<p>asdad</p>#}
+
+                {#<p>5,00</p>#}
+                {#</div>#}
+                {#<div class="cart-item-count">#}
+                {#<div class="cart-item-count-count"><span#}
+                {#class="cart-item-count-increase"></span>3<span#}
+                {#class="cart-item-count-decrease"></span></div>#}
+                {#</div>#}
+                {#</article>#}
+                {#{% endfor %}#}
+                {#</div>#}
+                {#</div>#}
+                {#{% endfor %}#}
+
+                {#{% include 'AppBundle::_Includes/pack_cart_item.html.twig' %}#}
+
+
+            </div>
+        </div>
+        <div class="cart-bottom">
+            <div class="cart-bottom-summary clearfix">
+                <div class="cart-row">
+                    <div class="cart-half-row">
+                        <div class="tip-half">
+
+                            <span class="tip-label">TIP<span>$</span></span>
+                            <input type="tel" class="tip-input" value="0.00"/>
+                        </div>
+
+                    </div>
+                    <div class="cart-half-row">
+                        <div class="tip-select">
+                            <a href="#" data-value="0.1">10%</a>
+                            <a href="#" data-value="0.15">15%</a>
+                            <a href="#" data-value="0.2">20%</a>
+                        </div>
+                    </div>
+                </div>
+
+                {#------------ todo enable and implement when api ready ------------#}
+                <div class="cart-row">
+                    {#<div class="cart-half-row">#}
+                    {#<a href="#" class="cart-btn active">This is a Gift</a>#}
+                    {#</div>#}
+                    <div class="cart-half-row" id="promo-code-div">
+                        <a href="#modal-promo-code" class="activate-modal-link cart-btn" data-effect="mfp-zoom-in">Promo
+                            Code</a>
+                    </div>
+                </div>
+                {#<div class="cart-row">#}
+                {#<a href="#modal-schedule" class="cart-btn activate-modal-link">Schedule delivery time</a>#}
+                {#</div>#}
+
+                <table class="cart-totals-table">
+                    <tr>
+                        <td>Subtotal:</td>
+                        <td class="cart-subtotal"
+                            data-value="0">$0.00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Delivery Fee:</td>
+                        <td class="delivery-fee">$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Tax:</td>
+                        <td class="tax-total">$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Discount:</td>
+                        <td class="discount-total">$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Tip:</td>
+                        <td class="tip-amount">$0.00</td>
+                    </tr>
+                </table>
+            </div>
+            <a class="cart-checkout" href="{{ path('_checkout_index') }}"><strong>CHECKOUT</strong>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cart-total"
+                                                          data-value="0">$0.00</span></a>
+            <div class="checkout-disabled-warning cart-checkout-disabled">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+</section>

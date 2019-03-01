@@ -1,0 +1,28 @@
+{% if pack is defined %}
+<section id="modal-pack" class="modal modal--pack mfp-with-anim mfp-hide">
+  <div class="content">
+    <div class="modal__header">
+      <h2 class="modal-pack-title">{{ pack.name }}</h2>
+      {#<div class="modal-pack-slider-arrows"></div>#}
+      {#<div class="modal-pack-people-slider-wrapper">#}
+        {#<ul class="modal-pack-people-slider modal-slider">#}
+          {#<li>2-4</li>#}
+          {#<li>4-6</li>#}
+          {#<li>6-8</li>#}
+        {#</ul>#}
+        {#<span class="modal-pack-people-slider-label">People</span>#}
+      {#</div>#}
+    </div>
+    <div class="modal-pack-item-list">
+      {% set cartPrice = 0 %}
+      {% for item in pack.package_items %}
+        {% set cartPrice = cartPrice + (item.product.variants.0.price * item.quantity) %}
+        {% include 'AppBundle::_Includes/pack_cart_item.html.twig' %}
+      {% endfor %}
+    </div>
+    <div class="modal-pack-btn-overlay">
+      <a class="modal-pack-submit form__submit btn btn--primary {% if app.user == null %}pack-add-to-cart-not-logged--action{% endif %}" data-id="{{ pack.id }}" data-price="{{ cartPrice }}" href="#">Add <span class="pack-items-quantity--action">{{ pack.package_items|length }}</span> items to cart{% if app.request.cookies.get('sampleStore') == 'false' %} - <span class="pack-total--action">{{ cartPrice|price }}</span>{% endif %}</a>
+    </div>
+  </div>
+</section>
+{% endif %}

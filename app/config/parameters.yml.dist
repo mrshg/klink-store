@@ -1,0 +1,10 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    secret:            'ThisTokenIsNotSoSecretChangeIt'
+    klink.api.client_id: 'klink_v3_website_client_VO3xb7'
+    klink.api.client_secret: 'J}U]q78kym}bjG>Tt2U4'
+    klink.api.end_point: 'https://controller-dev.klinkdelivery.com'
+    asset_url: '/store/'
+    prod_mode: false

@@ -1,0 +1,27 @@
+_discover_index:
+    pattern: /
+    defaults: { _controller: AppBundle:Discover:index }
+
+_discover_pack:
+    pattern: /host-collections/{collectionId}/packs/{packId}
+    defaults: { _controller: AppBundle:Discover:singlePack }
+
+_discover_pack_no_collection:
+    pattern: /host-collections/pack/{packId}
+    defaults: { _controller: AppBundle:Discover:singlePackWithoutCollection }
+
+_discover_featured_selection:
+    pattern: /featured-selection
+    defaults: { _controller: AppBundle:Discover:discoverFeaturedSelection }
+
+_discover_host_collections:
+    pattern: /host-collections
+    defaults: { _controller: AppBundle:Discover:discoverHostCollections }
+
+_discover_single_collection:
+    pattern: /host-collections/{collectionId}
+    defaults: { _controller: AppBundle:Discover:singleCollection }
+
+_discover_article:
+    pattern: /article
+    defaults: { _controller: AppBundle:Discover:discoverArticle }

@@ -1,0 +1,46 @@
+.tabs
+  &__modal
+    padding-bottom: 20px;
+  &__nav
+    clearfix();
+    display table;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid gray-70;
+    padding: baseSpacing (baseSpacing*2) 0 (baseSpacing*2);
+    li
+      display table-cell;
+      width: 50%
+      padding: (baseSpacing/2) 0;
+      margin: 0 (baseSpacing/2);
+      text-align: center;
+      vertical-align bottom;
+      a
+        color: gray-10;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 600;
+        padding:0 (baseSpacing/2.5);
+      &.active
+        border-bottom: 4px solid theme-primary;
+        a
+          cursor: default;
+  &__content
+    padding:0 (baseSpacing*4) 0 (baseSpacing*4);
+    font-size: 12px;
+    font-weight: 400;
+    clear: both;
+    height: 100px;
+    overflow-y:scroll;
+    a
+      color: gray-50;
+.tabs__content-single
+  // display: none;
+  transition: all 0.3s ease;
+  opacity:0;
+  position: absolute;
+  // top: 0;
+  // left: 0
+  &.active
+    // display: block;
+    opacity:1;

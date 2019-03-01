@@ -1,0 +1,46 @@
+.page--browse-drinks
+  background-color: page-discover-bg;
+
+
+.browse-drinks-main-section
+  overflow: hidden;
+  +above(bpMedium)
+    padding-left: browseSidebarWidth + 50px;
+    // padding-top: 47px;
+
+.drink-img-current
+  padding: 60px 40px;
+
+.back-to-the-top
+  display: block;
+  width: 34px;
+  height: 34px;
+  background-color: rgba(#000, 0.5);
+  border-radius: 5px;
+
+  position: fixed;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  left: 10px;
+  bottom: 13px;
+  z-index: 9998;
+
+  &:after
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 6px 6px 6px;
+    border-color: transparent transparent rgba(#fff, 0.5) transparent;
+    top: 50%;
+    margin-top: -3px;
+    left: 50%;
+    margin-left: -6px;
+
+
+.drink-item-slider
+  .slick-slide
+    margin: 0!important;

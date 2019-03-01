@@ -1,0 +1,19 @@
+<div class="hero account-hero site-head">
+    <div id="bg"></div>
+    <img src="{{ asset('assets/dist/img/test_imgs/test-bg-img.jpg') }}" class="bg-image" alt="" style="display:none;" />
+    <div class="wrapper">
+        <div class="content">
+          <div class="account-info">
+            <p class="account-info__name">{{ profile.full_name }}</p>
+            <p>{{ profile.email }}</p>
+              {% if profile.phone_number is defined %}
+                <p>{{ profile.phone_number }}</p>
+              {% endif %}
+              {% if profile.birthday is defined and profile.birthday %}
+                  <p>{{ profile.birthday|date('m/d/Y') }}</p>
+              {% endif %}
+          <a href="#modal-update-info" class="btn btn--gray-hasborder activate-modal-link" data-effect="mfp-zoom-in">Update my info</a>
+          </div>
+        </div>
+    </div>
+</div>

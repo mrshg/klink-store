@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Klink | Alcohol Delivered in Under an Hour</title>
+
+    {% block javascripts %}
+        <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+
+
+    {% endblock javascripts %}
+
+    <script src="{{ asset('assets/dist/scripts/modernizr.js') }}"></script>
+
+</head>
+
+<body>
+
+{% block javascripts_footer %}
+    <script src="{{ asset('bower_components/jQuery.serializeObject/dist/jquery.serializeObject.min.js') }}"></script>
+    <script src="{{ asset('bower_components/classie/classie.js') }}"></script>
+    <script src="{{ asset('bower_components/magnific-popup/dist/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('bower_components/slick-carousel/slick/slick.js') }}"></script>
+    <script src="{{ asset('bower_components/gmaps/gmaps.min.js') }}"></script>
+    <script src="{{ asset('bower_components/jquery.cookie/jquery.cookie.js') }}"></script>
+    <script src="{{ asset('bower_components/jquery-storage-api/jquery.storageapi.js') }}"></script>
+    <script src="{{ asset('bower_components/jquery-ui/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('bower_components/background-blur/dist/background-blur.min.js') }}"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script src="{{ asset('assets/dist/scripts/app.js') }}"></script>
+
+
+    {#save address from param#}
+    {% if app.request.get('address') %}
+    <script>
+        app.startLoading();
+        var paramAddress = jQuery.parseJSON('{{ app.request.get('address')|json_encode|raw }}');
+        address.setDefaultAddress(paramAddress);
+        var data = {
+            'address': address.__toString(paramAddress)
+        };
+        apiHandler.getGeocode(data).then(function (data) {
+            $.localStorage.set('showStoreClosed', true);
+            $.localStorage.set('showStoreOutOfArea', true);
+            store.init(data, true);
+        });
+        $.localStorage.set('defaultAddress', paramAddress);
+        $.cookieStorage.set('defaultAddress', paramAddress);
+
+    </script>
+
+    {% endif %}
+
+{% endblock javascripts_footer %}
+
+</body>
+</html>

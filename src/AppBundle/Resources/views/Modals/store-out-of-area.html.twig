@@ -1,0 +1,25 @@
+<section id="modal-store-outofarea" class="modal modal--store-outofarea mfp-with-anim mfp-hide">
+    <div class="content">
+        <div class="modal__header">
+            <h3>Delivery is not available here yet</h3>
+            <div class="modal__header-info"></div>
+            <p>
+                {% if app.user %}
+                    <a href="#modal-update-address" class="activate-modal-link form__link" data-effect="mfp-zoom-in">Change address</a>
+                {% else %}
+                    <a href="#initial-address-setup-notlogged" class="activate-modal-link form__link" data-effect="mfp-zoom-in">Change address</a>
+                {% endif %}            </p>
+        </div>
+         <div class="map"></div>
+        <div class="modal__body">
+            <div class="modal__actions">
+                <a href="#" class="btn btn--primary show-sample-store" style="margin-bottom: 10px;">Browse sample inventory</a>
+                {#<a href="#" class="btn btn--primary" style="margin-bottom: 10px;">Let me know when Klink is here!</a>#}
+                {#<a class="form__link" href="{{ path('_discover_index') }}">Browse sample inventory</a>#}
+            </div>
+        </div>
+        <div class="modal__footer">
+            {% include 'AppBundle:Modals:_modal-footer-nav.html.twig' %}
+        </div>
+    </div>
+</section>

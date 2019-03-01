@@ -1,0 +1,4 @@
+_get_products:
+    pattern: /
+    defaults: { _controller: ApiBundle:Product:getProducts }
+    methods: [GET]

@@ -1,0 +1,29 @@
+<section id="modal-update-info-checkout" class="modal modal--update-info-checkout mfp-with-anim mfp-hide">
+    <div class="content">
+        <div class="modal__header">
+            <h3 class="modal__title">Who's getting the order?</h3>
+        </div>
+        <div class="modal__body">
+            <form id="edit-profile-checkout" name="edit-profile-checkout" method="post" class="form form--modal" action="">
+                <input type="text" value="" required="" placeholder="Full name" name="fullName" id="fullname">
+                <input type="tel" value="" placeholder="Phone number" name="phoneNumber" class="phone-mask" id="phone" maxlength="14">
+
+                <div class="checkbox-circle">
+                    <div class="error-msg-age" hidden>This checkbox is required</div>
+                    <input name="user-recipients-age-name" type="checkbox" id="user-recipients-age" class="user-recipients-age"/>
+                    <label for="user-recipients-age"><span>Recipient is at least 21 with valid ID</span></label>
+                </div></br>
+
+                <div class="notice-message">
+                    If the person listed here is not present at time of delivery or the recipient can't show valid ID, fees may apply.
+                </div></br>
+
+                <div class="btn-group">
+                    <a class="btn btn--info" href="#" onclick="$.magnificPopup.close();">Cancel</a>
+                    <input type="submit" value="Submit" name="edit-profile-submit" class="btn btn--primary">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>

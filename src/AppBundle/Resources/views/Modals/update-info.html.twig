@@ -1,0 +1,23 @@
+<section id="modal-update-info" class="modal modal--update-info mfp-with-anim mfp-hide">
+    <div class="content">
+        <div class="modal__header">
+            <h3 class="modal__title">My info</h3>
+        </div>
+        <div class="modal__body">
+            <form id="edit-profile" name="edit-profile" method="post" class="form form--modal" action="">
+                <input type="text" value="" required="" placeholder="Full name" name="fullName" id="fullname">
+                <input type="email" value="" required="" placeholder="Email" name="email" id="email">
+                <input type="tel" value="" placeholder="Phone number" name="phoneNumber" class="phone-mask" id="phone" maxlength="14">
+                <div class="field-group">
+                    <input type="tel" value="" placeholder="Birthday (mm/dd/yyyy)" name="birthday" class="date-mask" id="birthday" maxlength="10">
+                </div>
+
+                <div class="btn-group">
+                    <a class="btn btn--info" href="#" onclick="$.magnificPopup.close();">Cancel</a>
+                    <input type="submit" value="Submit" name="edit-profile-submit" class="btn btn--primary">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>

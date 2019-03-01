@@ -1,0 +1,13 @@
+_checkout_index:
+    pattern: /
+    defaults: { _controller: AppBundle:Checkout:index }
+
+_checkout_post_order:
+    pattern: /postorder
+    defaults: { _controller: AppBundle:Checkout:checkoutPostOrder }
+
+_checkout_review:
+    pattern: /review
+    defaults: { _controller: AppBundle:Checkout:checkoutReview }
+
+

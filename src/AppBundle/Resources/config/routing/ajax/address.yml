@@ -1,0 +1,3 @@
+_edit_address_form:
+    pattern: /edit-form/{addressId}
+    defaults: { _controller: 'AppBundle:Ajax/Address:getEditAddressForm' }

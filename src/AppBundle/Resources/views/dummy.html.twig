@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+</head>
+<body>
+{% block body %}some page{% endblock %}
+{% block javascripts %}{% endblock %}
+
+{% if app.user %}
+    hi {{ app.user.username }}<br/>
+    <a href="{{ path('_logout') }}">Log Out</a>
+{% else %}
+    <a href="{{ path('_login') }}">Log In</a>
+{% endif %}
+
+</body>
+</html>

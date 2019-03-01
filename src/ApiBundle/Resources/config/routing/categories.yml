@@ -1,0 +1,4 @@
+_get_categories:
+    pattern: /
+    defaults: { _controller: ApiBundle:Category:getCategories }
+    methods: [GET]

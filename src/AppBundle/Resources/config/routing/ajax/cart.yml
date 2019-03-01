@@ -1,0 +1,4 @@
+_ajax_cart_dropdown:
+    pattern: /dropdown
+    defaults: { _controller: AppBundle:Cart:renderCart }
+    methods: [GET]

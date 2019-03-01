@@ -1,0 +1,41 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <div class="page page--search-results">
+
+        <div class="main-wrapper browse-drinks-main-wrapper">
+            <a href="#" class="back-to-the-top"></a>
+            <section class="browse-drinks-main-section">
+                {% if products.items is defined %}
+                <div class="search-results__header">
+                <h1 class="search-results__title">Search results for "{{ searchTerm }}"</h1>
+                </div>
+                <div class="drink-list">
+                    {% include 'AppBundle:_Includes:browse-drink-item.html.twig' %}
+                </div>
+                    {% if hasMore == true %}
+                       <div class="load-more-wrap">
+                            <div class="load-more btn btn--link"
+                                    data-page="1">
+                                    Loading ...
+                            </div>
+                        </div>
+                    {% endif %}
+                {% else %}
+                    <p>There are no products for "{{ searchTerm }}".</p>
+                {% endif %}
+            </section>
+            </div>
+        </div>
+
+{% endblock body %}
+{% block after_analitics_scripts %}
+    {{ parent() }}
+    {% if prodMode %}
+        <script type="text/javascript">
+            if (typeof(fbq) == "function") {
+                fbq('track', 'Search');
+            }
+        </script>
+    {% endif %}
+{% endblock after_analitics_scripts %}

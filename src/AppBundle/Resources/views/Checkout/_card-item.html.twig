@@ -1,0 +1,26 @@
+{% for credit_card in profile.credit_cards %}
+    {% if credit_card.default == true %}
+        <div class="card-info">
+            <div class="card-info__content">
+                <div class="center">
+                    <p>{{ credit_card.brand }}</p>
+
+                    <p>{{ credit_card.cardholder_name }}</p>
+
+                    <p>**** {{ credit_card.last4digits }}</p>
+                </div>
+            </div>
+            <div class="card-info__actions">
+                <a href="#modal-choose-credit-card" class="btn btn--white activate-modal-link" data-effect="mfp-zoom-in">Change card</a>
+            </div>
+        </div>
+    {% endif %}
+{% else %}
+    <div class="card-info">
+        <article class="new-item new-item--credit-card">
+            <div class="content">
+                <a href="#modal-add-card" class="btn btn--white activate-modal-link" data-effect="mfp-zoom-in">Add a card</a>
+            </div>
+        </article>
+    </div>
+{% endfor %}

@@ -1,0 +1,81 @@
+<header class="top-header">
+  <div class="top-header-container">
+    <a class="site-logo" href="/" title="Klink Delivery"><i class="icon" data-icon="i"></i></a>
+
+    <div class="top-header-left">
+      <div class="search-form-wrapper">
+        <form class="search-form" id="search-form" action="{{ path('_search') }}" method="get">
+          <a class="action--close-search" href="#"><span class="icon" data-icon="g"></span></a>
+          <input type="text" name="search-term" class="search-terms" id="search-terms" placeholder="Search drinks and press ENTER" {% if searchTerm is defined %}value="{{ searchTerm }}"{% endif %}>
+        </form>
+      </div>
+      <a href="{{ path('_search') }}" class="search-btn"><i data-icon="g" class="icon"></i><span>Search</span></a>
+
+      <nav class="main-nav">
+        <ul>
+          <li>
+            <a href="{{ path('_discover_index') }}" class="{% if '_discover' in app.request.get("_route") %}active{% endif %}">Discover</a>
+          </li>
+          <li>
+            <a href="{{ path('_browse_drinks') }}" class="{% if '_browse' in app.request.get("_route")%}active{% endif %}">Browse</a>
+            <div class="dropdown browse-dropdown">
+                <ul>
+                    {#<li class="{% if app.request.server.get("REQUEST_URI") == '/browse/'~category.id %}active{% endif %}">#}
+                      {#<a href="{{ path('_browse_drinks_category', {categoryId: category.id}) }}">{{ category.name }}</a>#}
+                    {#</li>#}
+                  {#{% endfor %}#}
+                  {#<li class="{% if app.request.attributes.get('_route') == '_browse_drinks' %}active{% endif %}">#}
+                    {#<a href="{{ path('_browse_drinks') }}">More</a>#}
+                  {#</li>#}
+                </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+
+    <div class="top-header-right">
+      {#<div class="nav-extra">#}
+        {#<a href="#">Earn free drinks</a>#}
+      {#</div>#}
+
+      <div class="nav-more">
+        <a href="#" class="button-dots nav-more__trigger"><span class="dot"></span></a>
+        <div class="dropdown more-dropdown">
+          <ul>
+            {#<li><a href="#" class="dropdown__item--accent">Drink for free</a></li>#}
+            <li><a href="#modal-contact" class="activate-modal-link" data-effect="mfp-zoom-in">Contact</a></li>
+            {#<li><a href="#modal-request-drink" class="activate-modal-link" data-effect="mfp-zoom-in">Request a drink</a></li>#}
+            <li><a href="#modal-get-app" class="activate-modal-link" data-effect="mfp-zoom-in">Get the App</a></li>
+            <li><a href="/blog">Blog</a></li>
+            {% if app.user %}
+            <li><a href="{{ path('_account_overview') }}">Account</a></li>
+            <li><a href="{{ path('_logout') }}">Log Out</a></li>
+            {% else %}
+            <li><a href="#modal-login" class="activate-modal-link" data-effect="mfp-zoom-in">Log in</a></li>
+            <li><a href="#modal-register" class="activate-modal-link" data-effect="mfp-zoom-in">Register</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+      <div class="header-customer-address">
+          {% include 'AppBundle:_Includes:_top-header-delivery-address.html.twig' %}
+      </div>
+
+{% if app.user %}
+      <div class="cart-summary cart-trigger-action">
+        <div class="cart-summary-container">
+          <i class="icon" data-icon="h"></i>
+          <div class="cart-summary__value"></div>
+          {#<i class="icon icon-arrow" data-icon="k"></i>#}
+          <i class="icon icon-arrow">
+            <span class="line"></span>
+          </i>
+        </div>
+      </div>
+{% endif %}
+
+    </div><!--top-header-right-->
+  </div>
+</header>

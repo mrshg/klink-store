@@ -1,0 +1,109 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- security -->
+        <service id="klink_user_provider" class="AppBundle\Security\KlinkUserProvider">
+            <argument type="service" id="klink_user_handler"/>
+        </service>
+        <service id="klink_authenticator" class="AppBundle\Security\KlinkAuthenticator" public="false">
+            <argument type="service" id="security.user_password_encoder.generic"/>
+        </service>
+
+        <!--klink handlers-->
+        <service id="klink_user_handler" class="ApiBundle\KlinkApi\Handlers\UserHandler">
+            <argument type="service" id="session"/>
+            <argument type="service" id="klink_api_security_handler"/>
+        </service>
+        <service id="klink_api_handler" class="ApiBundle\KlinkApi\Handlers\ApiHandler">
+            <argument type="collection">
+                <argument key="klink_api_end_point">%klink.api.end_point%</argument>
+                <argument key="klink_api_client_id">%klink.api.client_id%</argument>
+                <argument key="klink_api_client_secret">%klink.api.client_secret%</argument>
+            </argument>
+        </service>
+        <service id="klink_api_user_handler" class="ApiBundle\KlinkApi\Handlers\ApiUserHandler">
+            <argument type="collection">
+                <argument key="klink_api_end_point">%klink.api.end_point%</argument>
+                <argument key="klink_api_client_id">%klink.api.client_id%</argument>
+                <argument key="klink_api_client_secret">%klink.api.client_secret%</argument>
+            </argument>
+        </service>
+        <service id="klink_api_store_handler" class="ApiBundle\KlinkApi\Handlers\ApiStoreHandler">
+            <argument type="collection">
+                <argument key="klink_api_end_point">%klink.api.end_point%</argument>
+                <argument key="klink_api_client_id">%klink.api.client_id%</argument>
+                <argument key="klink_api_client_secret">%klink.api.client_secret%</argument>
+            </argument>
+            <argument type="service" id="security.token_storage" />
+            <argument type="service" id="klink_api_user_handler" />
+        </service>
+        <service id="klink_api_address_handler" class="ApiBundle\KlinkApi\Handlers\ApiAddressHandler">
+            <argument type="collection">
+                <argument key="klink_api_end_point">%klink.api.end_point%</argument>
+                <argument key="klink_api_client_id">%klink.api.client_id%</argument>
+                <argument key="klink_api_client_secret">%klink.api.client_secret%</argument>
+            </argument>
+        </service>
+        <service id="klink_api_security_handler" class="ApiBundle\KlinkApi\Handlers\ApiSecurityHandler">
+            <argument type="collection">
+                <argument key="klink_api_end_point">%klink.api.end_point%</argument>
+                <argument key="klink_api_client_id">%klink.api.client_id%</argument>
+                <argument key="klink_api_client_secret">%klink.api.client_secret%</argument>
+            </argument>
+        </service>
+        <service id="klink_api_categories_handler" class="ApiBundle\KlinkApi\Handlers\ApiCategoriesHandler">
+            <argument type="collection">
+                <argument key="klink_api_end_point">%klink.api.end_point%</argument>
+                <argument key="klink_api_client_id">%klink.api.client_id%</argument>
+                <argument key="klink_api_client_secret">%klink.api.client_secret%</argument>
+            </argument>
+        </service>
+        <service id="klink_api_credit_card_handler" class="ApiBundle\KlinkApi\Handlers\ApiCreditCardHandler">
+            <argument type="collection">
+                <argument key="klink_api_end_point">%klink.api.end_point%</argument>
+                <argument key="klink_api_client_id">%klink.api.client_id%</argument>
+                <argument key="klink_api_client_secret">%klink.api.client_secret%</argument>
+            </argument>
+        </service>
+        <service id="klink_api_product_handler" class="ApiBundle\KlinkApi\Handlers\ApiProductHandler">
+            <argument type="collection">
+                <argument key="klink_api_end_point">%klink.api.end_point%</argument>
+                <argument key="klink_api_client_id">%klink.api.client_id%</argument>
+                <argument key="klink_api_client_secret">%klink.api.client_secret%</argument>
+            </argument>
+        </service>
+        <service id="klink_api_package_handler" class="ApiBundle\KlinkApi\Handlers\ApiPackageHandler">
+            <argument type="collection">
+                <argument key="klink_api_end_point">%klink.api.end_point%</argument>
+                <argument key="klink_api_client_id">%klink.api.client_id%</argument>
+                <argument key="klink_api_client_secret">%klink.api.client_secret%</argument>
+            </argument>
+        </service>
+        <service id="klink_api_checkout_handler" class="ApiBundle\KlinkApi\Handlers\ApiCheckoutHandler">
+            <argument type="collection">
+                <argument key="klink_api_end_point">%klink.api.end_point%</argument>
+                <argument key="klink_api_client_id">%klink.api.client_id%</argument>
+                <argument key="klink_api_client_secret">%klink.api.client_secret%</argument>
+            </argument>
+        </service>
+        <service id="klink_api_cart_handler" class="ApiBundle\KlinkApi\Handlers\ApiCartHandler">
+            <argument type="collection">
+                <argument key="klink_api_end_point">%klink.api.end_point%</argument>
+                <argument key="klink_api_client_id">%klink.api.client_id%</argument>
+                <argument key="klink_api_client_secret">%klink.api.client_secret%</argument>
+            </argument>
+        </service>
+        <service id="klink_home_handler" class="ApiBundle\KlinkApi\Handlers\ApiHomeHandler">
+            <argument type="collection">
+                <argument key="klink_api_end_point">%klink.api.end_point%</argument>
+                <argument key="klink_api_client_id">%klink.api.client_id%</argument>
+                <argument key="klink_api_client_secret">%klink.api.client_secret%</argument>
+            </argument>
+        </service>
+    </services>
+
+</container>

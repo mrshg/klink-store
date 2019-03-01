@@ -1,0 +1,23 @@
+<section class="navigation-secondary">
+    <div class="blur-bg"></div>
+    <div class="wrapper">
+        <div class="content">
+            <nav>
+                <ul class="navigation-secondary__slider">
+                    <li class="{% if app.request.attributes.get('_route') == '_account_overview' %}active{% endif %}">
+                        <a href="{{ path('_account_overview') }}">Account overview</a>
+                        </li>
+                    {#<li class="{% if app.request.attributes.get('_route') == '_account_orders' %}active{% endif %}">#}
+                        {#<a href="{{ path('_account_orders') }}">Order history</a>#}
+                    {#</li>#}
+                    {#<li class="{% if app.request.attributes.get('_route') == '_account_favorites' %}active{% endif %}">#}
+                        {#<a href="{{ path('_account_favorites') }}">Favorites</a>#}
+                    {#</li>#}
+                    {#<li class="{% if app.request.attributes.get('_route') == '_account_klink_credit' %}active{% endif %}">#}
+                        {#<a href="{{ path('_account_klink_credit') }}">Klink credit</a>#}
+                    {#</li>#}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,15 @@
+_ajax_addresses:
+    resource: "@AppBundle/Resources/config/routing/ajax/address.yml"
+    prefix: /addresses
+
+_ajax_profile:
+    resource: "@AppBundle/Resources/config/routing/ajax/profile.yml"
+    prefix: /profile
+
+_ajax_product:
+    resource: "@AppBundle/Resources/config/routing/ajax/product.yml"
+    prefix: /products
+
+_ajax_cart:
+    resource: "@AppBundle/Resources/config/routing/ajax/cart.yml"
+    prefix: /cart

@@ -1,0 +1,14 @@
+_get_collections:
+    pattern: /collections/
+    defaults: { _controller: ApiBundle:Package:getCollections }
+    methods: [GET]
+
+_get_packages:
+    pattern: /packages/
+    defaults: { _controller: ApiBundle:Package:getPackages }
+    methods: [GET]
+
+_get_package:
+    pattern: /packages/{id}/
+    defaults: { _controller: ApiBundle:Package:getPackage }
+    methods: [GET]

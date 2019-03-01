@@ -1,0 +1,121 @@
+<section id="modal-add-card" class="modal modal--add-card mfp-with-anim mfp-hide">
+    <div class="content">
+        <div class="modal__header">
+            <h3 class="modal__title">Add new card</h3>
+        </div>
+        <div class="modal__body">
+            <form action="" class="form form--modal" method="post" id="new-card-form" name="new-card-form">
+                <span class="payment-errors errors" style="display:none;"></span>
+
+                <span id="card_holder_error" class="errors" style="display:none;">Please Enter Card Holder's Full Name</span>
+                <input type="text" name="name" placeholder="Card Holder's Full Name" data-stripe="name" class="name"/>
+
+                <span id="card_number_error" class="errors" style="display:none;">Please Enter Card Number</span>
+                <input type="tel" name="number" id="credit_card_number" placeholder="Card Number" class="cc-mask" data-stripe="number"/>
+
+                <span id="card_expiration_error" class="errors" style="display:none;">Please Enter Expiration Date</span>
+                <div class="form__group">
+                    <input type="tel" name="exp_month" placeholder="Month (mm)" data-stripe="exp-month" class="mm-mask" maxlength="2"/>
+                    <input type="tel" name="exp_year" placeholder="Year (yyyy)" data-stripe="exp-year" class="yyyy-mask" maxlength="4"/>
+                </div>
+
+                <span id="card_cvc_error" class="errors" style="display:none;">Please Enter CVV</span>
+                <input type="tel" name="cvc" placeholder="CVV" data-stripe="cvc" class="cvc-mask" maxlength="4"/>
+
+                <div class="checkbox-circle">
+                    <input type="checkbox" id="billing-shipping-address" class="user-recipients-age"/>
+                    <label for="billing-shipping-address"><span>Billing address is same as delivery address.</span></label>
+                </div>
+
+                <span id="card_addr1_error" class="errors" style="display:none;">Please Enter Billing address line 1</span>
+                <input type="text" name="address_line1" placeholder="Billing address line 1" data-stripe="address_line1" class="address_line1"/>
+
+                <input type="text" name="address_line2" placeholder="Billing address line 2" data-stripe="address_line2" class="address_line2"/>
+
+                <span id="card_city_error" class="errors" style="display:none;">Please Enter City</span>
+                <input type="text" name="address_city" placeholder="City" data-stripe="address_city" class="address_city" />
+
+                <span id="card_state_error" class="errors" style="display:none;">Please Select State</span>
+                <select name="address_state" id="address_state" data-stripe="address_state" class="address_state"></select>
+
+                <span id="card_zip_error" class="errors" style="display:none;">Please Enter Zip Code</span>
+                <input name="address_zip" placeholder="Zip Code" data-stripe="address_zip" class="address_zip"/>
+
+                <div class="checkbox-circle">
+                    <input type="checkbox" id="credit-card-default" class="user-recipients-age"/>
+                    <label for="credit-card-default"><span>Set as default</span></label>
+                </div>
+
+                <div class="btn-group">
+                    <a href="#" class="btn btn--info" onclick="$.magnificPopup.close();" >Cancel</a>
+
+                    <button class="btn btn--primary" type="submit" id="new-card">Save</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+<script>
+    // select states fill
+    var states = {
+        "Alabama": "US-AL",
+        "Alaska": "US-AK",
+        "Arizona": "US-AZ",
+        "Arkansas": "US-AR",
+        "California": "US-CA",
+        "Colorado": "US-CO",
+        "Connecticut": "US-CT",
+        "Delaware": "US-DE",
+        "Florida": "US-FL",
+        "Georgia": "US-GA",
+        "Hawaii": "US-HI",
+        "Idaho": "US-ID",
+        "Illinois": "US-IL",
+        "Indiana": "US-IN",
+        "Iowa": "US-IA",
+        "Kansas": "US-KS",
+        "Kentucky": "US-KY",
+        "Louisiana": "US-LA",
+        "Maine": "US-ME",
+        "Maryland": "US-MD",
+        "Massachusetts": "US-MA",
+        "Michigan": "US-MI",
+        "Minnesota": "US-MN",
+        "Mississippi": "US-MS",
+        "Missouri": "US-MO",
+        "Montana": "US-MT",
+        "Nebraska": "US-NE",
+        "Nevada": "US-NV",
+        "New Hampshire": "US-NH",
+        "New Jersey": "US-NJ",
+        "New Mexico": "US-NM",
+        "New York": "US-NY",
+        "North Carolina": "US-NC",
+        "North Dakota": "US-ND",
+        "Ohio": "US-OH",
+        "Oklahoma": "US-OK",
+        "Oregon": "US-OR",
+        "Pennsylvania": "US-PA",
+        "Rhode Island": "US-RI",
+        "South Carolina": "US-SC",
+        "South Dakota": "US-SD",
+        "Tennessee": "US-TN",
+        "Texas": "US-TX",
+        "Utah": "US-UT",
+        "Vermont": "US-VT",
+        "Virginia": "US-VA",
+        "Washington": "US-WA",
+        "Washington, D.C.": "US-DC",
+        "West Virginia": "US-WV",
+        "Wisconsin": "US-WI",
+        "Wyoming": "US-WY"
+    };
+
+    var html = '<option value="" disabled selected>Select state</option>';
+    for (var key in states) {
+        html += "<option value=" + states[key] + ">" + key + "</option>";
+    }
+    $('.address_state').html(html);
+
+</script>

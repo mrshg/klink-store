@@ -1,0 +1,330 @@
+.drink-list
+	// width: 100%;
+	// max-width: 970px;
+	// font-size: 0;
+	// line-height: 1;
+	max-width: 970px;
+	font-size: 0;
+	line-height: 1;
+	margin: 0 auto;
+	clearfix();
+	+below(bpMedium)
+		text-align: center;
+// .cart-active .drink-list
+//   //width: calc(100% - cartWidth);
+//   width: "calc(100% - %s)" % cartWidth
+.cart-active .page-wrap, .cart-active-saved .page-wrap
+	+above(bpSmall)
+		width: "calc(100% - %s)" % cartWidth
+.drink-item
+	vertical-align: top;
+	display: inline-block;
+	position: relative;
+	margin: 5px 10px 20px 10px;
+	width: 159px;
+	height: 278px;
+	border-radius: 5px;
+	margin-top: 5px;
+	+above(bpSmall)
+		margin: 5px 10px 20px 10px;
+	&:before
+		content: "";
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 5px;
+		top: -5px;
+		border-radius: 5px 5px 0 0;
+		background-color: white;
+	.drink-item-top
+		position: relative;
+		overflow: hidden;
+		height: 215px;
+		// border-radius: 5px 5px 0 0;
+		background-color: #fff;
+	.drink-item-overlay
+		position: absolute;
+		height: 72px;
+		left: 0;
+		right: 0;
+		top: 90px;
+		background-color: rgba(0,0,0,0.5);
+		color: #fff;
+		z-index: 30;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+		a
+			color: #fff;
+		&.visible
+			opacity: 1;
+	&:hover
+		.drink-item-overlay
+			opacity: 1;
+	.drink-item-overlay.active
+		opacity: 1;
+
+	a.activate-modal-link
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 9;
+		text-indent: 200%;
+		white-space: nowrap;
+		font-size: 0;
+		opacity: 0;
+	h2
+		position: absolute;
+		top: 10px;
+		left: 5px;
+		right: 5px;
+		// height: 36px;
+		padding: 0 8px;
+		margin: 0;
+		text-align: center;
+		color: #030303;
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 17px;
+		z-index: 31;
+		pointer-events: none;
+		background: white;
+		background: rgba(255, 255, 255, 0.7);
+
+
+.drink-img
+	display: block;
+	margin: 50px auto 0 auto;
+	width: 112px;
+	height: 154px;
+	background-color: transparent;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+
+.drink-item.drink-img-small .drink-img
+	margin: 74px auto 0 auto;
+	width: 112px;
+	height: 130px;
+
+.drink-data
+	height: 63px;
+	padding: 15px 15px 22px 15px;
+	position: relative;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	p
+		text-align: center;
+		margin: 0;
+		color: #fff;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 1.1;
+
+.drink-item-qty-count
+	position: absolute;
+	display: block;
+	width: 86px;
+	height: 72px;
+	line-height: 72px;
+	font-size: 57px;
+	font-weight: 400;
+	top: 50%;
+	margin-top: -36px;
+	left: 50%;
+	margin-left: -43px;
+	text-align: center;
+.drink-item-qty-minus, .drink-item-qty-plus, .drink-item-add-first
+	display: block;
+	position: absolute;
+	width: 28px;
+	height: 28px;
+	top: 50%;
+	margin-top: -14px;
+	cursor: pointer;
+	span
+		display: block;
+		position: absolute;
+		top: 50%;
+		margin-top: -1px;
+		left: 50%;
+		margin-left: -8px;
+		width: 16px;
+		height: 2px;
+		background-color: #fff;
+.drink-item-qty-plus, .drink-item-add-first
+	span:after
+		content:'';
+		display: block;
+		position: absolute;
+		width: 2px;
+		height: 16px;
+		left: 50%;
+		margin-left: -1px;
+		top: 50%;
+		margin-top: -8px;
+		background-color: #fff;
+
+.drink-item-qty-minus
+	left: 12px;
+
+.drink-item-qty-plus
+	right: 11px;
+
+.drink-item-add-first
+	left: 50%;
+	margin-left: -14px;
+	border-radius: 50%;
+	border: 2px solid #fff;
+
+.drink-item-overlay-info
+	width: 100%;
+	height: 100%;
+	display: table;
+	span
+		display: table-cell;
+		text-align: center;
+		vertical-align: middle;
+		font-size: 14px;
+		font-weight: 400;
+		text-transform: uppercase;
+
+
+
+
+
+/*
+ * Drinks listing on account orders
+*/
+.drink-list--account-orders
+	.drink-item-overlay
+		opacity: 1;
+		span
+			line-height: 72px;
+			font-size: 57px;
+			font-weight: 600;
+	.drink-data
+		height: auto;
+
+
+/*
+ * Drink list on article
+*/
+
+.article-featured__drinks
+	.drink-item
+		border: 1px solid gray-70;
+
+/*
+ * Drinks data slider
+*/
+slick-font-path = "./fonts/";
+slick-font-family = "slick";
+slick-loader-path = "./";
+slick-arrow-color = white;
+slick-dot-color = white;
+slick-dot-color-active = slick-dot-color;
+slick-dot-character = "•";
+slick-dot-size = 25px;
+slick-opacity-default = 0.5;
+slick-opacity-on-hover = 1;
+slick-opacity-not-active = 0.4;
+
+//.drinks-data-slider
+.drink-item
+	.slick-slider
+		margin-bottom: 0
+
+.drinks-data-slider
+	.slick-prev:before, .slick-next:before
+		font-family: slick-font-family;
+		font-size: 16px;
+		line-height: 1;
+		color: slick-arrow-color;
+		opacity: slick-opacity-default;
+
+	.slick-prev
+		z-index: 9;
+		left: 7px;
+		bottom: 24px;
+		top: auto;
+		[dir="rtl"] &
+			left: auto;
+			right: 7px;
+			bottom: 24px;
+			top: auto;
+
+
+	.slick-next
+		z-index: 9;
+		right: 7px;
+		bottom: 24px;
+		top: auto;
+		[dir="rtl"] &
+			left: 7px;
+			right: auto;
+			bottom: 24px;
+			top: auto;
+
+
+	.slick-slider
+		margin-bottom: 0;
+
+	.slick-dots
+		position: absolute;
+		bottom: 7px;
+		list-style: none;
+		display: block;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		li
+			position: relative;
+			display: inline-block;
+			height: 15px;
+			width: 12px;
+			margin: 0;
+			padding: 0;
+			cursor: pointer;
+			&.slick-active button:before
+				color: slick-dot-color-active;
+				opacity: 0.9;
+			button
+				border: 0;
+				background: transparent;
+				display: block;
+				height: 15px;
+				width: 12px;
+				outline: none;
+				line-height: 0;
+				font-size: 0;
+				color: transparent;
+				padding: 0;
+				cursor: pointer;
+				&:hover, &:focus
+					outline: none;
+					&:before
+						opacity: slick-opacity-on-hover;
+
+				&:before
+					position: absolute;
+					top: 0;
+					left: 0;
+					content: slick-dot-character;
+					width: 12px;
+					height: 15px;
+					font-family: slick-font-family;
+					font-size: slick-dot-size;
+					line-height: 20px;
+					text-align: center;
+					color: slick-dot-color;
+					opacity: slick-opacity-not-active;
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+
+
+
+

@@ -1,0 +1,22 @@
+<section class="billboard-hero site-head">
+    <div id="bg"></div>
+         <div class="content">
+            <div class="site-head-content">
+                <div class="content__inner">
+                        {% if home.type == 'collection' %}
+                        <a href="{{ path('_discover_single_collection', {'collectionId': home.id}) }}">
+                            {% elseif home.type == 'package' %}
+                            <a href="{{ path('_discover_pack_no_collection', {'packId': home.id}) }}">
+                            {% endif %}
+
+                            <div class="billboard-hero__content">
+                                <img src='{{ home.image }}' alt=''>
+                            </div>
+
+                            {% if home.type == 'collection' or home.type == 'package' %}
+                        </a>
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+</section>

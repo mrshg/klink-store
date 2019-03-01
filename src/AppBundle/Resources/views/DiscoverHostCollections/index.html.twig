@@ -1,0 +1,22 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <div class="page page--discover">
+    {% include 'AppBundle:_Includes:navigation-secondary.html.twig' %}
+        <div class="page__content">
+
+                {% if collections is defined %}
+                <section class="box clearfix">
+                        <div class="wrapper">
+                            <div class="content">
+                                {% for collection in collections %}
+                                    {% include 'AppBundle:DiscoverHostCollections:_collections-item.html.twig' %}
+                                {% endfor %}
+                        </div>
+                    </div>
+                </section>
+                {% endif %}
+        </div>
+    </div>
+{% endblock body %}
+

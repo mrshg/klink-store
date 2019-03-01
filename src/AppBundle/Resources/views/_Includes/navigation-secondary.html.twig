@@ -1,0 +1,20 @@
+<section class="navigation-secondary">
+    <div class="blur-bg"></div>
+    <div class="wrapper">
+        <div class="content">
+            <nav>
+                <ul class="navigation-secondary__slider">
+                    <li class="{% if app.request.attributes.get('_route') == '_discover_index' %}active{% endif %}">
+                        <a href="{{ path('_discover_index') }}">Overview</a>
+                    </li>
+                    {#<li class="{% if app.request.attributes.get('_route') == '_discover_featured_selection' %}active{% endif %}">#}
+                        {#<a href="{{ path('_discover_featured_selection') }}">Featured selection</a>#}
+                    {#</li>#}
+                    <li class="{% if app.request.attributes.get('_route') == '_discover_host_collections' %}active{% endif %}">
+                        <a href="{{ path('_discover_host_collections') }}">Host collections</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>

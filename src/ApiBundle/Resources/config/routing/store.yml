@@ -1,0 +1,4 @@
+_get_stores:
+    pattern: /
+    defaults: { _controller: ApiBundle:Store:getStores }
+    methods: [GET]

@@ -1,0 +1,14 @@
+_get_address_suggestions:
+    pattern: /address-suggestions/
+    defaults: { _controller: ApiBundle:Address:getAddressSuggestions }
+    methods: [GET]
+
+_get_geocode:
+    pattern: /geocode/
+    defaults: { _controller: ApiBundle:Address:getGeoCode }
+    methods: [GET]
+
+_get_geocode_reverse:
+    pattern: /geocode-reverse/
+    defaults: { _controller: ApiBundle:Address:getGeoCodeReverse }
+    methods: [GET]

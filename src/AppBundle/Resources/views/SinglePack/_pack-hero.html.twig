@@ -1,0 +1,42 @@
+<section class="pack-hero site-head">
+    <div id="bg"></div>
+    <div class="content">
+        <div class="site-head-content">
+            <div class="pack-hero__image col col--one-half">
+                <div class="col__inner">
+                    {# todo change for prod #}
+                    {% if prodMode %}
+                        <img src="https://sylius.klinkdelivery.com/media/image/{{ pack.thumbnail_path }}"
+                         alt="{{ pack.name }}">
+                    {% else %}
+                        <img src="https://sylius-dev.klinkdelivery.com/media/image/{{ pack.thumbnail_path }}"
+                         alt="{{ pack.name }}">
+                    {% endif %}
+                    <img class="bg-image" style="display:none;" src="{{ pack.image }}"
+                         alt="{{ pack.name }}">
+                </div>
+            </div>
+            <div class="pack-hero__description col col--one-half">
+                <div class="col__inner">
+                    <h1 class="pack-hero__title">
+                        {{ pack.name }}
+                    </h1>
+
+                    {% if pack.description is defined %}
+                        <h2 class="pack-hero__subtitle">
+                            {{ pack.description }}
+                        </h2>
+                    {% endif %}
+                    {% if app.request.cookies.get('closedStore') != 'true' %}
+                    <a class="btn btn--primary activate-modal-link" data-effect="mfp-zoom-in" href="#modal-pack"
+                           data-id="{{ pack.id }}">Add all to cart</a>
+                    {% endif %}
+
+                    {# <p class="pack-author">This pack was created by Mixologist Name at <a href="">website.com</a> #}
+                    {#</p>#}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

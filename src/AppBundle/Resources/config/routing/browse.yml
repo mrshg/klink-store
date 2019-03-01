@@ -1,0 +1,11 @@
+_browse_drinks:
+    pattern: /
+    defaults: { _controller: AppBundle:Browse:browseDrinks }
+
+_browse_all:
+    pattern: /all
+    defaults: { _controller: AppBundle:Browse:browseAll }
+
+_browse_drinks_category:
+    pattern: /{categoryId}
+    defaults: { _controller: AppBundle:Browse:browseDrinksByCategory }

@@ -1,0 +1,114 @@
+{% block analytics %}
+    <!-- Segment.io -->
+    <script>
+        // Create a queue, but don't obliterate an existing one!
+        window.analytics = window.analytics || [];
+
+        // If analytics was included show an error.
+        if (window.analytics.included) {
+          if (window.console && console.error) {
+            console.error('analytics.js included twice');
+          }
+        } else {
+
+          // included.
+          window.analytics.included = true;
+
+          // A list of the methods in Analytics.js to stub.
+          window.analytics.methods = ['identify', 'group', 'track',
+            'page', 'pageview', 'alias', 'ready', 'on', 'once', 'off',
+            'trackLink', 'trackForm', 'trackClick', 'trackSubmit'];
+
+          // Define a factory to create stubs. These are placeholders
+          // for methods in Analytics.js so that you never have to wait
+          // for it to load to actually record data. The `method` is
+          // stored as the first argument, so we can replay the data.
+          window.analytics.factory = function(method){
+            return function(){
+              var args = Array.prototype.slice.call(arguments);
+              args.unshift(method);
+              window.analytics.push(args);
+              return window.analytics;
+            };
+          };
+
+          // For each of our methods, generate a queueing stub.
+          for (var i = 0; i < window.analytics.methods.length; i++) {
+            var key = window.analytics.methods[i];
+            window.analytics[key] = window.analytics.factory(key);
+          }
+
+          // Define a method to load Analytics.js from our CDN,
+          // and that will be sure to only ever load it once.
+          window.analytics.load = function(key){
+            // Create an async script element based on your key.
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.async = true;
+            script.src = ('https:' === document.location.protocol
+              ? 'https://' : 'http://')
+              + 'cdn.segment.com/analytics.js/v1/'
+              + key + '/analytics.min.js';
+
+            // Insert our script next to the first script element.
+            var first = document.getElementsByTagName('script')[0];
+            first.parentNode.insertBefore(script, first);
+          };
+
+          // Add a version to keep track of what's in the wild.
+          window.analytics.SNIPPET_VERSION = '2.0.9';
+
+          // Load Analytics.js with your key, which will automatically
+          // load the tools you've enabled for your account. Boosh!
+          if (window.location.hostname === 'klinkdelivery.com') {
+            window.analytics.load("q7h27yp1ip");
+          }
+
+          // Make the first page call to load the integrations. If
+          // you'd like to manually name or tag the page, edit or
+          // move this call however you'd like.
+
+        } window.analytics.page();
+    </script>
+
+    <!-- Google Code for Remarketing Tag -->
+    <!-- ------------------------------------------------
+    Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+    ------------------------------------------------- -->
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      var google_conversion_id = 953762778;
+      var google_custom_params = window.google_tag_params;
+      var google_remarketing_only = true;
+      /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+    <noscript>
+      <div style="display:inline;">
+      <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/953762778/?value=0&amp;guid=ON&amp;script=0"/>
+      </div>
+    </noscript>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js" charset="utf-8"></script>
+
+
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+      fbq('init', '457969724361317');
+      fbq('track', "PageView");
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=457969724361317&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Start of ReTargeter Tag -->
+    <script type="text/javascript">
+        (function(c, d, e, g, a) {g = c.createElement(d); g.type = "text/java" + d; g.async = !0; g.src = e; a = c.getElementsByTagName(d)[0]; a.parentNode.insertBefore(g, a) }(document, "script", "//a.sellpoint.net/rt/3682/rt.min.js?t="+Math.floor(Date.now() / 86400000)));
+    </script>
+    <!-- End of ReTargeter Tag -->
+
+{% endblock analytics %}

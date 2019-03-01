@@ -1,0 +1,322 @@
+.page--account
+	.main-overlap
+		padding: baseSpacing 0 0 0;
+		background-color: page-account-bg;
+		top: 350px;
+	&-orders, &-credit
+		//padding: (baseSpacing * 4) 0 0 0;
+		background-color: page-account-bg;
+	&-orders
+		.box__body
+			margin:0 -10px;
+		.drink-item
+			float: left;
+		//  margin: 0 10px 30px 10px;
+		//.drink-list
+		//  +below(bpXSmall)
+		//    text-align: center;
+		//.drink-item, .order-item
+		//  +below(bpXSmall)
+		//    float: none;
+
+	.slick-slide
+		margin: 0 10px;
+	.box-slider .box__list
+		margin: 0 -10px;
+
+.account-hero
+	height: 250px;
+	#bg
+		height: 250px;
+	.wrapper
+		height: 100%;
+		display: table;
+	.content
+		height: 100%;
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+
+.account-info
+	display: inline-block;
+	position: relative;
+	z-index: 2;
+	padding: baseSpacing;
+	background-color: white;
+	min-width: 250px;
+	max-width: 100%;
+	border-radius: 4px;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 1.5;
+	color: gray-20;
+	font-weight: 400;
+	.account-info__name
+		font-weight: 600
+	.btn
+		margin-top: baseSpacing;
+		&:hover
+			background-color: gray-50;
+			color: white;
+
+.address-item
+	// padding: 10px;
+	background-color: white;
+	width: 100%;
+	height: 300px;
+	position relative;
+	margin: 0 auto;
+	text-align: center;
+	overflow: hidden;
+	border-radius: 4px;
+	color: white;
+	font-size: 14px;
+	line-height: 1.3;
+	.map-source
+		// background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		position: absolute;
+		top: -35px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	.map-blur
+		background-size: 220%;
+		background-repeat: no-repeat;
+		background-position: center bottom;
+		position: absolute;
+		filter: blur(10px);
+		top: 50%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	.btn
+		margin-bottom: 0;
+	h2
+		font-size: 14px;
+	#blur-bg1
+		filter: blur(10px);
+		overflow: hidden;
+		position absolute;
+		//top: 50%;
+		left: 0;
+		right: 0;
+		height: 300px;
+		bottom: -50%;
+		width: 100%;
+		z-index: 11;
+	img
+		width: 100%;
+		height: auto;
+	address
+		font-style: normal;
+		font-weight: 600;
+		padding: 20px 20px 5px 20px;
+	canvas[id^="map"]
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 10;
+		border-radius: 4px;
+	&__data
+		background-color: rgba(gray-10, 0.4);
+		min-height: 150px;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		z-index: 99;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	&__actions
+		padding: 20px;
+		.btn--is-chosen
+			background-color: white;
+			color: gray-50;
+
+.card-item
+	padding: baseSpacing;
+	background-color: creditcardbg;
+	width: 100%;
+	height: 200px;
+	position relative;
+	margin: 0 auto;
+	text-align: center;
+	overflow: hidden;
+	border-radius: 4px;
+	color: white;
+	font-size: 14px;
+	line-height: 1.3;
+	.content
+		height: 100%;
+		position: relative
+	&__data
+		font-weight: 700;
+		width: 100%;
+		height: 100%;
+		display: table;
+		.center
+			vertical-align: middle;
+			display: table-cell;
+			padding-bottom: 35px;
+	h2
+		text-transform: uppercase;
+	&__actions
+		position: absolute;
+		width: 100%;
+		left: 0;
+		bottom: 0;
+	.btn--is-chosen
+		background-color: white;
+		color: gray-50;
+
+	.btn
+		margin-bottom: 0;
+	h2
+		font-size: 14px;
+	p
+		font-size: 14px;
+
+.new-item
+	padding: baseSpacing;
+	background-color: transparent;
+	width: 100%;
+	height: 200px;
+	position relative;
+	margin: 0 auto;
+	text-align: center;
+	overflow: hidden;
+	border-radius: 4px;
+	border: 1px solid white
+	color: white;
+	font-size: 14px;
+	.content
+		width: 100%;
+		height: 100%;
+		position: relative;
+		display: table;
+		a
+			display: table-cell;
+			vertical-align: middle;
+	&--credit-card
+		height: 200px;
+	&--address
+		height: 300px;
+
+.order-item
+	display: inline-block;
+	position: relative;
+	width: 159px;
+	height: 302px;
+	border-radius: 5px;
+	margin: 0 10px 30px 10px;
+	float: left;
+	color: white;
+	font-size: 12px;
+	text-align: center;
+	background-color: gray-10;
+	&__content
+		height: 100%;
+		position: relative;
+		.center
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 100%;
+			margin-top: -20px;
+			transform: translate(-50%, -50%);
+	&__actions
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		padding: 0 10px;
+		.btn
+			font-weight: 600;
+	p
+		font-weight: 400;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-bottom: 10px;
+
+.account__more
+	+above(bpSmall)
+		.btn:first-child
+			margin-left: 0
+
+.account-credit
+	&__head
+		padding: 60px 0 40px 0;
+		text-align: center
+		h2
+			color: white;
+			text-transform: uppercase;
+			margin-bottom: baseSpacing;
+		p
+			color: white;
+			+above(bpMedium)
+				display: block;
+				width: 500px;
+				margin: 0 auto;
+
+	&__footer
+		color: white;
+		text-align: center;
+		border-top: 1px solid rgba(white, 0.25);
+		margin-top: 30px;
+		padding: baseSpacing 0;
+		p
+			line-height: 1.5;
+			font-weight: 400;
+			&.accent
+				font-weight: 600;
+				color: theme-primary;
+	&__code
+		text-align: center;
+		overflow: hidden;
+		.legend
+			text-transform: uppercase;
+			margin-bottom: 0;
+			color: white;
+		.title
+			color: theme-primary;
+			font-weight: 900;
+			font-size: 46px;
+			line-height: 1;
+			height: 41px;
+			&:before
+				background-color: rgba(white, 0.25);
+			span
+				line-height: 1;
+				background-color: page-account-bg;
+
+	&__forms
+		margin-top: baseSpacing;
+		clearfix();
+		> .form-item
+			float: left;
+			width: 50%;
+			//+above(bpMedium)
+			//  margin: baseSpacing;
+			+below(bpMedium)
+				float: none;
+				width: 100%;
+
+			&:last-child
+				.credit-form
+					margin-left: baseSpacing;
+					margin-right: 0;
+			.credit-form
+				margin-right: baseSpacing;
+				padding: baseSpacing;
+				background-color: white;
+				border-radius: 4px;
+				legend
+					margin: (baseSpacing / 2) auto;
+				&__actions
+					text-align: center;
+					.btn
+						margin-bottom: 0;
+						margin-top: 0;

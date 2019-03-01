@@ -1,0 +1,59 @@
+<section id="modal-update-address" class="modal modal--update-address mfp-with-anim mfp-hide">
+    <div class="content">
+        <div class="modal__header">
+            <h3 class="modal__title">Update your address</h3>
+        </div>
+        <div class="modal__body">
+            <form class="form form--address" action="">
+                    <form class="form form--address" action="">
+                        <div class="address-input">
+                            <div class="ui-widget">
+                                <label for="input-address-field-logged-in"></label>
+                                <input type="text" placeholder="Type new address and press ENTER" id="input-address-field-logged-in" class="input-address-field" autocomplete="on"/>
+                            </div>
+                        </div>
+                        <div class="current-location">
+                            <a href="#" id="get-current-location" class="get-current-location--action"><strong>Use my current location</strong>
+                            </a>
+                            <i class="icon icon-location"></i>
+                        </div>
+                        <button type="button" id="submit-new-setup-address" class="btn btn--primary submit-new-setup-address--action">Submit</button>
+                    </form>
+
+                <div class="address-list">
+                    <span class="address-list__title">Saved addresses</span>
+                    <ul>
+                        {#<li>#}
+                            {#<label for="address1">#}
+                                {#<strong>Home</strong>#}
+                                {#123 Wall Street, City ST 12345#}
+                            {#</label>#}
+                            {#<input type="radio" name="deliveryaddress" id="address1" />#}
+                        {#</li>#}
+                        {#<li>#}
+                            {#<label for="address2">#}
+                                {#<strong>Office</strong>#}
+                                {#123 Wall Street, City ST 12345#}
+                            {#</label>#}
+                            {#<input type="radio" name="deliveryaddress" id="address2" />#}
+                        {#</li>#}
+                    </ul>
+                    {#<ul>#}
+                        {#<li class="address-list__title">Recent</li>#}
+                        {#<li>#}
+                            {#<label for="address3">#}
+                                {#<strong>Home</strong>#}
+                                {#123 Wall Street, City ST 12345#}
+                            {#</label>#}
+                            {#<input type="radio" name="deliveryaddress" id="address3" />#}
+                        {#</li>#}
+                    {#</ul>#}
+
+                </div>
+            </form>
+        </div>
+        <div class="modal__footer">
+            <a href="#" onclick="$.magnificPopup.close();">Cancel</a>
+        </div>
+    </div>
+</section>

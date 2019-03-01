@@ -1,0 +1,41 @@
+<section id="modal-another-available-stores" class="modal modal--modal-another-available-stores mfp-with-anim mfp-hide">
+    <div class="content">
+        <div class="modal__header">
+            <h3 class="modal__title user-desclaimer-title">Clear your cart?</h3>
+        </div>
+        <div class="modal__body user-desclaimer-body">
+            The items and prices available to this address may be different than those you just browsed. If you change to this address, your cart will be reset.
+            <div class="modal__actions">
+                <div class="btn-group">
+                    <a href="#" class="btn btn--primary clean_cart" style="margin-bottom: 10px;" onclick="updateUserAddressAndClearCart()">Ok</a>
+                    <a href="#" class="btn btn--info" style="margin-bottom: 10px;" onclick="$.magnificPopup.close();">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    function updateUserAddressAndClearCart() {
+        app.startLoading();
+        apiHandler.deleteCart().then(function () {
+            var $editAddressCheckoutForm = $('form#edit-address-form-checkout');
+            apiHandler.patchUserAddress($.localStorage.get('temporaryAddressId'), $.localStorage.get('temporaryAddressPostData')).then(function (data) {
+                var addressData = user.getDefaultAddress();
+                var stringAddress = addressData.address_line1 + ' '
+                + addressData.locality + ' '
+                + addressData.administrative_area;
+                var geoData = {
+                    address: stringAddress
+                };
+                apiHandler.getGeocode(geoData).then(function (data) {
+                    store.init(data, true);
+                });
+                app.displaySingleFormMessage($editAddressCheckoutForm, 'Address successfully updated.');
+                location.href = '{{ path('_discover_index') }}'
+            }).fail(function (data) {
+                app.displayFormErrors($editAddressCheckoutForm, data.responseJSON);
+                app.stopLoading();
+            });
+        });
+    };
+</script>

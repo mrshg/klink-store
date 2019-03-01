@@ -1,0 +1,61 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <div class="page page--account-credit">
+
+        {% include 'AppBundle:_Includes:account-navigation.html.twig' %}
+
+        <section class="account-credit">
+            <div class="wrapper">
+                <div class="content">
+                    <div class="account-credit__head">
+                        <h2>Earn money towards drinks</h2>
+
+                        <p>Share your Klink Code with friends. When they place their first order, they'll get $10 off
+                            and you'll get $10 towards drinks of your own.</p>
+                    </div>
+                    <div class="account-credit__code">
+                        <p class="legend">Your Klink code</p>
+
+                        <p class="code title title--lines-on-side"><span>123DC</span></p>
+                    </div>
+                    <div class="account-credit__forms">
+                        <div class="form-item">
+                            <form action="" class="credit-form">
+                                <legend>Send $10 by email</legend>
+                                    <input type="email" placeholder="Add multiple email addresses here"/>
+                                <div class="credit-form__actions">
+                                    <input type="submit" value="Send email" class="btn btn--primary"/>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="form-item">
+                            <form action="" class="credit-form">
+                                <legend>Send $10 by email</legend>
+                                <input type="email" placeholder="http://klink.com/fsfd/g"/>
+
+                                <div class="credit-form__actions">
+                                    <div class="btn-group">
+                                        <a href="#" class="btn btn--facebook">Share on <strong>Facebook</strong></a>
+                                        <a href="#" class="btn btn--twitter">Share on <strong>Twitter</strong></a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="account-credit__footer">
+                        <p>Friends ordered: 3</p>
+
+                        <p>Used Klink Credits: $10</p>
+
+                        <p class="accent">Available Klink credits: $20</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+{% endblock body %}
+

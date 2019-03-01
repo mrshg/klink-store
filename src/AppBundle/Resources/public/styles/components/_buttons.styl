@@ -1,0 +1,229 @@
+.icon-facebook
+	display:inline-block;
+	margin: 0px 10px 0px 10px;
+	width: 30px;
+	height: 35px;
+	background: transparent url('../img/fb-white.png') no-repeat center center;
+	background-size: contain;
+	span
+		display:none;
+.icon-twitter
+	display:inline-block;
+	margin: 0px 10px 0px 10px;
+	width: 30px;
+	height: 35px;
+	background: transparent url('../img/tw-white.png') no-repeat center center;
+	background-size: contain;
+	span
+		display:none;
+.icon-instagram
+	display:inline-block;
+	margin: 0px 10px 0px 10px;
+	width: 30px;
+	height: 35px;
+	background: transparent url('../img/inst-white.png') no-repeat center center;
+	background-size: contain;
+	span
+		display:none;
+.icon-pinterest
+	display:inline-block;
+	margin: 0px 10px 0px 10px;
+	width: 30px;
+	height: 35px;
+	background: transparent url('../img/pin-white.png') no-repeat center center;
+	background-size: contain;
+	span
+		display:none;
+
+.icon-appstore
+	display:inline-block;
+	margin: 0px 10px 0px 0px;
+	width: 40%;
+	height: 40px;
+	background: transparent url('../img/appstore-logo.png') no-repeat center center;
+	background-size: contain;
+	span
+		display:none;
+
+.icon-googleplay
+	display:inline-block;
+	margin: 0px 0px 0px 10px;
+	width: 40%;
+	height: 40px;
+	background: transparent url('../img/google-logo.png') no-repeat center center;
+	background-size: contain;
+	span
+		display:none;
+
+
+
+.facebook-btn
+	font-weight: 400;
+	display: inline-block;
+	width: auto;
+	padding: 15px 20px 13px 20px;
+	margin: baseSpacing auto;
+	background-color: color_facebook;
+	color: white;
+	border-radius: 4px;
+	&:hover
+		background-color: darken(color_facebook, 10%);
+
+
+.btn
+	text-align: center;
+	display: inline-block;
+	width: auto;
+	box-sizing: border-box;
+	border: 0;
+	margin: 0 0 10px 0;
+	padding: 15px 20px 13px 20px;
+	border-radius: 4px;
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 1;
+	font-weight: 700;
+	transition: all 0.3s ease;
+	&--block
+		display: block;
+		width: 100%;
+		max-width: 300px;
+		margin: 20px auto;
+	&--primary
+		color: white;
+		background-color: theme-primary;
+		&:hover
+			background-color: darken(theme-primary, 10%);
+	&--link
+		color: white;
+		background-color: gray-15;
+		text-transform: none;
+		font-weight: 400;
+		&:hover, &:focus
+			background-color: lighten(gray-15, 5%);
+	&--info
+		color: white;
+		background-color: gray-50;
+		&:hover, &:focus
+			background-color: lighten(gray-50, 5%);
+
+	&--info-inverse
+		background-color: white;
+		color: gray-50;
+		border: 3.5px solid gray-50;
+		&:hover, &:focus
+			background-color: darken(white, 5%);
+	&--gray-hasborder
+		margin: (baseSpacing / 2) baseSpacing;
+		text-transform: none;
+		font-weight: 700;
+		font-size: 12px;
+		padding: 7px 20px 6px 20px;
+		color: gray-50;
+		background-color: transparent;
+		border: 1.5px solid gray-50;
+		&:hover, &:focus
+			background-color: white;
+			color: gray-25;
+	&--white
+		margin: (baseSpacing / 2) baseSpacing;
+		text-transform: none;
+		font-weight: 700;
+		font-size: 12px;
+		padding: 7px 15px 6px 15px;
+		color: white;
+		background-color: transparent;
+		border: 1.5px solid white;
+		&:hover, &:focus
+			background-color: white;
+			color: gray-25;
+
+	&--facebook
+		line-height: 1;
+		background-color: color_facebook;
+		color: white;
+		text-transform: none;
+		position: relative;
+		font-weight: 400;
+		&:before
+			position: absolute;
+			left: 11px;
+			top: 11px;
+			display: inline-block;
+			content: '';
+			width: 20px;
+			height: 20px;
+			background: transparent url("../img/facebook.svg") no-repeat center center;
+			background-size: contain;
+
+	&--twitter
+		font-weight: 400;
+		position: relative;
+		line-height: 1;
+		background-color: color_twitter;
+		color: white;
+		text-transform: none;
+		&:before
+			position: absolute;
+			left: 11px;
+			top: 11px;
+			display: inline-block;
+			content: '';
+			width: 20px;
+			height: 20px;
+			background: transparent url("../img/twitter.svg") no-repeat center center;
+			background-size: contain;
+
+	+below(bpSmall)
+		display: block;
+		width: 100%;
+		margin: (baseSpacing / 2) 0;
+
+
+.btn-group
+	width: 100%;
+	flex-direction: column;
+	display: flex;
+	// justify-content: space-between;
+	+above(bpSmall)
+		flex-direction: row;
+		display: flex;
+		// justify-content: space-between;
+	.btn
+		line-height:1;
+		margin: 0;
+		font-size: 14px;
+		+below(bpSmall)
+			width: 100%
+		+above(bpSmall)
+			order: 1;
+			flex: 1;
+	.btn:first-child
+		display block
+		margin:8px 0;
+		order: 2
+		+above(bpSmall)
+			order: 1
+			margin:0 8px 0 0;
+	.btn:last-child
+		margin:8px 0;
+		order: 1
+		+above(bpSmall)
+			order: 2
+			margin:0 0 0 8px;
+
+
+.load-more-wrap
+	width: 100%;
+	max-width: 970px;
+	line-height: 1;
+	text-align: center;
+.load-more
+	display: inline-block;
+	// margin: 0 auto 40px auto;
+	width: auto!important;
+	pointer-events: none;
+
+#modal-delete-cart button.mfp-close
+	display:none;
+

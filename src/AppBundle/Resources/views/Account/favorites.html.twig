@@ -1,0 +1,85 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <div class="page page--account page--account-favorites">
+
+        {% include 'AppBundle:_Includes:account-navigation.html.twig' %}
+  <div class="main-wrapper browse-drinks-main-wrapper">
+
+            <div class="browse-drinks-filters-and-sorting-wrapper">
+                <section class="browse-drinks-filters-and-sorting">
+                    <header>
+                        <h2>All favorites</h2>
+                    </header>
+                    <div class="browse-drinks-filters">
+                        <ul>
+                            <li><a href="#" class="active">Beer</a></li>
+                            <li><a href="#">Wine</a></li>
+                            <li><a href="#">Spirit</a></li>
+                            <li><a href="#">Mixers</a></li>
+                            <li><a href="#">Other</a></li>
+                        </ul>
+                    </div>
+                    {#<div class="browse-drinks-sorting">#}
+                        {#<ul>#}
+                            {#<li><a href="#" class="active">A-Z</a></li>#}
+                            {#<li><a href="#">$ Low-High</a></li>#}
+                            {#<li><a href="#">Rating</a></li>#}
+                        {#</ul>#}
+                    {#</div>#}
+                </section>
+            </div>
+
+
+            <section class="browse-drinks-main-section">
+                <div class="wrapper">
+                    <div class="content">
+                        <div class="box__body">
+                            <div class="drink-list drink-list--account-favorites">
+                                {% if items is defined %}
+                                {% for item in items %}
+                                    {% include 'AppBundle:_Includes:drink-item.html.twig' %}
+                                {% endfor %}
+                                {% else %}
+                                <div class="no-favorites">
+                                    <p class="">You don't have any favorites yet.</p>
+                                </div>
+                                {% endif %}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+</div>
+
+        <div class="page-actions">
+            <div class="wrapper">
+                <div class="content">
+                    <a href="{{ path('_logout') }}" class="btn btn--white">Log Out</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock body %}
+
+{% block javascripts_footer %}
+    {{ parent() }}
+    <script>
+        var options = {
+            autoplay: false,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true
+//            appendArrows: '.slider-arrows',
+//            prevArrow: '<i class="icon icon-arrow icon-arrow--previous">',
+//            nextArrow: '<i class="icon icon-arrow icon-arrow--next">',
+        };
+        $('.drinks-data-slider').slick(options);
+    </script>
+
+{% endblock javascripts_footer %}

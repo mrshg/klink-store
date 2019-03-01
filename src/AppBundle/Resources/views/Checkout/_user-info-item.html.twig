@@ -1,0 +1,24 @@
+<div class="user-info">
+    <div class="user-info__header">
+        <p><b>ORDER RECIPIENT</b></p>
+    </div>
+    <div class="user-info__content">
+        <div class="center">
+            <p>{{ profile.full_name }}</p>
+
+            {#<p>{{ profile.email }}</p>#}
+
+            <p>{% if profile.phone_number is defined %}{{ profile.phone_number }}{% else %}<span class="error">Please add phone number</span>{% endif %}</p>
+            {#{% if profile.birthday is defined and profile.birthday %}#}
+                {#<p>{{ profile.birthday|date('m/d/Y') }}</p>#}
+            {#{% endif %}#}
+            {% if profile.birthday is defined and profile.birthday and ('now'|date('Y') - profile.birthday|date('Y')) >= 21 %}
+                <div class="valid-recipient-age">21 or older with valid ID</div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="user-info__actions">
+        {#<a href="#" class="btn btn--gray-hasborder">Send as gift</a>#}
+        <a href="#modal-update-info-checkout" class="btn btn--gray-hasborder activate-modal-link" data-effect="mfp-zoom-in">Edit</a>
+    </div>
+</div>

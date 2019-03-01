@@ -1,0 +1,44 @@
+<section id="modal-drink-item" class="modal modal--drink-item mfp-with-anim mfp-hide">
+    <div class="content">
+        <div class="modal__header">
+            {#<button class="btn--favorite">#}
+                {#<i class="icon" data-icon="q"></i>#}
+            {#</button>#}
+        </div>
+        <div class="modal__body">
+
+                <article class="modal__drink-item">
+                    <div class="modal__drink-img">
+                    </div>
+                    <h2 class="modal__title"></h2>
+
+                    <div class="modal__drink-data">
+                        <div class="drink-pack-amount">
+                        </div>
+                        <div class="drink-price"></div>
+                        {% if app.request.cookies.get('closedStore') != 'true' %}
+
+                        <div class="drink-pack-quantity">
+                            <button class="btn btn-minus item-decrease--action"><i class="icon" data-icon="s"></i></button>
+                            <input class="drink-pack-quantity__value item-quantity--action" value="0" style="width: 10px;"/>
+                            <button class="btn btn-plus item-increase--action"><i class="icon" data-icon="t"></i></button>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="tabs tabs-init tabs--modal">
+                        <ul class="tabs__nav tabs-nav-action">
+                            <li class="active"><a href="#about">About</a></li>
+                        </ul>
+                        <div class="tabs__content">
+                            <div id="about" class="tabs__content-single tabs-content-action active">
+                                <div class="read-more">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+        </div>
+    <div class="modal__footer">
+    </div>
+    </div>
+</section>

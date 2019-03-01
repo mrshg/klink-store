@@ -1,0 +1,204 @@
+filtersSidePadding = 19px;
+.browse-drinks-filters-and-sorting-wrapper
+	position: fixed;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	// overflow-y: auto;
+	// overflow: hidden;
+	z-index: 999;
+	+above(bpMedium)
+		left: 10px;
+		top: standardTopOffset + headerHeight;
+		bottom: 57px;
+.browse-drinks-filters-and-sorting
+	position: relative;
+	width: browseSidebarWidth;
+	font-size: 12px;
+	font-weight: 400;
+	background-color: rgba(0, 0, 0, 0.9);
+	header
+		padding: 20px 10px 20px 20px;
+		button
+			margin: 0;
+			font-size: 11px;
+			font-weight: 400;
+			text-transform: uppercase;
+			&:hover, &.active
+					color: #fff;
+				&.active
+					font-weight: 700;
+	+above(bpMedium)
+		background-color: rgba(0, 0, 0, 0.5);
+		border-radius: 6px;
+.browse-drinks-filters, .browse-drinks-sorting
+	& > ul
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		text-transform: uppercase;
+		& > li
+			& > a
+				display: block;
+				line-height: 14px;
+				padding: 3px 0;
+
+			&:hover, &.active
+				> a
+					color: #fff;
+			&.active
+				position: relative
+				& > a
+					position: relative
+					font-weight: 700;
+					&:after
+						color: white;
+						display: block;
+						content: 'x';
+						left: -10px;
+						top: 3px;
+						font-size: 10px;
+						font-weight: 300;
+						position:absolute;
+
+
+.browse-drinks-filters
+	height: auto;
+	max-height: calc(100vh - 350px);
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 10px filtersSidePadding;
+	border-top: 1px solid rgba(255, 255, 255, .5);
+	+above(bpMedium)
+		height: auto;
+		max-height: calc(100vh - 248px);
+	a
+		cursor: pointer;
+	ul
+		li
+			white-space: normal;
+	&::-webkit-scrollbar
+		-webkit-appearance: none;
+		width: 7px;
+	&::-webkit-scrollbar-thumb
+		border-radius: 4px;
+		background-color: rgba(255, 255, 255, 0.5);
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+	&::-webkit-scrollbar-track
+		background-color: rgba(0, 0, 0, 0.5);
+		border-radius: 8px;
+
+.browse-drinks-sorting
+	padding: 11px filtersSidePadding;
+	border-top: 1px solid rgba(255, 255, 255, .5);
+
+.browse-drinks-filters-and-sorting-addendum
+	text-align: center;
+	font-size: 12px;
+	font-weight: 300;
+	margin-top: 6px;
+	a
+		color: rgba(#fff, .5);
+		&:hover
+			text-decoration: underline;
+
+
+.filter-close
+	display: none;
+	+below(bpMedium)
+		display: block;
+		padding-top: 0;
+		position: absolute;
+		width: 30px;
+		height: 54px;
+		color: gray-30;
+		right: -30px;
+		top: 0;
+		border-bottom: rgba(255, 255, 255, .5);
+		background-color: rgba(0, 0, 0, 0.9);
+		.line
+			display: block;
+			background-color: transparent;
+			width: 23px;
+			height: 15px;
+			transition: all .3s ease;
+			position: relative;
+			&::after, &::before
+				content: '';
+				position: absolute;
+				top: 50%;
+				margin-top: -1px;
+				display: inline-block;
+				height: 2px;
+				width: 20px;
+				background: #fff;
+				backface-visibility: hidden;
+			&::before
+				transform: translateX(9px) rotate(-45deg);
+			&::after
+				transform: translateX(0px) rotate(45deg);
+			&::after
+				transform-origin: 9px 50% 50%;
+			&::before, &::after
+				width: 15px;
+				transform-origin: 50% 50% 50%;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+				transition: width 0.2s, transform 0.2s;
+			&::before
+				right: 9px;
+			&::after
+				right: 0px;
+
+
+
+
+
+
+
+//Browse filter and main content responsive styles
+.browse-drinks-filters-and-sorting-wrapper
+	+below(bpMedium)
+		transition: transform 0.3s ease;
+		position: fixed
+		transform: translate(-150%, 0);
+		transform: translate3D(-150%, 0, 0);
+
+body.filter-active
+	.browse-drinks-filters-and-sorting-wrapper
+		+below(bpMedium)
+			display: block;
+			transform: translate(0, 0);
+			transform: translate3D(0, 0, 0);
+
+.browse-filter
+	+above(bpMedium)
+		display: none;
+	+below(bpMedium)
+		clearfix()
+		// background: rgb(73, 64, 49);
+		// background: radial-gradient(ellipse at center, rgba(73, 64, 49, 1) 0%, rgba(47, 43, 32, 1) 100%);
+		display: block;
+		width: 100%;
+		height: 50px;
+		text-align: center;
+		position: relative;
+		button
+			display: block;
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			top: auto;
+			width: 100%;
+			height: 40px;
+			text-align: center;
+			text-transform: uppercase;
+			color: white;
+			font-size: 12px;
+			&:hover
+				color: theme-primary;
+			i
+				position: absolute;
+				top: 13px;
+				right: 0;
+				font-size: 16px;

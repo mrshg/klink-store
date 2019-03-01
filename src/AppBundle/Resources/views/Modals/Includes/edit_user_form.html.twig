@@ -1,0 +1,20 @@
+<form action="/user/profile/patch/" class="form form--modal" method="post" name="edit-profile" id="edit-profile">
+    <input type="text" name="fullName" placeholder="Full name" required value="{{ profile.full_name }}" />
+    <input type="email" name="email" placeholder="Email" required value="{{ profile.email }}" />
+    <input type="text" name="phoneNumber" placeholder="Phone number"
+           {% if profile.phone_number is defined %}
+           value="{{ profile.phone_number }}"
+           {% endif %}
+            />
+    <input type="text" name="birthday" placeholder="Birthday (mm/dd/yyyy)" class="date-mask"
+           {% if profile.birthday is defined %}
+           value="{{ profile.birthday|date('m/d/Y') }}"
+            {% endif %}
+            />
+
+    <div class="btn-group">
+        <a href="#" class="btn btn--primary">Cancel</a>
+        <input type="submit" class="btn btn--info" name="edit-profile-submit" value="Submit"/>
+    </div>
+
+</form>

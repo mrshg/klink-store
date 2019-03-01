@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Klink | Alcohol Delivered in Under an Hour</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="apple-itunes-app" content="app-id=805369766"/>
+    <meta name="google-play-app" content="com.klink.delivery"/>
+
+    {% if app.environment  == 'dev' %}
+        <script src="http://localhost:35729/livereload.js"></script>
+    {% endif %}
+    <script>
+        var api = api || {};
+        api.assetUrl = '{{ assetUrl }}';
+        api.endpoint = '{{ apiEndpoint }}';
+        api.prodMode = '{{ prodMode }}';
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+    {% block javascripts %}
+        <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+
+
+    {% endblock javascripts %}
+
+    {% block stylesheets %}
+        {#{% if app.environment == 'dev' %}#}
+        <link rel="stylesheet" href="{{ asset('bower_components/normalize-css/normalize.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/dist/styles/main.css') }}"/>
+        {#{% elseif app.environment == 'prod' %}#}
+        {#<link rel="stylesheet" href="assets/dist/app.css"/>#}
+        {#{% endif %}#}
+
+    {% endblock stylesheets %}
+
+
+    <!--[if lt IE 9]>
+    <script src="{{ asset('bower_components/jquery-placeholder/jquery.placeholder.min.js') }}"></script>
+    <![endif]-->
+
+</head>
+
+<body {% if app.request.cookies.get('cartOpen') == 'true' and app.user %}class="cart-active-saved"{% endif %}   {% if app.request.cookies.get('closedStore') == 'true' %}class="closed-store"{% endif %}>
+<script>var width = $(window).width();
+    if (width < 720) {
+        $('body').removeClass('cart-active');
+        $('body').removeClass('cart-active-saved');
+    }</script>
+<div class="page-load-circle" style="opacity:1;">
+    <div class="circle"></div>
+</div>
+<div class="site-loading" style="opacity:0;">
+    <div class="circle"></div>
+</div>
+{% block header %}
+    {% include 'AppBundle::_Includes/top_header.html.twig' %}
+    {% block image_loader_script %}
+        <script type="text/javascript">
+            function imageReplace(that, image) {
+                if (image) {
+                    var img = new Image();
+                    img.onload = function () {
+                        $(that).parent().css('background-image', 'url(' + img.src + ')');
+                        $(that).hide();
+                    }
+                    img.onerror = function(){
+                        $(that).hide();
+                    };
+                    img.src = image;
+                } else {
+                    $(that).hide();
+                }
+            };
+        </script>
+    {% endblock %}
+{% endblock header %}
+{% if app.request.cookies.get('closedStore') == 'true' %}
+    <div class="store-closed-banner">
+        <p>We're closed right now, try again soon!</p>
+    </div>
+{% endif %}
+
+<div class="page-wrap">
+
+    {% block body %}
+        {% include 'AppBundle::_Includes/navigation-secondary.html.twig' %}
+
+        {% include 'AppBundle::_Includes/billboard.html.twig' %}
+
+        {# {% include 'AppBundle::_Includes/browse-filter.html.twig' %} #}
+    {% endblock body %}
+</div>
+
+
+{% block cart %}
+    {% if app.user %}
+        <div id="cart-dropdown">
+            {% include 'AppBundle:_Includes:cart.html.twig' %}
+        </div>
+    {% endif %}
+{% endblock cart %}
+
+{% include 'AppBundle:_Includes:modals_init.html.twig' %}
+
+{% block javascripts_footer %}
+    <script src="{{ asset('bower_components/jQuery.serializeObject/dist/jquery.serializeObject.min.js') }}"></script>
+    <script src="{{ asset('bower_components/classie/classie.js') }}"></script>
+    <script src="{{ asset('bower_components/magnific-popup/dist/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('bower_components/slick-carousel/slick/slick.js') }}"></script>
+    <script src="{{ asset('bower_components/gmaps/gmaps.min.js') }}"></script>
+    <script src="{{ asset('bower_components/jquery.cookie/jquery.cookie.js') }}"></script>
+    <script src="{{ asset('bower_components/jquery-storage-api/jquery.storageapi.js') }}"></script>
+    <script src="{{ asset('bower_components/jquery-ui/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('bower_components/background-blur/dist/background-blur.min.js') }}"></script>
+    <script src="{{ asset('vendors/headroom.js/dist/jQuery.headroom.min.js') }}"></script>
+    <script src="{{ asset('vendors/headroom.js/dist/headroom.min.js') }}"></script>
+    <script src="{{ asset('bower_components/jquery-mask-plugin/dist/jquery.mask.min.js') }}"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script src="{{ asset('bower_components/jquery.payment/lib/jquery.payment.js') }}"></script>
+    <script src="{{ asset('assets/dist/scripts/app.js') }}"></script>
+
+
+    <script type="text/javascript">
+        {% if app.request.get('product') and app.request.get('storeId') %}
+            $.localStorage.set('addressPopupShow', true);
+             modal.openProductModalOnLoad('{{ app.request.get('product')|raw }}', {{ app.request.get('storeId') }});
+        {% elseif app.request.get('modal')=="address"%}
+        $(document).ready(function () {
+            $.localStorage.set('addressPopupShow', true);
+            modal.openChangeAddressInitModal();
+        });
+        {% endif %}
+        {% if app.user %}
+            user.update({{ app.user.serialize|raw }});
+            cart.init();
+            address.init();
+            creditCardComp.init();
+        {% else %}
+        $(window).load(function () {
+            app.stopPageLoading();
+        });
+            {% if app.request.get('modal')=="login" %}
+                $.localStorage.set('addressPopupShow', true);
+                modal.openLoginModalOnLoad();
+            {% elseif app.request.get('modal')=="register" %}
+                $.localStorage.set('addressPopupShow', true);
+                modal.openRegisterModalOnLoad();
+        {% endif %}
+            user.update(null);
+            cartComp.initNotLoggedIn();
+            address.initNotLoggedIn();
+            securityHandler.init();
+        {% endif %}
+
+        categories.updateHeaderDropdown('{{ assetUrl }}');
+        storeComp.init(true);
+        SignUp.init();
+        packComp.init();
+        addressComp.init();
+
+        var interval = 1000*60*5;
+        window.setInterval(function(){
+            var data = {
+                'address': address.__toString(address.getDefaultAddress())
+            };
+            apiHandler.getGeocode(data).then(function(data) {
+                store.init(data, true);
+            });
+        }, interval);
+
+    </script>
+
+{% endblock javascripts_footer %}
+
+
+{% if prodMode %}
+    {% include 'AppBundle:_Includes:analytics.html.twig' %}
+{% endif %}
+
+{% block after_analitics_scripts %}
+{% endblock after_analitics_scripts %}
+
+</body>
+</html>

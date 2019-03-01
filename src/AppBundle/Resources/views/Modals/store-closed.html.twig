@@ -1,0 +1,30 @@
+<section id="modal-store-closed" class="modal modal--store-closed mfp-with-anim mfp-hide">
+    <div class="content">
+        <div class="modal__header">
+            <h3 class="modal__title">Your store is closed</h3>
+            <p class="modal__header-info">
+            </p>
+            {% if app.user %}
+                <a href="#modal-update-address" class="activate-modal-link form__link" data-effect="mfp-zoom-in">Change address</a>
+            {% else %}
+                <a href="#initial-address-setup-notlogged" class="activate-modal-link form__link" data-effect="mfp-zoom-in">Change address</a>
+            {% endif %}        </div>
+        <ul class="working-hours">
+        </ul>
+        <div class="map" style="display:none">
+
+        </div>
+        <div class="modal__body">
+            <div class="modal__actions">
+                <div class="btn-group">
+                    <a href="#" class="btn btn--primary view-map--action">View map</a>
+                    <a href="#" class="btn btn--primary view-hours--action" style="display: none;">View hours</a>
+                    <a href="#" class="btn btn--primary save-address" onclick="addressComp.saveAddress($(this))">Browse anyway</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal__footer">
+         {% include 'AppBundle:Modals:_modal-footer-nav.html.twig' %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,3 @@
+klink_account_index:
+    pattern: /
+    defaults: { _controller: AppBundle:Default:index }

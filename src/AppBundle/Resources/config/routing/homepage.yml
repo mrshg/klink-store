@@ -1,0 +1,3 @@
+klink_app_homepage:
+    pattern: /
+    defaults: { _controller: AppBundle:Homepage:index }

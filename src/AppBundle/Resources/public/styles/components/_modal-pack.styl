@@ -1,0 +1,90 @@
+#modal-pack
+  max-width: 375px;
+  color: #000;
+  .modal-pack-slider-arrows
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 30px;
+    left: 0;
+    i:first-child, i:last-child
+      width: 40px;
+      height: 40px;
+      color: rgba(gray-10, 0.5);
+      font-size: 36px;
+      position: absolute;
+      top: 50%;
+      transition: color .3s ease;
+      &:hover
+        color: rgba(gray-10, 1);
+    i:first-child
+      left: 20px;
+    i:last-child
+      right: 20px;
+  .modal-pack-item-list
+    background-color: white;
+
+
+.modal-pack-title
+  color: #000;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 25px;
+  text-transform: uppercase;
+
+.modal-pack-people-slider-wrapper
+  text-align: center;
+  width: 220px;
+  margin: 0 auto;
+
+.modal-pack-people-slider
+  list-style: none;
+  padding: 0;
+  color: #000;
+  font-weight: 100;
+  margin: 13px 0 0;
+  li
+    font-size: 65px;
+    line-height: 67px;
+    font-weight: 100;
+    text-transform: uppercase;
+.modal-pack-people-slider-label
+  display: block;
+  text-align: center;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 25px;
+  text-transform: uppercase;
+  margin-top: -8px;
+
+btnOverlayHeight = 87px;
+.modal-pack-item-list
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  max-height: 370px;
+  padding: 8px 22px btnOverlayHeight;
+  text-align: left;
+  overflow-y: auto;
+  border-radius: 0 0 4px 4px;
+  .cart-item
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    height: 57px;
+    margin-bottom: 8px;
+.modal-pack-btn-overlay
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: btnOverlayHeight;
+  background-color: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 0 0 4px 4px;
+.modal-pack-submit
+  display: block;
+  max-width: 264px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 20px auto 0 auto!important;
+  font-size: 12px;
+  font-weight: 700;
+

@@ -1,0 +1,26 @@
+_login_check:
+    pattern: /login-check
+    defaults: { _controller: AppBundle:Security:loginCheck }
+
+_login:
+    pattern: /login
+    defaults: { _controller: AppBundle:Security:login }
+
+_login_success:
+    pattern: /login-success
+    defaults: { _controller: AppBundle:Security:loginSuccess }
+
+_logout:
+    pattern:   /logout
+
+_register:
+    pattern: /register
+    defaults: { _controller: AppBundle:Security:register }
+
+_register_form:
+    pattern: /register-form
+    defaults: { _controller: AppBundle:Security:getRegisterForm }
+
+_refresh_auth:
+    pattern: /refresh-auth
+    defaults: { _controller: AppBundle:Security:refreshTokenFromJs }

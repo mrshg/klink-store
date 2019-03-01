@@ -1,0 +1,51 @@
+{% extends 'AppBundle::base.html.twig' %}
+{% block header %}
+    {% include 'AppBundle::_Includes/top_header.html.twig' %}
+{% endblock header %}
+{% block body %}
+    <div class="page page--checkout-summary">
+
+        <div class="checkout-review">
+            <div class="wrapper">
+                <div class="content">
+                    <div class="checkout-review__info">
+                        {% include 'AppBundle:Checkout:_user-info-item.html.twig' %}
+                        {% include 'AppBundle:Checkout:_card-item.html.twig' %}
+                    </div>
+
+                    <div class="checkout-review__address">
+                        {% include 'AppBundle:Checkout:_address-item.html.twig' %}
+                    </div>
+
+                    {#<div class="checkout-review__footer">#}
+                        {#<p>Order will arrive:</p>#}
+
+                        {#<p>Today as soon as possible</p>#}
+                        {#<a href="#" class="btn btn--gray-hasborder">Reschedule</a>#}
+                    {#</div>#}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="page-actions page-actions--checkout">
+            {% if cart.checkout_message %}
+            <div class="error-msg">{{ cart.checkout_message }}</div>
+            {% else %}
+            <div class="success-msg">
+                <a href="" class="btn btn--full btn--green" id="checkout-send-my-order">CLICK TO SEND ORDER - <span class="checkout-total">
+                </a>
+                <p class="termsofuse">I am 21 or older and agree to the <a href="/tou" target="_blank">terms of use</a></p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock body %}
+
+{% block javascripts_footer %}
+    {{ parent() }}
+    <script>
+        user.setUserDetailedInfo({{ profileJson|raw }});
+        checkoutComp.init({{ profileJson|raw }});
+    </script>
+{% endblock javascripts_footer %}

@@ -1,0 +1,52 @@
+ <article class="drink-item{% if item.product.masterVariant.presentation|length > 35 %} drink-img-small{% endif %}" style="background-color:#000">
+    <h2>
+        {% include 'AppBundle:_Includes:item_master_variant_presentation.html.twig' %}
+    </h2>
+    <div class="drinks-data-slider">
+        {% set variantIds = [] %}
+        {% for key,variant in item.product.variants %}
+            {% set variantIds = variantIds|merge([variant.id]) %}
+        {% endfor %}
+        {% for key,variant in item.product.variants %}
+            <div class="slide">
+                {% set options = variant.options %}
+
+                <div class="drink-item-top" title="{{variant.presentation}}">
+
+                    <a href="#modal-drink-item" class="activate-modal-link page1" data-effect="mfp-zoom-in"
+                       data-id="{{ item.product.translations[item.product.current_locale].name }}"
+                       {% if app.request.cookies.get('storeId') in variant.channels %}
+                           data-storeId="{{ app.request.cookies.get('storeId') }}"
+                       {% elseif variant.channels|first %}
+                           data-storeId="{{ variant.channels|first }}"
+                       {% endif %}
+                       data-packageItem="{{ variantIds|join(',') }}"
+                       data-variant-id="{{ variant.id }}">View
+                        item</a>
+                    {% if app.request.cookies.get('closedStore') != 'true' %}
+                        <div class="drink-item-overlay overlay-item-{{ variant.id }}">
+                            <a class="drink-item-add-first {% if app.user == null %}add-to-cart-not-logged--action{% endif %}" data-id="{{ variant.id }}">
+                                <span class="add-drink-to-cart" data-id="{{ variant.id }}"></span>
+                            </a>
+                        </div>
+                    {% endif %}
+                    <div class="drink-img" style="background-image: url('{{ asset('assets/dist/img/drink-no-image.jpg') }}');">
+                        <img class="drink-img-current" src="{{ asset('assets/dist/img/ajax-loader.gif') }}" onload="imageReplace($(this), '{{ variant.image }}')">
+                    </div>
+                </div>
+
+                <div class="drink-data">
+                    <div class="product-variant-presentation" style="display:none;">{{ variant.presentation }}</div>
+                    <div class="product-variant-price" style="display:none;">{{ variant.price }}</div>
+                    <div class="product-variant" data-id="{{ variant.id }}">
+                        <p>
+                            {% include 'AppBundle:_Includes:drink_options.html.twig' %}
+                        {% if app.request.cookies.get('sampleStore') == 'false' %}
+                            <p>{{ variant.price|price }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</article>

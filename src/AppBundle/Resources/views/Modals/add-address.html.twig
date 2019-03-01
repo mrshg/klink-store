@@ -1,0 +1,89 @@
+<section id="modal-add-address" class="modal modal--add-address mfp-with-anim mfp-hide">
+    <div class="content">
+        <div class="modal__header">
+            <h3 class="modal__title">Add new address</h3>
+        </div>
+        <div class="modal__body">
+            <form action="" class="form form--modal" method="post" id="new-address-form">
+                <input type="text" name="addressLine1" placeholder="Address line 1" required/>
+                <input type="text" name="addressLine2" placeholder="Address line 2"  />
+                <select name="administrativeArea" class="administrativeArea" required>
+                </select>
+                <input type="text" name="locality" placeholder="City" required/>
+                <input type="text" name="postalCode" placeholder="ZIP" required/>
+                <input type="hidden" name="countryCode" value="US" />
+                {# todo enable when api ready #}
+                {#<input type="text" placeholder="Enter a name for the address(optional)"/>#}
+                {#<textarea rows="2" placeholder="Special instructions: gate, code, alt, phone number, etc. (optional)"></textarea>#}
+                <div class="modal__actions">
+                    <div class="btn-group">
+                        <a href="#" class="btn btn--info" onclick="$.magnificPopup.close();" style="margin-bottom: 10px;">Cancel</a>
+                        <button class="btn btn--primary" type="submit" id="new-address" style="margin-bottom: 10px;">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<script>
+    // select states fill
+    var states = {
+        "Alabama": "US-AL",
+        "Alaska": "US-AK",
+        "Arizona": "US-AZ",
+        "Arkansas": "US-AR",
+        "California": "US-CA",
+        "Colorado": "US-CO",
+        "Connecticut": "US-CT",
+        "Delaware": "US-DE",
+        "Florida": "US-FL",
+        "Georgia": "US-GA",
+        "Hawaii": "US-HI",
+        "Idaho": "US-ID",
+        "Illinois": "US-IL",
+        "Indiana": "US-IN",
+        "Iowa": "US-IA",
+        "Kansas": "US-KS",
+        "Kentucky": "US-KY",
+        "Louisiana": "US-LA",
+        "Maine": "US-ME",
+        "Maryland": "US-MD",
+        "Massachusetts": "US-MA",
+        "Michigan": "US-MI",
+        "Minnesota": "US-MN",
+        "Mississippi": "US-MS",
+        "Missouri": "US-MO",
+        "Montana": "US-MT",
+        "Nebraska": "US-NE",
+        "Nevada": "US-NV",
+        "New Hampshire": "US-NH",
+        "New Jersey": "US-NJ",
+        "New Mexico": "US-NM",
+        "New York": "US-NY",
+        "North Carolina": "US-NC",
+        "North Dakota": "US-ND",
+        "Ohio": "US-OH",
+        "Oklahoma": "US-OK",
+        "Oregon": "US-OR",
+        "Pennsylvania": "US-PA",
+        "Rhode Island": "US-RI",
+        "South Carolina": "US-SC",
+        "South Dakota": "US-SD",
+        "Tennessee": "US-TN",
+        "Texas": "US-TX",
+        "Utah": "US-UT",
+        "Vermont": "US-VT",
+        "Virginia": "US-VA",
+        "Washington": "US-WA",
+        "Washington, D.C.": "US-DC",
+        "West Virginia": "US-WV",
+        "Wisconsin": "US-WI",
+        "Wyoming": "US-WY"
+    };
+
+    var html='<option value="" disabled selected>Select state</option>';
+    for(var key in states) {
+            html += "<option value=" + states[key] + ">" + key + "</option>";
+    }
+    $('.administrativeArea').html(html);
+</script>

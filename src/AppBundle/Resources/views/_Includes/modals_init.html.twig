@@ -1,0 +1,67 @@
+{% block modal %}
+    {% include 'AppBundle::Modals/login.html.twig' %}
+    {% include 'AppBundle::Modals/user-desclaimer.html.twig' %}
+    {% include 'AppBundle::Modals/register.html.twig' %}
+    {% include 'AppBundle::Modals/contact.html.twig' %}
+    {% include 'AppBundle::Modals/get-app.html.twig' %}
+    {% include 'AppBundle::Modals/forgot-password.html.twig' %}
+    {% include 'AppBundle::Modals/signup-address.html.twig' %}
+    {% include 'AppBundle::Modals/update-address.html.twig' %}
+    {% include 'AppBundle::Modals/add-address.html.twig' %}
+    {% include 'AppBundle::Modals/verify-address.html.twig' %}
+    {% include 'AppBundle::Modals/drink-item.html.twig' %}
+    {% include 'AppBundle::Modals/delete_card_modal.html.twig' %}
+    {% include 'AppBundle::Modals/delete_cart_modal.html.twig' %}
+    {% include 'AppBundle::Modals/delete_address_modal.html.twig' %}
+    {% include 'AppBundle::Modals/request-drink.html.twig' %}
+    {% include 'AppBundle::Modals/store-closed.html.twig' %}
+    {% include 'AppBundle::Modals/store-out-of-area.html.twig' %}
+    {% include 'AppBundle::Modals/updates.html.twig' %}
+    {% include 'AppBundle::Modals/update-info.html.twig' %}
+    {% include 'AppBundle::Modals/update-info-checkout.html.twig' %}
+    {% include 'AppBundle::Modals/edit-card.html.twig' %}
+    {% include 'AppBundle::Modals/add_card.html.twig' %}
+    {% include 'AppBundle::Modals/edit-address.html.twig' %}
+    {% include 'AppBundle::Modals/edit-address-checkout.html.twig' %}
+    {% include 'AppBundle::Modals/no-available-stores.html.twig' %}
+    {% include 'AppBundle::Modals/another-available-stores.html.twig' %}
+    {% include 'AppBundle::Modals/schedule-delivery.html.twig' %}
+    {% include 'AppBundle::Modals/pack.html.twig' %}
+    {% include 'AppBundle::Modals/error_modal.html.twig' %}
+    {% include 'AppBundle::Modals/setup-address-not-logged.html.twig' %}
+    {% include 'AppBundle::Modals/update-password.html.twig' %}
+    {% include 'AppBundle::Modals/reset-password.html.twig' %}
+    {% include 'AppBundle::Modals/choose-credit-card.html.twig' %}
+    {% include 'AppBundle::Modals/promo-code.html.twig' %}
+    {% include 'AppBundle::Modals/promo-code-remove.html.twig' %}
+    {% include 'AppBundle::Modals/max_quantity_quantity_modal.html.twig' %}
+
+{% endblock modal %}
+
+{% block modalTriggers %}
+    <div style="display:none;">
+        <a href="#modal-login" class="activate-modal-link trigger-modal-login" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-max-quantity-cart" class="activate-modal-link trigger-modal-max-quantity-cart" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-user-desclaimer" class="activate-modal-link trigger-modal-user-desclaimer" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-register" class="activate-modal-link trigger-modal-register" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-contact" class="activate-modal-link trigger-modal-contact" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-get-app" class="activate-modal-link trigger-modal-get-app" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-verify-address" class="activate-modal-link trigger-modal-verify-address" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-store-closed" class="activate-modal-link trigger-modal-store-closed" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-store-outofarea" class="activate-modal-link trigger-modal-store-outofarea" data-effect="mfp-zoom-in"></a>
+        <a href="#initial-address-setup-notlogged" class="activate-modal-link trigger-initial-address-setup-notlogged" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-update-address" class="activate-modal-link trigger-modal-update-address" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-update-info" class="activate-modal-link trigger-modal-update-info" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-update-info-checkout" class="activate-modal-link trigger-modal-update-info-checkout" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-no-available-stores" class="activate-modal-link trigger-modal-no-available-stores" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-another-available-stores" class="activate-modal-link trigger-modal-another-available-stores" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-choose-credit-card" class="activate-modal-link trigger-modal-choose-credit-card" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-add-card" class="activate-modal-link trigger-modal-add-card" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-delete-cart" class="activate-modal-link trigger-modal-delete-cart" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-reset-password" class="activate-modal-link trigger-modal-reset-password" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-add-address" class="activate-modal-link trigger-modal-add-address" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-drink-item" class="activate-modal-link trigger-modal-drink-item" data-effect="mfp-zoom-in" data-id="Decoy Chardonnay" data-storeId="null" tabindex="0"></a>
+        <a href="#modal-promo-code" class="activate-modal-link trigger-modal-promo-code" data-effect="mfp-zoom-in"></a>
+        <a href="#modal-promo-code-remove" class="activate-modal-link trigger-modal-promo-code-remove" data-effect="mfp-zoom-in"></a>
+    </div>
+{% endblock %}

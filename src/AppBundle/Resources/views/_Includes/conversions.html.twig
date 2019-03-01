@@ -1,0 +1,55 @@
+{% block conversions %}
+    <!-- Segment Placed Order Event -->
+    <script>
+        window.analytics.track("Placed Order");
+    </script>
+
+
+    <!-- Klink - Google Code for Klink Purchase v3 Conversion Page -->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 953762778;
+        var google_conversion_language = "en";
+        var google_conversion_format = "3";
+        var google_conversion_color = "ffffff";
+        var google_conversion_label = "-Pi0CJ-x6GcQ2oflxgM";
+        var google_conversion_value = {{ cart_total }};
+        var google_conversion_currency = "USD";
+        var google_remarketing_only = false;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+    <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/953762778/?value={{ cart_total }}&amp;currency_code=USD&amp;label=-Pi0CJ-x6GcQ2oflxgM&amp;guid=ON&amp;script=0" />
+        </div>
+    </noscript>
+
+
+    <!-- Beyond ROI - Google Code for Klink Purchase v3 Conversion Page -->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 953762778;
+        var google_conversion_language = "en";
+        var google_conversion_format = "3";
+        var google_conversion_color = "ffffff";
+        var google_conversion_label = "rcYNCLyYxFgQ2oflxgM";
+        var google_conversion_value = {{ cart_total }};
+        var google_conversion_currency = "USD";
+        var google_remarketing_only = false;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+    <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/953762778/?value={{ cart_total }}&amp;currency_code=USD&amp;label=rcYNCLyYxFgQ2oflxgM&amp;guid=ON&amp;script=0"/>
+        </div>
+    </noscript>
+
+
+    <!-- Facebook Conversion Code for Klink Checkout -->
+    <script>
+        fbq('track', 'Purchase', {value: {{ cart_total }}, currency: 'USD'});
+    </script>
+
+{% endblock conversions %}

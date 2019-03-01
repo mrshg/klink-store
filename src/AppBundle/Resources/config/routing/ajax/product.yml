@@ -1,0 +1,7 @@
+_single_product:
+    pattern: /{productName}
+    defaults: { _controller: AppBundle:Ajax/Product:getProductModal }
+
+_filter_products:
+    pattern: /filter/
+    defaults: { _controller: AppBundle:Ajax/Product:getProductsByCategoriesAndPage }

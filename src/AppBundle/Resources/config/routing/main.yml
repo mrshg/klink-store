@@ -1,0 +1,33 @@
+klink_app_home:
+    resource: "@AppBundle/Resources/config/routing/homepage.yml"
+
+klink_app_security:
+    resource: "@AppBundle/Resources/config/routing/security.yml"
+
+klink_app_account:
+    resource: "@AppBundle/Resources/config/routing/account.yml"
+    prefix: /account
+
+klink_app_discover:
+    resource: "@AppBundle/Resources/config/routing/discover.yml"
+    prefix: /discover
+
+klink_app_browse:
+    resource: "@AppBundle/Resources/config/routing/browse.yml"
+    prefix: /browse
+
+klink_app_checkout:
+    resource: "@AppBundle/Resources/config/routing/checkout.yml"
+    prefix: /checkout
+
+klink_app_search:
+    resource: "@AppBundle/Resources/config/routing/search.yml"
+    prefix: /search
+
+klink_app_ajax:
+    resource: "@AppBundle/Resources/config/routing/ajax/main.yml"
+    prefix: /ajax
+
+klink_get_ip_address:
+    pattern: /get-user-ip-address/
+    defaults: { _controller: AppBundle:Ajax/Profile:getUserIpAddress }

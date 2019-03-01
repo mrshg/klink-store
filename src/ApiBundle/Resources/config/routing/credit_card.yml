@@ -1,0 +1,24 @@
+_get_user_credit_cards:
+    pattern: /
+    defaults: { _controller: ApiBundle:CreditCard:getUserCreditCards }
+    methods: [GET]
+
+_post_user_credit_card:
+    pattern: /
+    defaults: { _controller: ApiBundle:CreditCard:postUserCreditCard }
+    methods: [POST]
+
+_delete_user_credit_card:
+    pattern: /{creditCardId}
+    defaults: { _controller: ApiBundle:CreditCard:deleteCreditCard }
+    methods: [POST]
+
+_get_user_credit_card_default:
+    pattern: /default/
+    defaults: { _controller: ApiBundle:CreditCard:getDefaultCreditCard }
+    methods: [GET]
+
+_post_user_credit_card_default:
+    pattern: /default/
+    defaults: { _controller: ApiBundle:CreditCard:postDefaultCreditCard }
+    methods: [POST]

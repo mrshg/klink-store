@@ -1,0 +1,69 @@
+_patch_user_default_address:
+    pattern: /address/default/
+    defaults: { _controller: ApiBundle:User:patchDefaultAddress }
+    methods: [POST]
+
+_post_user_address:
+    pattern: /address/
+    defaults: { _controller: ApiBundle:User:postAddress }
+    methods: [POST]
+
+_get_user_address:
+    pattern: /address/{addressId}/
+    defaults: { _controller: ApiBundle:User:getAddress }
+    methods: [GET]
+
+_get_user_address_default:
+    pattern: /address/default/
+    defaults: { _controller: ApiBundle:User:getDefaultAddress }
+    methods: [GET]
+
+_delete_user_address:
+    pattern: /address/{addressId}/delete
+    defaults: { _controller: ApiBundle:User:deleteAddress }
+    methods: [POST]
+
+_patch_user_address:
+    pattern: /address/{addressId}/patch
+    defaults: { _controller: ApiBundle:User:patchAddress }
+    methods: [POST]
+
+_get_user_addresses:
+    pattern: /addresses/
+    defaults: { _controller: ApiBundle:User:getAddresses }
+    methods: [GET]
+
+_post_user_default_credit_card:
+    pattern: /credit-cards/default/
+    defaults: { _controller: ApiBundle:User:postDefaultCreditCard }
+    methods: [POST]
+
+_post_user_credit_card:
+    pattern: /credit-cards/
+    defaults: { _controller: ApiBundle:User:postCreditCard }
+    methods: [POST]
+
+_get_user_profile:
+    pattern: /profile/
+    defaults: { _controller: ApiBundle:User:getProfile }
+    methods: [POST]
+
+_patch_user_profile:
+    pattern: /profile/patch/
+    defaults: { _controller: ApiBundle:User:patchProfile }
+    methods: [POST]
+
+_post_user_reset_password:
+    pattern: /reset-password/
+    defaults: { _controller: ApiBundle:User:resetPassword }
+    methods: [POST]
+
+_put_user_reset_password_pin:
+    pattern: /reset-password-pin/
+    defaults: { _controller: ApiBundle:User:resetPassword }
+    methods: [POST]
+
+_patch_user_change_password:
+    pattern: /reset-password/
+    defaults: { _controller: ApiBundle:User:resetPassword }
+    methods: [POST]

@@ -1,0 +1,8 @@
+# This file is auto-generated during the composer install
+parameters:
+    secret:            'ThisTokenIsNotSoSecretChangeIt'
+    klink.api.client_id: 'klink_v3_website_client_VO3xb7'
+    klink.api.client_secret: 'J}U]q78kym}bjG>Tt2U4'
+    klink.api.end_point: 'https://controller-dev.klinkdelivery.com'
+    asset_url: '/store/'
+    prod_mode: false

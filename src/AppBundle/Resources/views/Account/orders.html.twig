@@ -1,0 +1,92 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <div class="page page--account-orders">
+
+        {% include 'AppBundle:_Includes:account-navigation.html.twig' %}
+
+        <div class="page__content">
+            {% for e in 1..2 %}
+                <section class="box">
+                    <div class="wrapper">
+                        <div class="content">
+                            <div class="box__header">
+                                <h2 class="box__header-title">Order #89438948398493</h2>
+                            </div>
+                            <div class="box__body">
+                                <div class="drink-list drink-list--account-orders">
+                                    <article class="order-item">
+                                        <div class="order-item__content">
+                                            <div class="center">
+                                                <p>
+                                                    <strong>07/09/2015</strong> <br>
+                                                    8:09 p.m.
+                                                </p>
+
+                                                <p>
+                                                    16000 Pennsylvania Ave
+                                                    NW Washington DC 2050
+                                                </p>
+
+                                                <p>
+                                                    6 items <br>
+                                                    Subtotal: $56.00 <br>
+                                                    Tip: $4.00 <br>
+                                                    Total: $60.00
+                                                </p>
+
+                                                <p>
+                                                    Card: **** 5678
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="order-item__actions">
+                                            <a href="" class="btn btn--white btn--block">Re-order</a>
+                                        </div>
+                                    </article>
+
+                                    {% for i in 1..7 %}
+                                        <article class="drink-item">
+                                            <div class="drink-item-top">
+                                                <div class="drink-item-overlay">
+                                                    {% if i == 2 %}
+                                                        <div class="drink-item-overlay-info"><span>3</span></div>
+                                                    {% elseif i == 5 %}
+                                                        <div class="drink-item-overlay-info"><span>2</span></div>
+                                                    {% else %}
+                                                        <div class="drink-item-overlay-info"><span>1</span></div>
+                                                    {% endif %}
+                                                </div>
+                                                <h2>Item cell in cart Name Line 2 here</h2>
+
+                                                <div class="drink-img"
+                                                     style="background-image: url('{{ asset('assets/dist/img/test_imgs/beer' ~ i ~ '.png') }}');"></div>
+                                            </div>
+                                            <div class="drink-data">
+                                                <p>12 Bottles</p>
+
+                                                <p>$11.99</p>
+                                            </div>
+                                        </article>
+                                    {% endfor %}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            {% endfor %}
+
+        </div>
+        <div class="page-actions">
+            <div class="wrapper">
+                <div class="content">
+                    <a href="{{ path('_logout') }}" class="btn btn--white">Log Out</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock body %}
+

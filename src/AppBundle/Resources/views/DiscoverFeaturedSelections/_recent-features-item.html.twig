@@ -1,0 +1,14 @@
+{% set p = ['Maybe some description Three lines max Three lines max Three lines max', 'Maybe some description Two lines'] %}
+{% set h = ['Article Article title Two Lines', 'Article Title one line', 'Article Title Three lines, three lines' ] %}
+
+<div class="box__item box__item--recent-features">
+    <div class="box__item-inner" style="background-image: url('{{ asset('assets/dist/img/collection-placeholder.png') }}')">
+        <div class="box__item-content">
+            <div class="summary">
+                <h3>{{ cycle(h, i) }}</h3>
+                <p>{{ cycle(p, i) }}</p>
+            </div>
+            <a href="#">View more</a>
+        </div>
+    </div>
+</div>

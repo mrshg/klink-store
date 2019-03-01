@@ -1,0 +1,72 @@
+{% if products is defined %}
+    {% set item = products.items[0] %}
+<article class="modal__drink-item">
+    <div class="modal__drink-img">
+        <img src="{{ item.image }}" alt="{{ item.masterVariant.presentation }}" width=110 height=170>
+    </div>
+    <h2 class="modal__title">{{ item.masterVariant.presentation }}</h2>
+
+    <div class="modal__drink-data">
+        <div class="drink-pack-amount">
+            {# {% set options =  variant.options %}
+            {% include 'AppBundle:_Includes:drink_options.html.twig' %} #}
+        </div>
+    {% if app.request.cookies.get('sampleStore') == 'false' %}
+        <div class="drink-price">{{ item.masterVariant.price|price }}</div>
+    {% endif %}
+    {% if app.request.cookies.get('closedStore') != 'true' %}
+
+        <div class="drink-pack-quantity">
+            <button class="btn btn-plus">+</button>
+            <div class="drink-pack-quantity__value">1</div>
+            <button class="btn btn-minus">-</button>
+        </div>
+        {% endif %}
+    </div>
+    <div class="tabs tabs-init tabs--modal">
+        <ul class="tabs__nav tabs-nav-action">
+            <li class="active"><a href="#about">About</a></li>
+            <li><a href="#also-liked">People also liked</a></li>
+        </ul>
+        <div class="tabs__content">
+            <div id="about" class="tabs__content-single tabs-content-action active">
+                <div class="rating">
+                    {% for i in 1..5 %}
+                        <i class="icon" data-icon="q"></i>
+                    {% endfor %}
+                </div>
+                <div class="read-more">
+                    <p>{{ item.description|slice(0, 10) }}
+                        <a class="read-more-show hide" href="#">Read More</a>
+                                    <span class="read-more-content">
+                                        {{ item.description|slice(10) }}
+                                        <a class="read-more-hide hide" href="#">Read Less</a></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="also-liked" class="tabs__content-single tabs-content-action">
+            {% for i in 1..6 %}
+                <article class="cart-item">
+                    <img class="cart-item-img" src="{{ asset('assets/dist/img/test_imgs/beer-small.png') }}" alt=""
+                         width="40" height="55">
+
+                    <div class="cart-item-info">
+                        <h2>Item Name goes here...</h2>
+
+                        <p>Item Size</p>
+
+                        <p>$11.00</p>
+                    </div>
+                    <div class="cart-item-count">
+                        <div class="cart-item-count-count"><span
+                                    class="cart-item-count-increase item-increase--action"></span>2<span
+                                    class="cart-item-count-decrease item-decrease--action"></span></div>
+                    </div>
+                </article>
+            {% endfor %}
+
+        </div>
+    </div>
+</article>
+{% endif %}

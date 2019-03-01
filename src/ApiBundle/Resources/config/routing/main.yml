@@ -1,0 +1,37 @@
+klink_account:
+    resource: "@ApiBundle/Resources/config/routing/account.yml"
+    prefix: /account
+
+klink_user:
+    resource: "@ApiBundle/Resources/config/routing/user.yml"
+    prefix: /user
+
+klink_store:
+    resource: "@ApiBundle/Resources/config/routing/store.yml"
+    prefix: /stores
+
+klink_address:
+    resource: "@ApiBundle/Resources/config/routing/address.yml"
+
+klink_categories:
+    resource: "@ApiBundle/Resources/config/routing/categories.yml"
+    prefix: /categories
+
+klink_credit_cards:
+    resource: "@ApiBundle/Resources/config/routing/credit_card.yml"
+    prefix: /user/credit-cards
+
+klink_product:
+    resource: "@ApiBundle/Resources/config/routing/product.yml"
+    prefix: /products
+
+klink_package:
+    resource: "@ApiBundle/Resources/config/routing/package.yml"
+
+klink_checkout:
+    resource: "@ApiBundle/Resources/config/routing/checkout.yml"
+    prefix: /cart/checkout
+
+klink_cart:
+    resource: "@ApiBundle/Resources/config/routing/cart.yml"
+    prefix: /cart

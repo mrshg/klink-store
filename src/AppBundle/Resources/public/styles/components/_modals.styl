@@ -1,0 +1,418 @@
+//==================
+// Modals general
+//==================
+
+.modal.active
+	opacity:1;
+
+.modal
+	opacity:0;
+	position: relative;
+	width: auto;
+	max-width: 450px;
+	//max-height: 500px;
+	min-height: 300px;
+	overflow: hidden;
+	margin: 20px auto;
+	text-align: center;
+	form
+		input, select,textarea
+			&.error
+				border: 1px solid theme-danger;
+
+	.tabs__nav li
+		width: 100%!important;
+	.btn
+		margin: 0;
+	.content
+		padding: 0;
+	.title--lines-on-side
+		background: #fff;
+	.form--modal
+		margin: 20px 40px;
+		fieldset
+			margin-bottom: baseSpacing;
+	&__header
+		border-radius: 4px 4px 0px 0px;
+		background-color: white;
+		position:relative;
+		padding: 60px 40px 40px 40px;
+		min-height: 40px;
+		&--with-divider
+			padding: (baseSpacing*2) (baseSpacing*4) baseSpacing (baseSpacing*4);
+			border-bottom: 1px solid gray-40;
+		p
+			margin: 10px 0 0 0;
+			font-size: 14px;
+			color: gray-10;
+		h3
+			text-transform: uppercase;
+			font-weight: 700;
+			color: gray-10;
+			margin: 0;
+	&__body
+		background-color: white;
+		overflow: hidden;
+		border-radius:0px 0px 4px 4px;
+		padding: 40px 40px 40px 40px;
+	&__actions
+		background-color: white;
+		padding: baseSpacing;
+		text-align: center;
+		+above(bpSmall)
+			a
+				margin:0 10px;
+	&__footer
+		padding: baseSpacing 0;
+		a
+			text-decoration:none;
+			font-size: 14px;
+		p
+			font-weight: 400;
+			font-size: 14px;
+			a
+				text-decoration: underline;
+
+.modal__logo
+	padding: 10px 0;
+	text-align: center;
+	i
+		font-size: 40px;
+
+
+
+//==================
+// Modals specific
+//==================
+.modal--drink-item
+	.modal__body
+		padding: 00px 40px 40px 40px;
+	.modal
+		&__title
+			color: gray-10;
+			text-transform: none;
+			font-size: 22px;
+			line-height: 1.2;
+			margin: baseSpacing;
+		&__header
+			padding: 10px;
+			text-align: right;
+	.btn--favorite
+		display:inline-block;
+		width: 20px;
+		height: 20px;
+		color: gray-20;
+		font-size: 20px;
+		&:hover
+			color: theme-primary;
+		&:focus
+			i:before
+				color: theme-primary;
+				content: 'p'!important;
+	.rating
+		width: 100%;
+		height: 40px;
+		text-align: center;
+		font-size: 20px;
+		i
+			display: inline-block;
+			&:hover
+				color: theme-primary;
+			&:focus
+				&:before
+					content: 'p'!important;
+	.cart-item
+		border-radius: 4px;
+		border: 1px solid gray-70;
+		text-align: left;
+
+	.modal__drink-img
+		img
+			width: auto;
+			display: block;
+			margin: 0 auto;
+	.drink-price
+		padding: 8px 0 3px 0;
+		font-size: 22px;
+		line-height: 1.1;
+		font-weight: 400;
+		color: theme-secondary;
+
+
+	.drink-pack-amount
+		font-size: 12px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		text-align: center;
+		min-width: 50%;
+		margin: 0 auto;
+		button
+			margin: 0;
+			padding: 5px 10px;
+			line-height: 1;
+			color: theme-primary;
+			display block;
+			font-weight: 400;
+			border-color: theme-primary;
+			border-style: solid;
+			border-width: 1px 1px 1px 0;
+			&:first-child
+				border-width: 1px 1px 1px 1px;
+				border-radius: 4px 0 0 4px;
+			&:last-child
+				border-width: 1px 1px 1px 0;
+				border-radius: 0 4px 4px 0;
+			&.active
+				color: white;
+				background-color: theme-primary;
+			&:only-child
+				border-radius: 4px;
+				border-width:1px;
+				border-radius: 4px;
+	.drink-pack-quantity
+		text-align: center;
+		height: 40px;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.btn
+			margin: 0;
+			display: inline-block;
+			text-align: center;
+			padding: 0;
+			color: gray-50;
+			font-size: 35px;
+			margin: 0 10px;
+			i
+				&:before
+					position: relative
+					top: 4px;
+
+			&:hover
+				color: gray-10;
+		&__value
+			margin: 0;
+			padding: 0;
+			color: gray-20;
+			font-size: 16px;
+			height: 35px;
+			min-width: 40px;
+			border-radius: 6px;
+			font-weight: 700;
+			border: 2px solid gray-50;
+
+	.tabs__content
+		padding: 0 20px 0 20px;
+		font-size: 14px;
+		color: gray-25;
+		position: relative;
+	.tabs__content-single
+		padding: 0 20px;
+
+.modal--setup-address-notlogged
+	.modal__header
+		padding: 40px 40px 20px 40px;
+	.current-location
+		text-align:center;
+		font-size: 14px;
+		margin-bottom: 40px;
+		a
+			text-decoration: underline
+			&:hover, &:focus
+				text-decoration: none
+		i
+			font-size: 18px;
+			position: relative;
+			top: 4px;
+			text-decoration: none
+	.modal__body
+		padding: 0 40px 40px 40px;
+		form
+			.btn
+				margin: 0 auto!important;
+	.modal__footer
+		position: relative;
+		// padding-bottom: 00px;
+
+.modal--store-outofarea
+	.modal__header
+		padding: 60px 40px 20px 40px;
+		a
+			color: gray-20;
+			&:hover
+				text-decoration: none;
+	.modal__header-info
+		padding-top: 10px;
+		font-size: 14px;
+	.map
+		img
+			width: 100%;
+			height: auto;
+
+.modal--choose-credit-card
+	.modal__header
+		padding: 40px 40px 0 40px;
+	.address-list
+		margin-bottom: 20px;
+.modal--update-address
+	.modal__header
+		padding: 40px 40px 0 40px;
+	.modal__body
+		padding: 0 40px 40px 40px;
+	.address-input
+		margin: 30px 20px 20px 20px;
+	.address-list
+		margin-top: 20px;
+		max-height: 200px;
+		overflow-y: auto;
+		&::-webkit-scrollbar
+			-webkit-appearance: none;
+			width: 7px;
+		&::-webkit-scrollbar-thumb
+			border-radius: 4px;
+			background-color: rgba(0, 0, 0, 0.5);
+			box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+		&::-webkit-scrollbar-track
+			background-color: rgba(255, 255, 255, 0.5);
+			border-radius: 8px;
+	.btn
+		margin-top: 20px;
+
+
+.modal--update-info, .modal--update-info-checkout
+	.modal__actions
+		margin: 20px 80px;
+	.modal__body
+		padding: 0 40px 40px 40px;
+
+
+.modal--edit-address
+	.modal__actions
+		margin: 0;
+		padding: 0;
+	.modal__body
+		padding: 0 40px 40px 40px;
+
+.modal--edit-card
+	.modal__actions
+		margin: 20px 80px;
+	.modal__body
+		padding: 0 40px 40px 40px;
+
+
+.modal--verify-address
+	.modal__header-info
+		color: gray-20;
+		font-weight: 600;
+
+.modal--add-address
+	.modal__header
+		padding: 60px 40px 0 40px;
+	.modal__body
+		padding: 0 40px 40px 40px;
+	.modal__actions
+		padding: 0;
+
+
+.modal--update-password
+	.modal__header
+		padding: 60px 40px 0px 40px;
+	.modal__body
+		padding: 0 40px 40px 40px;
+
+.modal--login
+	.modal__header
+		padding: 60px 40px 0px 40px;
+	.modal__body
+		padding: 0 40px 40px 40px;
+	.title--lines-on-side
+		background-color: white;
+	.modal__footer
+		a
+			color: theme-primary;
+
+
+.modal--register
+	.modal__header
+		padding: 60px 40px 0px 40px;
+	.modal__body
+		padding: 0 40px 40px 40px;
+	.form__info
+		max-width: 300px;
+		margin: 10px auto 0 auto;
+	.modal__footer
+		a
+			color: theme-primary;
+
+
+
+.modal--password
+	.modal__header
+		padding: 60px 40px 0px 40px;
+	.modal__body
+		padding: 0 40px 40px 40px;
+
+.modal--update-info, .modal--update-info-checkout
+	.modal__header
+		padding: 60px 40px 0px 40px;
+	.modal__body
+		padding: 0 40px 40px 40px;
+
+.modal--add-card
+	.modal__header
+		padding: 60px 40px 0px 40px;
+	.modal__body
+		padding: 0 40px 40px 40px;
+
+.modal--edit-address
+	.modal__header
+		padding: 60px 40px 0px 40px;
+	.modal__body
+		padding: 0 40px 40px 40px;
+
+.modal--verify-address
+	.modal__actions
+		border-radius:0px 0px 4px 4px;
+	.modal__body
+		padding: 0 40px 40px 40px;
+
+.modal--store-closed
+	.modal__header
+		padding: 60px 40px 20px 40px;
+		a
+			color: gray-20;
+			&:hover
+				text-decoration: none;
+	.modal__header-info
+		padding-top: 10px;
+		font-size: 14px;
+	.modal__body
+		padding: 0;
+	.modal__actions
+		margin:0;
+		.btn
+			white-space: nowrap;
+	.map
+		img
+			width: 100%;
+		height: auto;
+
+.modal--contact
+	.modal__header
+		padding: 40px 40px 0px 40px;
+	.modal__body
+		padding: 40px 40px 20px 40px;
+		p
+			margin-bottom: 20px;
+		a
+			display: block;
+			max-width: 280px;
+			margin: 0 auto 20px auto;
+
+
+.modal--get-app
+	.modal__header
+		padding: 40px 40px 0px 40px;
+

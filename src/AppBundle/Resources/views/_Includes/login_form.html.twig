@@ -1,0 +1,16 @@
+<form class="form form--modal login" action="{{ path('_login_check') }}" method="post" name="login">
+    {% for flashError in app.session.flashbag.get('error') %}
+        <div class="alert">{{ flashError }}</div>
+    {% endfor %}
+    <fieldset>
+        <div class="form__field">
+            <input type="email" placeholder="Email address" name="_username" required />
+        </div>
+        <div class="form__field">
+            <input type="password" placeholder="Password" name="_password" required />
+
+        </div>
+        <a href="#modal-password" class="form__link activate-modal-link" data-effect="mfp-3d-unfold">Forgot your password?</a>
+    </fieldset>
+    <input type="submit" value="Log in"/>
+</form>

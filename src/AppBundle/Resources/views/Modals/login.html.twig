@@ -1,0 +1,19 @@
+<section id="modal-login" class="modal modal--login mfp-with-anim mfp-hide">
+    <div class="content">
+        <div class="modal__header">
+            <h3 class="modal__title">Log in</h3>
+            {#<a href="#" class="facebook-btn">Log in with facebook</a>#}
+        </div>
+            {#<p class="title title--lines-on-side"><span>or</span></p>#}
+        <div class="modal__body login-body">
+            <div class="login-form">
+                {% include 'AppBundle:_Includes:login_form.html.twig' %}
+            </div>
+        </div>
+        <div class="modal__footer">
+            <p>
+                Don't have an account? <a href="#modal-register" class="activate-modal-link" data-effect="mfp-zoom-in">Make one now</a>
+            </p>
+        </div>
+    </div>
+</section>

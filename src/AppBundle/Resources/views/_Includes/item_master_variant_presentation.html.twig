@@ -1,0 +1,17 @@
+{% if item.product_variant is defined %}
+    {% set presenataion = item.product_variant.presentation %}
+{% elseif item.product is defined %}
+    {% set presenataion = item.product.masterVariant.presentation %}
+{% else %}
+    {% set presenataion = item.masterVariant.presentation %}
+{% endif %}
+
+{% if presenataion|preg_match('/\\d{4}$/') %}
+    {% if presenataion|length > 35 %}
+        {{ presenataion|slice(0, 31) ~ '...' ~  presenataion|slice(presenataion|length-4, presenataion|length) }}
+    {% else %}
+        {{ presenataion }}
+    {% endif %}
+{% else %}
+    {{ presenataion|length > 35 ? presenataion|slice(0, 35) ~ '...' : presenataion }}
+{% endif %}

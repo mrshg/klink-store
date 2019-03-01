@@ -1,0 +1,310 @@
+.page-wrap
+	transition: all .6s ease;
+	&.blur
+		filter: blur(10px);
+
+hr
+	border-style: none;
+	border-width: 0;
+	height: 1px;
+	background-color: rgba(white, 0.6);
+	margin: 20px 0;
+
+.clearfix
+	clearfix();
+.hide
+	display: none;
+
+.blur-bg
+	background-position: center top;
+	background-size: cover;
+	position: absolute;
+	pointer-events: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+
+
+.billboard
+	//@include radial-gradient(#d2941f, #452f06);
+	background: radial-gradient(at top left, #d2941f, #452f06);
+	padding: 20px;
+	height: 290px;
+	position: relative;
+	.wrapper
+		max-width: 500px;
+
+	img
+		display: block;
+		margin: 0 auto;
+		width: 100%;
+		height: auto;
+
+.title--lines-on-side
+	overflow: hidden;
+	clear: both;
+	position: relative;
+	display: block;
+	font-size: 12px;
+	line-height: 18px;
+	height: 18px;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: #808080;
+	text-align: center;
+	span
+		padding: 0 8px;
+		position: relative;
+		display: inline-block;
+		background-color: #fff;
+		z-index: 100;
+
+	&:before
+		position: absolute;
+		content: '';
+		display: block;
+		top: 50%;
+		margin-top: -1px;
+		height: 1px;
+		background-color: rgba(0, 0, 0, 0.25);
+		left: 0;
+		right: 0;
+
+.working-hours
+	background: transparent url("../img/map-bg.jpg") no-repeat center center;
+	background-size: cover;
+	padding: 7px 20px;
+	min-height: 200px;
+	margin: 0;
+	.info
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin-top: -20px;
+		color: white;
+	ul
+		display inline-block;
+		width: auto;
+		margin: 0 auto;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		// justify-content: center;
+		// align-items: center;
+		// align-content: space-between;
+		font-size: 10px;
+		li
+			width: 100%;
+			padding: 2px 0;
+			text-align: left;
+			font-weight: 400;
+			color: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			align-content: space-between;
+			flex: 1;
+			strong
+				// display inline-block;
+				// width: 100px;
+				flex: 1;
+				text-align:left;
+				font-style: normal;
+				font-weight: 600;
+				// padding-right: 10px;
+			span
+				display: inline-block;
+				font-size: 13px;
+				flex: 2;
+				line-height: 1.2;
+				text-align: right;
+				margin: 0 5px;
+			&.today
+				color: theme-primary;
+
+.modal
+	ul.working-hours
+		display inline-block;
+		width: 100%;
+		height: 200px;
+		margin: 0;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		li
+			display block;
+			width: 100%;
+			padding: 2px 0;
+			text-align: left;
+			font-size: 12px;
+			font-weight: 400;
+			font-size: 13px;
+			color: white;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			align-content: space-between;
+			flex: 1;
+			strong
+				// display inline-block;
+				// width: 100px;
+				font-size: 13px;
+				flex: 1;
+				text-align:left;
+				font-style: normal;
+				font-weight: 600;
+				padding-right: 10px;
+			span
+				font-size: 13px;
+				flex: 2;
+				line-height: 1;
+				text-align: right;
+				// display: inline-block
+			&.today
+				color: theme-primary;
+
+.page-actions
+	background-color: gray-10;
+	text-align: center;
+	color: white;
+	img
+		display: block;
+		margin: 0 auto;
+		width: auto;
+	> div
+		padding: (baseSpacing * 2) baseSpacing;
+
+.address-list
+	text-align: left;
+	font-size: 12px;
+	font-weight: 600;
+	padding-bottom: 5px;
+	> a
+		display block;
+		padding: (baseSpacing / 2) baseSpacing;
+		strong
+			color: black;
+	&__title
+		color: gray-20;
+		text-transform: uppercase;
+	ul
+		margin: 0;
+		padding: (baseSpacing / 2) baseSpacing;
+		border-top: 1px solid gray-40;
+		strong
+			color: black;
+			display: block;
+		> li
+			padding: 5px 0 5px 0;
+			border-bottom: 1px solid gray-40;
+			&:last-child
+				padding: 5px 0 0 0;
+				border-bottom: 0;
+	input
+		visibility: hidden;
+		display none;
+
+.credit-card-list
+	text-align: left;
+	font-size: 12px;
+	font-weight: 600;
+	padding-bottom: 5px;
+	> a
+		display block;
+		padding: (baseSpacing / 2) baseSpacing;
+		strong
+			color: black;
+	&__title
+		color: gray-20;
+		text-transform: uppercase;
+	ul
+		margin: 0 0 40px 0;
+		padding: 20px;
+		border-top: 1px solid gray-40;
+		height: 200px;
+		overflow-x: hidden;
+		overflow-y: auto;
+		>li
+			position: relative;
+			border-bottom: 1px solid gray-70;
+			padding: 10px 0;
+			>label
+				padding-left:50px;
+				width: 100%;
+			>input
+				margin: 0;
+				padding: 0;
+				display: block;
+				position: absolute;
+				width: 30px;
+				height: 30px;
+				top: 10px;
+				left: 0;
+				z-index: 1;
+				&::before
+					font-family: "klink-delivery" !important;
+					font-style: normal !important;
+					font-weight: normal !important;
+					font-variant: normal !important;
+					text-transform: none !important;
+					speak: none;
+					line-height: 30px;
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					position: absolute;
+					width: 30px;
+					height: 30px;
+					top: 0;
+					left: 0;
+					content: "";
+					font-size: 22px;
+					color: #333;
+					z-index: 2;
+					background-color: #f0f0f0;
+					border: 1px solid #aaa;
+					border-radius: 30px;
+					transition-duration: 0.3s;
+					cursor: pointer;
+				&:hover::before, &:active::before, &:focus::before
+					border: 1px solid #333;
+				&.btn--is-chosen
+					&:before
+						content: "\7a";
+
+
+.read-more
+	margin-bottom: 20px;
+	transition: all .3s ease;
+	&-content
+		transition: all .3s ease;
+	p
+		transition: all .3s ease;
+
+.errors, .alert
+	display: block;
+	margin-bottom: 20px;
+	font-size: 12px;
+	color: theme-danger;
+	font-weight: 700;
+
+.messages
+	margin-bottom: 20px;
+	font-size: 12px;
+	color: theme-success;
+	font-weight: 700;
+
+.no-favorites
+	min-height: 300px;
+	text-align: center;
+	font-size: 28px;
+	padding: 40px 0;
+
+
+.no-products
+	font-size: 16px!important;
+	padding: 0 20px;
+

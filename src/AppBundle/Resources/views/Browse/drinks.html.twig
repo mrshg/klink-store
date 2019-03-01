@@ -1,0 +1,62 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+
+    <div class="page page--browse-drinks">
+        {% include 'AppBundle:_Includes:browse-navigation.html.twig' %}
+
+        <div class="main-wrapper browse-drinks-main-wrapper">
+            <div class="browse-drinks-filters-and-sorting-wrapper">
+                <section class="browse-drinks-filters-and-sorting">
+                    <header>
+                        <button class="filter-close filtering--action-close"><span class="line"></span></button>
+                        <button class="browse-drinks-all active">Browse All {% if(categoryName is defined) %}{{ categoryName }}{% endif %}</button>
+                    </header>
+
+                    {% if subcategories is defined %}
+                        {% if subcategories is not empty %}
+                        <div class="browse-drinks-filters">
+                            <ul>
+                                {% for subcategory in subcategories %}
+                                    <li><a data-id="{{ subcategory.id }}">{{ subcategory.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    {% endif %}
+                    {#<div class="browse-drinks-sorting">#}
+                        {#<ul>#}
+                            {#<li><a href="#" class="active">A-Z</a></li>#}
+                            {#<li><a href="#">$ Low-High</a></li>#}
+                            {#<li><a href="#">Rating</a></li>#}
+                        {#</ul>#}
+                    {#</div>#}
+                </section>
+                {#<div class="browse-drinks-filters-and-sorting-addendum">#}
+                    {#<a href="#modal-request-drink">Can’t find a favorite?</a>#}
+                {#</div>#}
+            </div>
+            <a href="#" class="back-to-the-top"></a>
+
+            <section class="browse-drinks-main-section">
+                <div class="drink-list">
+                    {% include 'AppBundle:_Includes:browse-drink-item.html.twig' %}
+                </div>
+                {% if products.items is defined %}
+                    {% if hasMore == true %}
+                        <div class="load-more-wrap">
+
+                            <div class="load-more btn btn--link"
+                                    data-page="1">
+                                    Loading ...
+                            </div>
+                        </div>
+                    {% endif %}
+                {% else %}
+                    <p>There are no products available.</p>
+                {% endif %}
+            </section>
+        </div>
+
+    </div>
+{% endblock body %}

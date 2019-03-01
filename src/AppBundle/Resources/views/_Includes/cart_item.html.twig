@@ -1,0 +1,16 @@
+{% if item is defined %}
+<article class="cart-item">
+  {# todo change image to thumbnail_path #}
+  <div class="cart-item-thumb" style="background-image: url('{{ item.image  }}')"></div>
+  <div class="cart-item-info">
+    <h2>{{ item.name }}</h2>
+    <p>{{ item.unit_price|price }}</p>
+  </div>
+  <div class="cart-item-count">
+    <div class="cart-item-count-count">
+      <span class="cart-item-count-increase item-increase--action" data-id="{{ item.variant_id }}"></span>
+      <span class="cart-item-quantity item-quantity--action">{{ item.quantity }}</span>
+      <span class="cart-item-count-decrease item-decrease--action" data-id="{{ item.id }}"></span></div>
+  </div>
+</article>
+{% endif %}

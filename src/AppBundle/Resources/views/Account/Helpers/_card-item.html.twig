@@ -1,0 +1,17 @@
+<article class="card-item">
+    <div class="content">
+        <div class="card-item__data">
+            <div class="center">
+                <h2>Personal card</h2>
+                <p>{{ credit_card.brand }}</p>
+                <p>**** **** **** {{ credit_card.last4digits }}</p>
+            </div>
+        </div>
+        <div class="card-item__actions">
+            {# <div class="btn-group"> #}
+                <button type="button" class="btn btn--gray-hasborder default-card-action{% if credit_card.default == true %} btn--is-chosen{% endif %}" data-id="{{ credit_card.id }}">Default</button>
+                <a href="#modal-delete-card" class="btn btn--gray-hasborder activate-modal-link" data-id="{{ credit_card.id }}" data-effect="mfp-zoom-in">Delete</a>
+            {# </div> #}
+        </div>
+    </div>
+</article>

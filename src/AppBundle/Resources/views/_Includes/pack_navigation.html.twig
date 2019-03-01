@@ -1,0 +1,22 @@
+<section class="navigation-breadcrumbs">
+    <div class="wrapper">
+        <div class="content">
+            <nav>
+                <ul class="navigation-breadcrumbs__items">
+                    <li><a href="{{ path('_discover_index') }}">Host Collections</a>
+                    </li>
+                    {% if collection is defined %}
+                        <li>
+                            <a href="{{ path('_discover_single_collection', {'collectionId':collection.id}) }}">{{ collection.name }}</a>
+                        </li>
+                        {% if pack is defined %}
+                            <li>
+                                <a href="{{ path('_discover_pack', {'packId': pack.id, 'collectionId': collection.id}) }}">{{ pack.name }}</a>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>

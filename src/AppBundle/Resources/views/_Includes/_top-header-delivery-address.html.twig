@@ -1,0 +1,34 @@
+{#{% set deliveryAddress = app.request.cookies.get('defaultAddress')|json_decode %}#}
+
+<button type="button" class="nav-address__trigger">
+    <div class="header-customer-address-container">
+          <span>
+          <strong>DELIVERING TO</strong><br>
+          <span class="header-address--action"></span><br>
+        <i class="icon icon-address-location" data-icon="r"></i>
+    </div>
+</button>
+<div class="tabs-init dropdown address-dropdown">
+    <div class="address-dropdown__header tabs-nav-action">
+        <ul>
+            <li class="active"><a href="#map">Map</a></li>
+            <li><a href="#store-hours">Hours</a></li>
+        </ul>
+    </div>
+    <div class="address-dropdown__body">
+        <div id="map" class="tabs__content-single tabs-content-action active">
+        </div>
+        <div id="store-hours" class="working-hours tabs__content-single tabs-content-action">
+            <div class="store-hours__map-bg"></div>
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+    <div class="address-dropdown__footer tabs-nav-action">
+        {% if app.user %}
+            <a href="#modal-update-address" class="activate-modal-link form__link" data-effect="mfp-zoom-in">Change address</a>
+        {% else %}
+            <a href="#initial-address-setup-notlogged" class="activate-modal-link form__link" id="addAddress" data-effect="mfp-zoom-in">Change address</a>
+        {% endif %}    </div>
+</div>

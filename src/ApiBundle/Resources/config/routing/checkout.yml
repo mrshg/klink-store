@@ -1,0 +1,39 @@
+_put_checkout_address:
+    pattern: /address/
+    defaults: { _controller: ApiBundle:Checkout:putCheckoutAddress }
+    methods: [POST]
+
+_get_checkout_shipping:
+    pattern: /shipping/
+    defaults: { _controller: ApiBundle:Checkout:getCheckoutShipping }
+    methods: [GET]
+
+_put_checkout_shipping:
+    pattern: /shipping/
+    defaults: { _controller: ApiBundle:Checkout:putCheckoutShipping }
+    methods: [POST]
+
+_get_checkout_payment:
+    pattern: /payment/
+    defaults: { _controller: ApiBundle:Checkout:getCheckoutPayment }
+    methods: [GET]
+
+_put_checkout_payment:
+    pattern: /payment/
+    defaults: { _controller: ApiBundle:Checkout:putCheckoutPayment }
+    methods: [POST]
+
+_get_checkout_finalize:
+    pattern: /finalize/
+    defaults: { _controller: ApiBundle:Checkout:getCheckoutFinalize }
+    methods: [GET]
+
+_put_checkout_authorize:
+    pattern: /authorize/
+    defaults: { _controller: ApiBundle:Checkout:putCheckoutAuthorize }
+    methods: [POST]
+
+_put_checkout_capture:
+    pattern: /capture/
+    defaults: { _controller: ApiBundle:Checkout:putCheckoutCapture }
+    methods: [POST]

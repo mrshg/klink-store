@@ -1,0 +1,13 @@
+{% if pack.id is defined %}
+<div class="box__item box__item--pack" style="background-color:#333;">
+    <div class="box__item-content">
+	      <div class="box__item-content-inner">
+	  				<div class="bg-image" {% if pack.thumbnail is defined %} style="background-image: url('{{ pack.thumbnail }}')"{% endif %}></div>
+						<div class="pack-name" style="background-color: #333">
+	          	<h3>{{ pack.name|length < 30 ? pack.name : pack.name|slice(0, 30) ~ '...' }} </h3>
+						</div>
+	      </div>
+    </div>
+    <a href="{{ path('_discover_pack', {'packId': pack.id, 'collectionId': collection.id}) }}">View more</a>
+</div>
+{% endif %}

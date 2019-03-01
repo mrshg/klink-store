@@ -1,0 +1,12 @@
+{% extends 'AppBundle::base.html.twig' %}
+{% block body %}
+    <div class="page page--login">
+    <div class="wrapper">
+        <div class="content">
+            <div class="login-body">
+                <h3>Log in</h3>
+                {% include 'AppBundle:_Includes:login_form_not_popup.html.twig' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

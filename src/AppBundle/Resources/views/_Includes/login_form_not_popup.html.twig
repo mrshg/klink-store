@@ -1,0 +1,42 @@
+<form class="form form--modal login" action="{{ path('_login_check') }}" method="post" name="login">
+    {% for flashError in app.session.flashbag.get('error') %}
+        <div class="alert">{{ flashError }}</div>
+    {% endfor %}
+    <fieldset>
+        <input type="text" placeholder="Email address" name="_username" />
+        <input type="password" placeholder="Password" name="_password" />
+        <a href="#modal-password" class="activate-modal-link" data-effect="mfp-zoom-in">Forgot your password?</a>
+        <input type="submit" value="Log in"/>
+        <a href="#modal-register" class="activate-modal-link" data-effect="mfp-zoom-in">Sign Up</a>
+    </fieldset>
+</form>
+{#<script>#}
+    {#$('form.login').submit(function(e) {#}
+        {#e.preventDefault();#}
+
+        {#$.ajax({#}
+            {#type: "post",#}
+            {#url: '{{ url('_login_check') }}',#}
+            {#data: $(this).serialize(),#}
+            {#success: function(data) {#}
+                {#console.log(data.errors);#}
+                {#if(data.errors.length != 0) {#}
+                    {#displayLoginErrors(data.errors);#}
+                {#}#}
+                {#if(data.messages.length != 0) {#}
+                    {#displayLoginMessages(data.messages);#}
+                {#}#}
+
+            {#}#}
+        {#})#}
+    {#});#}
+
+    {#function displayLoginErrors(errors) {#}
+
+        {#$('.login-form').prepend(errors);#}
+    {#}#}
+
+    {#function displayLoginMessages(messages) {#}
+        {#$('.login-body').html(messages);#}
+    {#}#}
+{#</script>#}

@@ -1,0 +1,22 @@
+<section id="modal-verify-address" class="modal modal--verify-address mfp-with-anim mfp-hide">
+    <div class="content">
+        <div class="modal__header">
+            <h3 class="modal__title">Is this your delivery address?</h3>
+
+            <p class="modal__header-info">
+            </p>
+            {% if app.user %}
+            <a href="#modal-update-address" class="activate-modal-link form__link" data-effect="mfp-zoom-in">Change address</a>
+            {% else %}
+                <a href="#initial-address-setup-notlogged" class="activate-modal-link form__link" data-effect="mfp-zoom-in">Change address</a>
+            {% endif %}
+        </div>
+        <div class="map"></div>
+        <div class="modal__actions">
+            <a href="#" class="btn btn--primary save-address" onclick="addressComp.saveAddress($(this))">Yes</a>
+        </div>
+        <div class="modal__footer">
+            {% include 'AppBundle:Modals:_modal-footer-nav.html.twig' %}
+        </div>
+    </div>
+</section>

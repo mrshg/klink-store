@@ -1,0 +1,54 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    {% include 'AppBundle:_Includes:navigation-secondary.html.twig' %}
+    <div class="page page--single-article">
+        {% include 'AppBundle:SingleArticle:_hero.html.twig' %}
+        <div class="page__content">
+            {% include 'AppBundle:SingleArticle:_content.html.twig' %}
+            <div class="article-featured__drinks">
+                <div class="wrapper">
+                    <h3 class="article-featured__title title title--lines-on-side"><span>Order the drink</span></h3>
+
+                    <div class="content">
+                        {% for i in 1..3 %}
+                            {% include 'AppBundle:_Includes:drink-item.html.twig' %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {#<section class="article-featured__articles box clearfix">#}
+                {#<div class="wrapper">#}
+                    {#<div class="content">#}
+                        {#<div class="box__header">#}
+                            {#<div class="left">#}
+                                {#<h2 class="box__header-title">Recent features</h2>#}
+                            {#</div>#}
+                            {#<div class="right">#}
+                                {#<a href="#">See all<i class="icon icon-arrow"></i></a>#}
+                            {#</div>#}
+                        {#</div>#}
+                        {#<div class="box__list">#}
+                            {#{% for i in 1..3 %}#}
+                                {#<div class="box__item box__item--recent-features">#}
+                                    {#<div class="box__item-inner" style="background-image: url('{{ asset('assets/dist/img/test_imgs/test-bg-img.jpg') }}')">#}
+                                        {#<div class="box__item-content">#}
+                                            {#<div class="summary">#}
+                                                {#<h3>Article Article title two lines</h3>#}
+                                            {#</div>#}
+                                            {#<a href="#">View more</a>#}
+                                        {#</div>#}
+                                    {#</div>#}
+                                {#</div>#}
+                            {#{% endfor %}#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</section>#}
+
+        </div>
+
+    </div>
+
+
+{% endblock body %}

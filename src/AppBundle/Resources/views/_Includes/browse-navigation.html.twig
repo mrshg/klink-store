@@ -1,0 +1,29 @@
+<section class="navigation-fixed navigation-secondary browse-navigation">
+    <div class="blur-bg"></div>
+    <div class="wrapper">
+        <div class="content">
+            <nav>
+                <ul class="navigation-secondary__slider">
+                    {% if app.request.attributes.get('_route') == '_browse_drinks' %}
+                    <li {% if app.request.attributes.get('_route') == '_browse_drinks' %}class="active"{% endif %}>
+                        <a href="{{ path('_browse_drinks') }}">Overview</a>
+                    </li>
+                    {% endif %}
+                    {% for category in categories %}
+                    <li data-id="{{ category.id }}" class="browse-drinks-category{% if app.request.server.get("REQUEST_URI") == assetUrl ~ 'browse/' ~ category.id %} active{% endif %}">
+                        <a href="{{ path('_browse_drinks_category', {categoryId: category.id}) }}">{{ category.name }}</a>
+                    </li>
+                    {% endfor %}
+                    <li {% if app.request.attributes.get('_route') == '_browse_all' %}class="active"{% endif %}>
+                        <a href="{{ path('_browse_all') }}">All</a>
+                    </li>
+                </ul>
+            </nav>
+            {% if (app.request.get('_route') == '_browse_drinks_category') or (app.request.get('_route') == '_browse_all') %}
+            <div class="browse-filter">
+                <button class="filtering--action" type="button"><i class="icon" data-icon="y"></i>Open filters</button>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,546 @@
+.top-header
+	position: fixed;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: headerHeight;
+	background-color: #1e1e1e;
+	color: #808080;
+	font-weight: 400;
+	z-index: 9998;
+	+above(headerTabletBreakpoint)
+		z-index: 9999;
+	a
+		color: #808080;
+.top-header-container
+	height: headerHeight
+	display: flex;
+
+.site-logo
+	float: left;
+	display: block;
+	height: headerHeight;
+	width: 63px;
+	background-color: theme-primary;
+	text-align: center;
+	+below(bpMedium)
+		display: none;
+	i
+		display: inline-block;
+		padding-top: 9px;
+		color: white;
+		font-size: 45px;
+.top-header-left
+	float: left;
+	height: headerHeight;
+	position: relative;
+	flex: 1;
+.search-form-wrapper
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	&.active
+		.search-form
+			width: 100%;
+.search-form
+	width: 0;
+	overflow: hidden;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 100;
+	margin: 0;
+	padding: 0;
+	transition: width 0.3s ease;
+.action--close-search
+	display: block;
+	position: absolute;
+	left: 0;
+	width: 40px;
+	top: 0;
+	bottom: 0;
+	.icon
+		display: block;
+		position: absolute;
+		left: 16px;
+		top: 0;
+		bottom: 0;
+		width: 14px;
+		font-size: 20px;
+		&:before
+			line-height: 64px;
+
+.search-form input[type="text"]
+	appearance: none !important;
+	box-shadow: none;
+	outline: none;
+	border: 0;
+	background-color: #fff;
+	margin: 0;
+	height: 100%;
+	padding: 22px 20px 18px 40px;
+	border-radius: 0;
+	color: #808080;
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 1.2;
+	text-align: left;
+	+below(bpSmall)
+		font-size: 14px;
+		line-height: 16px;
+
+	&:focus { outline: none; }
+
+
+	placeholderColor = #808080;
+	&::-webkit-input-placeholder { color: placeholderColor; }
+	&:-moz-placeholder { color: placeholderColor; }
+	&::-moz-placeholder { color: placeholderColor; }
+	&:-ms-input-placeholder { color: placeholderColor; }
+
+
+.search-btn
+	display: block;
+	float: left;
+	font-size: 21px;
+	line-height: 1;
+	position: relative;
+	padding: 22px 34px 18px 38px;
+	height: 100%;
+	border-right: 1px solid #535353;
+	+below(bpMedium)
+		padding: 26px;
+	+below(bpXSmall)
+		padding: 20px;
+	.icon
+		display: block;
+		position: absolute;
+		left: 16px;
+		top: 0;
+		bottom: 0;
+		width: 14px;
+		font-size: 20px;
+		+below(bpXSmall)
+			left: 10px;
+		&:before
+			line-height: 64px;
+	span
+		+below(bpMedium)
+			display: none;
+.main-nav
+	float: left;
+	height: headerHeight;
+	&>ul
+		&>li
+			float: left;
+			font-size: 21px;
+			text-transform: uppercase;
+			padding-left: 30px;
+			position: relative;
+			+below(bpMedium)
+				font-size: 18px;
+				padding-left: 10px;
+			+below(bpXSmall)
+				font-size: 13px;
+
+			&:hover .dropdown
+				display: block;
+				animation: fadeIn 0.7s;
+			&>a
+				display: block;
+				line-height: 1;
+				padding: 22px 0 19px 0;
+				&:hover
+					color: white;
+				&.active
+					color: white;
+	ul
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+.submenu
+	display: none;
+
+.top-header-right
+	float: right;
+	border-left: 1px solid #535353;
+	height: headerHeight;
+
+.nav-extra
+	float: left;
+	font-size: 12px;
+	line-height: headerHeight;
+	border-right: 1px solid #535353;
+	+below(1300px)
+		display: none;
+	a
+		color: theme-primary;
+		padding: 0 28px;
+
+.nav-more
+	float: left;
+	position: relative;
+	height: headerHeight;
+
+.button-dots
+	display: block;
+	width: 60px;
+	height: headerHeight;
+	position: relative;
+	border-right: 1px solid #535353;
+	+below(bpXSmall)
+		width: 45px;
+
+	.dot, .dot:before, .dot:after
+		display: block;
+		position: absolute;
+		width: 6px;
+		height: 6px;
+		background-color: transparent;
+		border: 1px solid rgba(255,255,255,0.5);
+		border-radius: 50%;
+	.dot
+		top: 50%;
+		margin-top: -3px;
+		left: 50%;
+		margin-left: -3px;
+		//position: relative;
+		//top: -4px;
+		&:before, &:after
+			content: "";
+			top: -1px;
+		&:before
+			left: -12px;
+		&:after
+			left: 10px;
+	+below(bpXSmall)
+		border-right: 0;
+
+.header-customer-address
+	position: relative;
+	float: left;
+	padding: 0;
+	font-size: 10px;
+	font-weight: 400;
+	line-height: 12px;
+	text-decoration: none;
+	color: gray;
+	+below(bpLarge)
+		padding: 0 10px 0 10px;
+	&:after
+		content: '';
+		position: absolute;
+		display: block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 7px 6.5px 0 6.5px;
+		border-color: #808080 transparent transparent transparent;
+		right: 22px;
+		top: 30px;
+		margin-top: -3px;
+		opacity: 0.5;
+		+below(bpLarge)
+			display: none;
+	.working-hours
+		min-height: 250px;
+		position: relative;
+		background: none !important;
+		.store-hours__map-bg
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 8;
+			overflow: hidden;
+			background-color: rgba(black, 1);
+			img
+				transform: scale(1.1);
+				opacity: 0.5;
+				filter: blur(5px)
+		ul
+			position: relative;
+			z-index: 9;
+			font-size: 12px;
+	.address-dropdown
+		display: none;
+		text-align: center;
+		width: 300px;
+		margin-left: -150px;
+		position: absolute;
+		font-size: 12px;
+		font-weight: 300;
+		line-height: 24px;
+		padding-top: 7px;
+		top: 100%;
+		&__body
+			background-color: gray-10;
+			height: 250px;
+			overflow: hidden;
+			#map
+				width: 300px;
+				height: 250px;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+		&__header
+			background-color: gray-10;
+			border-radius: 6px 6px 0 0;
+			text-transform: uppercase;
+			ul
+				margin: 0;
+				padding:0;
+				position: relative;
+				width: 100%;
+				text-align: center;
+				display: flex;
+				flex-direction: row;
+				li
+					flex: 1;
+					border-bottom: 3px solid transparent;
+					a
+						padding: 15px 0 10px 0;
+				li.active
+					border-bottom: 3px solid theme-primary;
+			&:before
+				content: '';
+				position: absolute;
+				top: 3px;
+				left: 50%;
+				margin-left: -5px;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 5px 5px 5px;
+				border-color: transparent transparent #1e1e1e transparent;
+			a
+				display: block;
+				line-height: 1;
+				//padding: 10px 0 5px 0;
+				color: white;
+		&__footer
+			background-color: gray-10;
+			border-radius: 0 0 6px 6px;
+			padding: 10px 0;
+			a
+				color: white;
+
+	&:hover
+		.address-dropdown
+			display:block;
+			-webkit-animation: fadeIn 0.7s;
+			animation: fadeIn 0.7s;
+
+.header-customer-address-container
+	height: headerHeight;
+	// display: flex;
+	// align-items: center;
+	text-align: center;
+	padding: 19px 0 0 0;
+	+above(bpLarge)
+		min-width: 100px;
+		padding: 13px 45px 0 33px;
+	> span
+		display: block
+		+below(bpLarge)
+			display: none;
+	strong
+		font-weight: 400;
+		color: white!important;
+		text-decoration: underline;
+.header-customer-address
+	.address-list
+		color: white;
+		ul
+			margin: 0;
+			padding: 10px 20px;
+			border-top: 1px solid gray-20;
+		ul > li
+			border-bottom: 1px solid gray-20;
+		label
+			line-height: 1.2;
+		&__title
+			color: gray-40;
+		strong
+			color: white;
+	+below(bpXSmall)
+		display: none;
+
+.icon-address-location
+	display: inline-block;
+	text-align: center;
+	font-size:28px;
+	+above(bpLarge)
+		display: none;
+
+
+.cart-summary
+	float: left;
+	padding: 0 30px 0 23px;
+	border-left: 1px solid #535353;
+	width: cartWidth;
+	cursor: pointer;
+	+below(headerTabletBreakpoint)
+		width: auto;
+	+below(bpXSmall)
+		padding: 0 15px 0 15px;
+
+
+.cart-summary-container
+	height: headerHeight;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	i
+		color: white;
+		font-size: 22px;
+		display: block;
+		padding-top: 5px;
+	.icon-arrow
+		padding-top: 0;
+		position: relative;
+		width: 20px;
+		height: 20px;
+		color: gray-30;
+		right: 0;
+		top: 2px;
+		+below(headerTabletBreakpoint)
+			display: none;
+		.line
+			display: block;
+			background-color: transparent;
+			width: 20px;
+			height: 20px;
+			transition: all .3s ease;
+			position: relative;
+			&::after, &::before
+				content: '';
+				position: absolute;
+				top: 50%;
+				margin-top: -1px;
+				display: inline-block;
+				height: 2px;
+				width: 15px;
+				background: #fff;
+				backface-visibility: hidden;
+			&::before
+				transform: rotate(45deg);
+			&::after
+				transform: rotate(-45deg);
+			&::after
+				transform-origin: 9px 50% 50%;
+			&::before, &::after
+				width: 15px;
+				transform-origin: 50% 50% 50%;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+				transition: width 0.2s, transform 0.2s;
+			&::before
+				right: 9px;
+			&::after
+				right: 0px;
+
+
+.cart-active, .cart-active-saved
+	.icon-arrow
+		.line
+			&::before, &:after
+				width: 20px;
+			&::before
+				transform: translateX(9px) rotate(-45deg);
+			&::after
+				transform: translateX(0px) rotate(45deg);
+.cart-summary__value
+	background-color: rgba(255,255,255,0.15);
+	border-radius: 5px;
+	font-size: 23px;
+	color: #fff;
+	line-height: 1;
+	padding: 5px 22px 3px 22px;
+	+below(headerTabletBreakpoint)
+		display: none;
+
+
+.dropdown
+	display: none;
+	position: absolute;
+	left: 50%;
+	padding-top: 7px;
+	text-transform: none;
+	> ul
+		position: relative;
+		width: 100%;
+		background-color: #1e1e1e;
+		border-radius: 6px;
+		font-size: 12px;
+		font-weight: 300;
+		line-height: 24px;
+		padding: 15px 0;
+		&:before
+			content: '';
+			position: absolute;
+			top: -4px;
+			left: 50%;
+			margin-left: -5px;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 5px 5px 5px;
+			border-color: transparent transparent #1e1e1e transparent;
+
+		a
+			display: block;
+			padding: 0 25px;
+			&.dropdown__item--accent
+				 color: theme-primary;
+			&:hover
+				color: #fff;
+				background-color: rgba(#fff, 0.5);
+
+browseDropdownWidth = 120px;
+.browse-dropdown
+	text-align: center;
+	width: browseDropdownWidth;
+	margin-left: -44px;
+
+moreDropdownWidth = 164px;
+.more-dropdown
+	padding-top: 0;
+	width: moreDropdownWidth;
+	margin-left: -(moreDropdownWidth / 2);
+	margin-top: -5px;
+	+below(bpMedium)
+		margin-left: -(moreDropdownWidth);
+		ul:before
+			left: 90%;
+
+.nav-more:hover
+	.more-dropdown
+		display: block;
+		-webkit-animation: fadeIn 0.7s;
+		animation: fadeIn 0.7s;
+
+
+
+
+
+// Reposition dropdown When item with dropdown is last child in header
+.top-header-right
+	>div:last-child
+		.dropdown
+			margin-left: 0;
+			left: auto;
+			right: 15px;
+			.address-dropdown__header:before
+				left:95%;
+
+
+

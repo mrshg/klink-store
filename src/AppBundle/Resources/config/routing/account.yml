@@ -1,0 +1,15 @@
+_account_overview:
+    pattern: /overview
+    defaults: { _controller: AppBundle:Account:accountOverview }
+
+_account_orders:
+    pattern: /orders
+    defaults: { _controller: AppBundle:Account:accountOrders }
+
+_account_favorites:
+    pattern: /favorites
+    defaults: { _controller: AppBundle:Account:accountFavorites }
+
+_account_klink_credit:
+    pattern: /klink-credit
+    defaults: { _controller: AppBundle:Account:accountKlinkCredit }

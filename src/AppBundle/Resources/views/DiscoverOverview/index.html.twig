@@ -1,0 +1,77 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <div class="page page--discover">
+    {% include 'AppBundle::_Includes/billboard.html.twig' %}
+
+    <div class="page__content">
+        {#{% include 'AppBundle:_Includes:navigation-secondary.html.twig' %}#}
+    {#{% if items is defined %}#}
+        {#<section class="box-slider clearfix">#}
+            {#<div class="wrapper">#}
+                {#<div class="content">#}
+                    {#<div class="box__header">#}
+                        {#<div class="left">#}
+                            {#<h2 class="box__header-title">Today's featured box</h2>#}
+                        {#</div>#}
+                        {#<div class="right">#}
+                            {#<div class="featured-selection-slider-arrows"></div>#}
+                        {#</div>#}
+                    {#</div>#}
+                        {#<div class="box__list today-featured-slider">#}
+                        {#{% for item in items %}#}
+                                {#<div class="slide">#}
+                                    {#{% include 'AppBundle:DiscoverOverview:_pack-item.html.twig' %}#}
+                                {#</div>#}
+                        {#{% endfor %}#}
+                        {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</section>#}
+        {#{% endif %}#}
+
+        {#<section class="box box--recent-features clearfix">#}
+            {#<div class="wrapper">#}
+                {#<div class="content">#}
+                    {#<div class="box__header">#}
+                        {#<div class="left">#}
+                            {#<h2 class="box__header-title">Recent features</h2>#}
+                        {#</div>#}
+                        {#<div class="right">#}
+                            {#<a href="#">See all<i class="icon icon-arrow"></i></a>#}
+                        {#</div>#}
+                    {#</div>#}
+                    {#<div class="box__list">#}
+                        {#{% for i in 1..3 %}#}
+                            {#<div class="box__item box__item--recent-features">#}
+                                {#<div class="box__item-inner" style="background-image: url('{{ asset('assets/dist/img/test_imgs/test-bg-img.jpg') }}')">#}
+                                    {#<div class="box__item-content">#}
+                                        {#<div class="summary">#}
+                                            {#<h3>Article Article title two lines</h3>#}
+                                        {#</div>#}
+                                        {#<a href="#">View more</a>#}
+                                    {#</div>#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#{% endfor %}#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</section>#}
+
+        {% if collections is defined %}
+            {% if collections is defined %}
+                <section class="box clearfix">
+                    <div class="wrapper">
+                        <div class="content">
+                            {% for collection in collections %}
+                                {% include 'AppBundle:DiscoverHostCollections:_collections-item.html.twig' %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            {% endif %}
+        {% endif %}
+    </div>
+    </div>
+{% endblock body %}

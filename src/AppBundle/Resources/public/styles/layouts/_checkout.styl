@@ -1,0 +1,472 @@
+.error-msg-age
+  color: red;
+.valid-recipient-age
+  color: silver;
+.modal__header
+	h3.user-desclaimer-title
+			color: black;
+.modal__body.user-desclaimer-body:last-child
+	border-radius: 0px 0px 4px 4px;
+.user-desclaimer-fees
+	margin-bottom: 20px;
+.modal__body.user-desclaimer-body
+	border-top: 1px solid #B6B6B6;
+	border-radius: 0px 0px 0px 0px;
+	.user-desclaimer-buttons
+		.cart-checkout-desclaimer
+			color: #FFFFFF;
+			border-radius: 6px;
+			width: 140px;
+			line-height: 40px;
+			display: block;
+			vertical-align: middle;
+		#user-desclaimer-checkout
+			background-color: #ffa800;
+			margin: 10px 30px 40px 0px;
+			float: right;
+		#user-desclaimer-denied
+			background-color: #B2B2B2;
+			margin: 10px 0px 40px 30px;
+			float: left;
+		input[type="checkbox"]
+			display:none;
+		input[type="checkbox"] + label span
+			display: inline-block;
+			width: auto;
+			line-height: 30px;
+			vertical-align: middle;
+			background: url('../img/checkbox.png') no-repeat;
+			background-size: 30px 30px;
+			padding-left: 40px;
+			cursor:pointer;
+		input[type="checkbox"]:checked + label span
+			background: url('../img/checkbox_checked.png') no-repeat;
+			background-size: 30px 30px;
+		label
+			display: inline-block;
+.checkbox-circle
+	input[type="checkbox"]
+			display:none;
+		input[type="checkbox"] + label span
+			display: inline-block;
+			width: auto;
+			line-height: 30px;
+			vertical-align: middle;
+			background: url('../img/checkbox.png') no-repeat;
+			background-size: 30px 30px;
+			padding-left: 40px;
+			cursor:pointer;
+		input[type="checkbox"]:checked + label span
+			background: url('../img/checkbox_checked.png') no-repeat;
+			background-size: 30px 30px;
+		label
+			display: inline-block;
+.modal__body
+	.user-desclaimer-text
+		color: #000000;
+.page-actions
+	// margin-top: 60px;
+	.success-msg
+		background-color: theme-success;
+		font-weight: 400
+		.btn
+			padding: 0;
+			font-weight: 700;
+			font-size: 32px;
+	.info-msg
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 32px;
+		background-color: theme-primary;
+	.error-msg
+		text-transform: uppercase;
+		font-weight: 600;
+		background-color: theme-danger;
+	.termsofuse
+		font-size: 14px;
+		a
+			text-decoration: underline;
+			&:hover, &:focus
+				text-decoration: none;
+
+
+.page--checkout-summary
+	margin: 60px 0 60px 0;
+	height: calc(100vh - 120px);
+	.page-actions
+		transition: all 0.3s ease;
+		margin-top: 30px;
+		z-index: 15;
+		position: fixed;
+		width: 100%;
+		top: auto;
+		bottom: 0;
+
+.cart-active .page-actions,
+.cart-active-saved .page-actions
+	width: calc(100% - 309px);
+
+
+.checkout-review
+	.content
+		max-width: 700px;
+		margin-bottom: 160px;
+		+below(bpSmall)
+			margin-bottom: 200px;
+	&__footer
+		text-align: center;
+		padding: (baseSpacing*2) 0;
+		p
+			color: white;
+			&:nth-child(1)
+				line-height: 1;
+				text-transform: uppercase;
+				font-size: 17px;
+			&:nth-child(2)
+				font-size: 26px;
+				font-weight: 600;
+
+	&__info
+		margin-bottom: baseSpacing;
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		+above(bpSmall)
+			flex-direction: row;
+		> div
+			flex: 1;
+			margin-bottom: baseSpacing;
+			+above(bpSmall)
+				margin-bottom: 0;
+			&:first-child
+				+above(bpSmall)
+					margin-bottom: 0;
+					margin-right: baseSpacing;
+
+
+	.user-info
+		position: relative;
+		padding: baseSpacing;
+		height: 200px;
+		line-height: 1.5;
+		text-align: center;
+		background-color: white;
+		border-radius: 4px;
+		font-weight: 400;
+		color: black;
+		&__content
+			position: relative;
+			height: 100%;
+			.center
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 100%;
+				margin-top: -20px;
+				transform: translate(-50%, -50%);
+		.error
+			display: block;
+			color: theme-danger;
+			font-weight: 500;
+			&:hover
+				cursor: pointer;
+		&__actions
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			padding: 20px;
+			// display: flex;
+			// flex-direction: row;
+			// flex-grow: 1;
+			// flex-wrap: nowrap;
+			.btn
+				// flex: 1;
+				margin: 0;
+				line-height: 1;
+				// &:first-child
+				// 	+above(bpSmall)
+				// 		margin-right: baseSpacing;
+
+	.card-info
+		position: relative;
+		padding: baseSpacing;
+		height: 200px;
+		line-height: 1.5;
+		text-align: center;
+		background-color: creditcardbg;
+		border-radius: 4px;
+		font-weight: 400;
+		color: white;
+		.new-item
+			height: 100%;
+			border: 0;
+			padding: 0;
+			.content
+				padding: 0;
+		&__content
+			position: relative;
+			height: 100%;
+			.center
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 100%;
+				margin-top: -20px;
+				transform: translate(-50%, -50%);
+		&__actions
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			padding: 20px;
+			//display: flex;
+			//flex-direction: row;
+			//flex-grow: 1;
+			//flex-wrap: nowrap;
+			.btn
+				//flex: 1;
+				margin: 0;
+				line-height: 1;
+				//&:first-child
+				//  +above(bpSmall)
+				//    margin-right: baseSpacing;
+
+	&__address
+		.address-item
+			width: 100%;
+		&__data
+			display: block;
+			width: auto;
+			height: 100%;
+			right: 0;
+			bottom: 0;
+			z-index: 12;
+			left: 50%;
+			top: 0;
+			.center
+				display: block;
+
+
+.checkout-address-item
+	background-color: white;
+	width: 100%;
+	height: 300px;
+	position relative;
+	margin: 0 auto;
+	text-align: center;
+	overflow: hidden;
+	border-radius: 4px;
+	color: white;
+	font-size: 14px;
+	line-height: 1.3;
+	&:hover
+		cursor: pointer;
+	.map-source
+		// background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		position: absolute;
+		z-index: 13;
+		top: 0;
+		left: 0%;
+		width: 50%;
+		height: 100%;
+
+	.map-blur
+		//transform: scale(1.05);
+		//background-size: 100%;
+		background-repeat: no-repeat;
+		background-position: -317px;
+		filter: blur(2px);
+		z-index: 8;
+		position: absolute;
+		left: auto;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+	.btn
+		margin-bottom: 0;
+	h2
+		font-size: 14px;
+
+	address
+		font-style: normal;
+		padding: 0 20px;
+	&__data
+		overflow: hidden;
+		display: table
+		background-color: rgba(gray-10, 0.5);
+		position absolute;
+		width: 50%;
+		right: 0;
+		bottom: 0;
+		z-index: 12;
+		top: 0;
+		height: 100%;
+		font-weight: 400;
+		p
+			padding: 0 20px;
+		.center
+			background-color: rgba(black, 0.45);
+			position: relative;
+			z-index: 9;
+			display: table-cell;
+			vertical-align: middle;
+	&__actions
+		padding: 0 20px;
+
+
+
+
+
+.page--post-order
+	margin-top: -(headerHeight);
+	.info-msg
+		i
+			font-size: 88px;
+	.box
+		padding-top: (baseSpacing * 3);
+		&:nth-child(2)
+			margin: 0 baseSpacing;
+		&__body
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			+above(900px)
+				flex-direction: row;
+		&__footer
+			padding: (baseSpacing*4) 0;
+			text-align: center;
+		.box-item
+			flex: 1;
+			width: 340px;
+			background-color: #333;
+			border-radius: 4px;
+			height: 300px;
+			text-align: center;
+			overflow: hidden;
+			color: white;
+			position: relative;
+			.title
+				margin-bottom: 20px;
+			img
+				display: block;
+				width: 100%;
+				height: auto;
+				position: absolute;
+				top: 112px;
+				bottom: 0;
+			&:nth-child(2)
+				margin: 10px 0;
+				+above(bpMedium)
+					margin: 0 10px;
+			.blured-img
+				overflow:hidden;
+				position: absolute;
+				top: -130px;
+				z-index: 2;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 300px;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+			.blur-bg
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 300px;
+				overflow: hidden;
+				background-color: rgba(black, 0.7)
+				svg
+					opacity: 0.5;
+					height: 300px;
+					width: 100%;
+					position: absolute;
+					bottom: 0;
+					top: 0;
+					left: 0;
+					right: 0;
+			&__data
+				position: relative;
+				height: 100%;
+				overflow: hidden;
+
+			h3
+				position: absolute;
+				z-index:3;
+				text-transform: uppercase;
+				font-size: 22px;
+				padding: baseSpacing;
+				left: 50%;
+				top: 50%;
+				width: 80%;
+				// width: 100%;
+				margin-top: -50px;
+				transform: translate(-50%, -50%);
+			.btn
+				margin: 20px 0 0 0;
+				padding: 7px 20px 6px 20px;
+			&__actions
+				position: absolute;
+				z-index: 2;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 130px;
+				padding: 20px;
+				display: table;
+				.center
+					width: 100%;
+					display: table-cell;
+					vertical-align: middle;
+
+
+
+
+.page--review
+	background-color: gray-20;
+
+
+
+.cart-active-saved .page--account
+	.page-actions
+		width: 100%!important;
+
+.store-closed-banner
+	pointer-events: none;
+	text-align: center;
+	display: block;
+	padding: 5px 0;
+	font-size: 14px;
+	background-color: #af7401;
+	// background-color: theme-primary;
+	color: white;
+	// color: white;
+	line-height: 1.2;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10000;
+
+#modal-add-card
+	.modal__header
+		padding-top: 25px;
+	.modal__body
+		padding: 0 25px 10px 25px;
+	.checkbox-circle
+		margin-bottom: 10px;
+	.errors
+		margin-bottom: 5px;
+	input, select
+		margin-bottom: 10px;
+		height: 45px;
+		padding: 10px 20px 7px 20px;

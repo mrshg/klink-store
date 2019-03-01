@@ -1,0 +1,34 @@
+{% set mapImage %}
+style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?autoscale=2&size=400x450&maptype=roadmap&key=AIzaSyAKkJMIYxEv8IV9Eoshxc4U8uDYKKPO97A&format=png&visual_refresh=true&markers=icon:http://i.imgur.com/dZttCtd.png|{{ address.address_line1 }}{% if address.address_line2 is defined %}+{{ address.address_line2 }}{% endif %}+{{ address.locality }}+{{ address.country_code }}+{{ address.postal_code }}')"
+{% endset %}
+<article class="address-item">
+    <div class="map-source" {{ mapImage }}></div>
+    <div class="map-blur" {{ mapImage }}></div>
+    <div class="address-item__data">
+            {% if address.name is defined %}
+                <h2>{{ address.name }}</h2>
+            {% endif %}
+            <address>
+                {{ address.address_line1 }} <br>
+                {% if address.address_line2 is defined %}
+                    {{ address.address_line2 }} <br>
+                {% endif %}
+                {{ address.administrative_area|slice(-2) }} {{ address.locality }}  {{ address.postal_code }}
+            </address>
+            <div class="address-item__actions">
+                {% set defaultClass = ' set-default-address' %}
+                {% if profile.default_address is defined and address.id == profile.default_address.id %}
+                    {% set defaultClass = ' active btn--is-chosen' %}
+                {% endif %}
+                <div class="btn-group">
+                    <button type="button" class="btn btn--white{{ defaultClass }}" data-id="{{ address.id }}">
+                        Default
+                    </button>
+                    <a href="#modal-edit-address" class="btn btn--white activate-modal-link"
+                       data-effect="mfp-zoom-in" data-id="{{ address.id }}">Edit</a>
+                    <a href="#modal-delete-address" class="btn btn--white activate-modal-link"
+                       data-effect="mfp-zoom-in" data-id="{{ address.id }}">Delete</a>
+                </div>
+            </div>
+    </div>
+</article>

@@ -1,0 +1,17 @@
+{% set label = '%packSize% %volume% %containerType%' %}
+{% for option in options %}
+    {% if option.name == 'Pack size' and (option.value != null or option.value != 'null') %}
+        {% set label = label|replace({'%packSize%': option.value ~ '-Pack'}) %}
+    {% elseif option.name == 'Volume' and (option.value != null or option.value != 'null') %}
+        {% set label = label|replace({'%volume%': option.value}) %}
+    {% elseif option.name == 'Container type' and (option.value != null or option.value != 'null') %}
+        {% set label = label|replace({'%containerType%': option.value ~ 's'}) %}
+    {% endif %}
+{% endfor %}
+{% set label = label|replace({'%packSize%': ''}) %}
+{% set label = label|replace({'%volume%': ''}) %}
+{% set label = label|replace({'%containerType%': ''}) %}
+{% set label = label|replace({'  ': ' '}) %}
+{% set label = label|trim %}
+
+{{ label }}
